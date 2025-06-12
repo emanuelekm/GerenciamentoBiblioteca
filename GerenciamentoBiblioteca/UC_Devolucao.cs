@@ -92,7 +92,7 @@ namespace GerenciamentoBiblioteca
             }
 
             int idEmprestimo = Convert.ToInt32(dataGridViewDevolucoes.SelectedRows[0].Cells["id"].Value);
-
+            // arrumar isso daqui
             string updateQuery = "UPDATE emprestimos SET status = 'Devolvido', data_devolvido = CURDATE() WHERE id = @id";
             using (var cmd = new MySqlCommand(updateQuery, conexao))
             {
