@@ -33,93 +33,105 @@ namespace GerenciamentoBiblioteca
 
         private void CarregarEmprestimosEmAndamento()
         {
-            string query = @"SELECT 
-                                e.id, 
-                                u.nome AS NomeUsuario, 
-                                l.titulo AS TituloLivro,
-                                e.data_emprestimo AS DataEmprestimo, 
-                                e.data_devolucao AS DataDevolucao,
-                                e.status AS Status
-                            FROM emprestimos e
-                            INNER JOIN usuarios u ON e.id_usuario = u.id
-                            INNER JOIN livros l ON e.id_livro = l.id
-                            WHERE e.status = 'Em andamento'";
+            List<Emprestimo> lista = new List<Emprestimo>();
 
-            DataTable tabela = new DataTable();
+            string query = @"SELECT e.id, u.nome AS NomeUsuario, l.titulo AS TituloLivro,
+                            e.data_emprestimo, e.data_devolucao, e.status
+                     FROM emprestimos e
+                     INNER JOIN usuarios u ON e.id_usuario = u.id
+                     INNER JOIN livros l ON e.id_livro = l.id
+                     WHERE e.status = 'Em andamento'";
 
             using (MySqlCommand cmd = new MySqlCommand(query, conexao))
             {
                 conexao.Open();
-                using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    adapter.Fill(tabela);
+                    while (reader.Read())
+                    {
+                        Emprestimo emp = new Emprestimo
+                        {
+                            Id = reader.GetInt32("id"),
+                            NomeUsuario = reader.GetString("NomeUsuario"),
+                            TituloLivro = reader.GetString("TituloLivro"),
+                            DataEmprestimo = reader.GetDateTime("data_emprestimo"),
+                            DataDevolucao = reader.GetDateTime("data_devolucao"),
+                            Status = reader.GetString("status")
+                        };
+                        lista.Add(emp);
+                    }
                 }
                 conexao.Close();
             }
 
-            dataGridViewDevolucoes.DataSource = tabela;
-
-            dataGridViewDevolucoes.Columns["id"].Visible = false;
-
-            // Ajustes visuais
-            dataGridViewDevolucoes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewDevolucoes.CellFormatting += dataGridViewDevolucoes_CellFormatting;
+            dataGridViewDevolucoes.DataSource = null;
+            dataGridViewDevolucoes.DataSource = lista;
         }
 
         private void dataGridViewDevolucoes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dataGridViewDevolucoes.Columns[e.ColumnIndex].Name == "DataDevolucao")
+            // Exemplo básico para colorir células dependendo do status
+            if (dataGridViewDevolucoes.Columns[e.ColumnIndex].Name == "status" && e.Value != null)
             {
-                DateTime dataDevolucao = Convert.ToDateTime(dataGridViewDevolucoes.Rows[e.RowIndex].Cells["DataDevolucao"].Value);
-                string status = dataGridViewDevolucoes.Rows[e.RowIndex].Cells["Status"].Value.ToString();
+                string status = e.Value.ToString();
 
-                if (status == "Em andamento" && dataDevolucao < DateTime.Today)
+                if (status == "Em atraso")
                 {
-                    dataGridViewDevolucoes.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCoral;
-                    dataGridViewDevolucoes.Rows[e.RowIndex].Cells["Status"].Value = "Em atraso";
+                    e.CellStyle.BackColor = Color.Red;
+                    e.CellStyle.ForeColor = Color.White;
+                }
+                else if (status == "Em andamento")
+                {
+                    e.CellStyle.BackColor = Color.Orange;
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+                else if (status == "Devolvido")
+                {
+                    e.CellStyle.BackColor = Color.LightGreen;
+                    e.CellStyle.ForeColor = Color.Black;
                 }
             }
         }
-
 
 
         private void buttonDevolver_Click(object sender, EventArgs e)
         {
-            if (dataGridViewDevolucoes.SelectedRows.Count == 0)
+            if (dataGridViewDevolucoes.SelectedRows.Count > 0)
             {
-                MessageBox.Show("Selecione um empréstimo para devolver.");
-                return;
+                int idEmprestimo = Convert.ToInt32(dataGridViewDevolucoes.SelectedRows[0].Cells["id"].Value);
+
+                string updateQuery = "UPDATE emprestimos SET status = 'Devolvido', data_devolvido = @dataHoje WHERE id = @id";
+                using (var cmd = new MySqlCommand(updateQuery, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@id", idEmprestimo);
+                    cmd.Parameters.AddWithValue("@dataHoje", DateTime.Today);
+
+                    try
+                    {
+                        conexao.Open();
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Livro devolvido com sucesso!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro: " + ex.Message);
+                    }
+                    finally
+                    {
+                        conexao.Close();
+                    }
+                }
+            
+
+                // Atualizar o DataGridView após a devolução
+                CarregarEmprestimosEmAndamento();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecione um empréstimo para devolver.");
             }
 
-            int idEmprestimo = Convert.ToInt32(dataGridViewDevolucoes.SelectedRows[0].Cells["id"].Value);
-            // arrumar isso daqui
-            string updateQuery = "UPDATE emprestimos SET status = 'Devolvido', data_devolvido = CURDATE() WHERE id = @id";
-            using (var cmd = new MySqlCommand(updateQuery, conexao))
-            {
-                cmd.Parameters.AddWithValue("@id", idEmprestimo);
-                cmd.Parameters.AddWithValue("@dataHoje", DateTime.Today);
-                conexao.Open();
-                cmd.ExecuteNonQuery();
-                conexao.Close();
-            
-                try
-                {
-                    conexao.Open();
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Livro devolvido com sucesso!");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao devolver o livro: " + ex.Message);
-                }
-                finally
-                {
-                    conexao.Close();
-                    CarregarEmprestimosEmAndamento(); // Atualiza o DataGridView após a devolução
-                }
-            }
         }
-        
     }
 
 }

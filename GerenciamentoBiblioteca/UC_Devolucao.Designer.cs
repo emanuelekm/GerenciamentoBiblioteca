@@ -60,7 +60,7 @@
             this.dataGridViewDevolucoes.RowTemplate.Height = 28;
             this.dataGridViewDevolucoes.Size = new System.Drawing.Size(1230, 401);
             this.dataGridViewDevolucoes.TabIndex = 1;
-            this.dataGridViewDevolucoes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewDevolucoes_CellFormatting);
+            //this.dataGridViewDevolucoes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewDevolucoes_CellFormatting);
             // 
             // label2
             // 
