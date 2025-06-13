@@ -111,7 +111,7 @@ namespace GerenciamentoBiblioteca
             List<Emprestimo> lista = new List<Emprestimo>();
 
             string query = @"SELECT e.id, u.nome AS NomeUsuario, l.titulo AS TituloLivro,
-                            e.data_emprestimo, e.data_devolucao, e.status
+                            e.data_emprestimo, e.data_devolucao, e.data_devolvido,e.status
                      FROM emprestimos e
                      INNER JOIN usuarios u ON e.id_usuario = u.id
                      INNER JOIN livros l ON e.id_livro = l.id";
@@ -132,7 +132,10 @@ namespace GerenciamentoBiblioteca
                             Status = reader.GetString("status"),
                             DataDevolucao = reader.IsDBNull(reader.GetOrdinal("data_devolucao"))
                                             ? (DateTime?)null
-                                            : reader.GetDateTime("data_devolucao")
+                                            : reader.GetDateTime("data_devolucao"),
+                            DataDevolvido = reader.IsDBNull(reader.GetOrdinal("data_devolvido"))
+                                            ? (DateTime?)null
+                                            : reader.GetDateTime("data_devolvido"),
                         };
                         lista.Add(emp);
                     }

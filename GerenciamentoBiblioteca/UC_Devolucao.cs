@@ -36,11 +36,11 @@ namespace GerenciamentoBiblioteca
             List<Emprestimo> lista = new List<Emprestimo>();
 
             string query = @"SELECT e.id, u.nome AS NomeUsuario, l.titulo AS TituloLivro,
-                            e.data_emprestimo, e.data_devolucao, e.status
-                     FROM emprestimos e
-                     INNER JOIN usuarios u ON e.id_usuario = u.id
-                     INNER JOIN livros l ON e.id_livro = l.id
-                     WHERE e.status = 'Em andamento'";
+                           e.data_emprestimo, e.data_devolucao, e.data_devolvido, e.status
+                           FROM emprestimos e
+                           INNER JOIN usuarios u ON e.id_usuario = u.id
+                           INNER JOIN livros l ON e.id_livro = l.id
+                           WHERE e.status = 'Em andamento' OR e.status = 'Devolvido'";
 
             using (MySqlCommand cmd = new MySqlCommand(query, conexao))
             {
@@ -56,6 +56,9 @@ namespace GerenciamentoBiblioteca
                             TituloLivro = reader.GetString("TituloLivro"),
                             DataEmprestimo = reader.GetDateTime("data_emprestimo"),
                             DataDevolucao = reader.GetDateTime("data_devolucao"),
+                            DataDevolvido = reader.IsDBNull(reader.GetOrdinal("data_devolvido"))
+                            ? (DateTime?)null
+                            : reader.GetDateTime("data_devolvido"),
                             Status = reader.GetString("status")
                         };
                         lista.Add(emp);

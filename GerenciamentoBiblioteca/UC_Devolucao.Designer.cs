@@ -53,14 +53,13 @@
             this.dataGridViewDevolucoes.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridViewDevolucoes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewDevolucoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDevolucoes.Location = new System.Drawing.Point(47, 152);
+            this.dataGridViewDevolucoes.Location = new System.Drawing.Point(47, 160);
             this.dataGridViewDevolucoes.Name = "dataGridViewDevolucoes";
             this.dataGridViewDevolucoes.ReadOnly = true;
             this.dataGridViewDevolucoes.RowHeadersWidth = 62;
             this.dataGridViewDevolucoes.RowTemplate.Height = 28;
-            this.dataGridViewDevolucoes.Size = new System.Drawing.Size(1230, 401);
+            this.dataGridViewDevolucoes.Size = new System.Drawing.Size(1246, 444);
             this.dataGridViewDevolucoes.TabIndex = 1;
-            //this.dataGridViewDevolucoes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewDevolucoes_CellFormatting);
             // 
             // label2
             // 
@@ -77,7 +76,7 @@
             // 
             this.buttonDevolver.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDevolver.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonDevolver.Location = new System.Drawing.Point(1030, 55);
+            this.buttonDevolver.Location = new System.Drawing.Point(1046, 44);
             this.buttonDevolver.Name = "buttonDevolver";
             this.buttonDevolver.Size = new System.Drawing.Size(247, 64);
             this.buttonDevolver.TabIndex = 3;
@@ -94,7 +93,7 @@
             this.Controls.Add(this.dataGridViewDevolucoes);
             this.Controls.Add(this.label1);
             this.Name = "UC_Devolucao";
-            this.Size = new System.Drawing.Size(1327, 577);
+            this.Size = new System.Drawing.Size(1378, 632);
             this.Load += new System.EventHandler(this.UC_Devolucao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDevolucoes)).EndInit();
             this.ResumeLayout(false);
