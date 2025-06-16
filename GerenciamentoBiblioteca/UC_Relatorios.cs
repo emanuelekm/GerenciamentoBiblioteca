@@ -29,18 +29,19 @@ namespace GerenciamentoBiblioteca
 
             InicializarTimer();
             CarregarEmprestimosNoDataGridView();
+            AtualizarGraficoPizza();
 
             dataGridViewEmprestimo.RowPrePaint += dataGridViewEmprestimo_RowPrePaint;
             dataGridViewEmprestimo.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dataGridViewEmprestimo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-       
+
 
         private void InicializarTimer()
         {
             timerAtualizacao = new Timer
             {
-                Interval = 5000 
+                Interval = 5000
             };
             timerAtualizacao.Tick += (s, e) => CarregarEmprestimosNoDataGridView();
             timerAtualizacao.Start();
@@ -81,7 +82,7 @@ namespace GerenciamentoBiblioteca
 
             series.Points.AddXY("Efetuados", efetuados);
             series.Points.AddXY("Em Andamento", andamento);
-            series.Points.AddXY("Em Atraso", atraso);  
+            series.Points.AddXY("Em Atraso", atraso);
 
             series.Points[0].Color = Color.FromArgb(144, 238, 144);  // Verde suave
             series.Points[1].Color = Color.FromArgb(255, 255, 192);  // Amarelo suave
@@ -144,26 +145,46 @@ namespace GerenciamentoBiblioteca
 
         private void buttonExportar_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
+            /*SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "Arquivo PDF (*.pdf)|*.pdf";
             sfd.FileName = "RelatorioEmprestimos.pdf";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 ExportarParaPDF(dataGridViewEmprestimo, sfd.FileName);
-            }
+            }*/
+
+            ExportarParaPDF(dataGridViewEmprestimo, chartLivroDisponibilidade);
         }
 
-        private void ExportarParaPDF(DataGridView dgv, string caminhoArquivo)
+        private void ExportarParaPDF(DataGridView dgv, Chart chart)
         {
-            Document doc = new Document(PageSize.A4, 10, 10, 10, 10);
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Arquivo PDF (*.pdf)|*.pdf";
+            sfd.FileName = "Relatorio.pdf";
+            if (sfd.ShowDialog() != DialogResult.OK) return;
 
-            using (FileStream stream = new FileStream(caminhoArquivo, FileMode.Create))
+            Document doc = new Document(PageSize.A4.Rotate(), 10, 10, 10, 10);
+            using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
             {
                 PdfWriter writer = PdfWriter.GetInstance(doc, stream);
                 doc.Open();
 
+                // Adiciona o gráfico de pizza como imagem
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    chart.SaveImage(ms, ChartImageFormat.Png);
+                    iTextSharp.text.Image chartImg = iTextSharp.text.Image.GetInstance(ms.ToArray());
+                    chartImg.ScaleToFit(400f, 300f);
+                    chartImg.Alignment = Element.ALIGN_CENTER;
+                    doc.Add(chartImg);
+                }
+
+                doc.Add(new Paragraph("\n"));
+
+                // Tabela do DataGridView
                 PdfPTable tabela = new PdfPTable(dgv.Columns.Count);
 
+                // Cabeçalhos
                 foreach (DataGridViewColumn coluna in dgv.Columns)
                 {
                     PdfPCell cell = new PdfPCell(new Phrase(coluna.HeaderText));
@@ -171,6 +192,7 @@ namespace GerenciamentoBiblioteca
                     tabela.AddCell(cell);
                 }
 
+                // Dados
                 foreach (DataGridViewRow row in dgv.Rows)
                 {
                     if (!row.IsNewRow)
@@ -181,13 +203,60 @@ namespace GerenciamentoBiblioteca
                         }
                     }
                 }
-
                 doc.Add(tabela);
+
                 doc.Close();
                 writer.Close();
                 stream.Close();
             }
             MessageBox.Show("PDF exportado com sucesso!");
         }
+        private void AtualizarGraficoPizza()
+        {
+            var (disponiveis, indisponiveis) = ObterQuantidadesLivros();
+            chartLivroDisponibilidade.Series.Clear();
+
+            Series serie = new Series
+            {
+                ChartType = SeriesChartType.Pie,
+                IsValueShownAsLabel = true
+            };
+            serie.Points.AddXY("Disponíveis", disponiveis);
+            serie.Points.AddXY("Indisponíveis", indisponiveis);
+
+            // Cores suaves
+            serie.Points[0].Color = Color.FromArgb(144, 238, 144); // Verde claro
+            serie.Points[1].Color = Color.FromArgb(255, 182, 193); // Vermelho claro
+
+            chartLivroDisponibilidade.Series.Add(serie);
+            chartLivroDisponibilidade.Titles.Clear();
+            chartLivroDisponibilidade.Titles.Add("Disponibilidade de Livros");
+        }
+
+        // Método para buscar do banco
+        private (int disponiveis, int indisponiveis) ObterQuantidadesLivros()
+        {
+            int disponiveis = 0, indisponiveis = 0;
+            string query = "SELECT status, COUNT(*) as quantidade FROM livros GROUP BY status";
+            using (MySqlCommand cmd = new MySqlCommand(query, conexao))
+            {
+                conexao.Open();
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string status = reader.GetString("status");
+                        int quantidade = reader.GetInt32("quantidade");
+                        if (status == "Disponível")
+                            disponiveis = quantidade;
+                        else
+                            indisponiveis += quantidade;
+                    }
+                }
+                conexao.Close();
+            }
+            return (disponiveis, indisponiveis);
+        }
     }
-}
+
+    }
