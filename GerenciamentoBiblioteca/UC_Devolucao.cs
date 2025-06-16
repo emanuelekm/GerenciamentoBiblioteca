@@ -22,6 +22,7 @@ namespace GerenciamentoBiblioteca
             conexao = new MySqlConnection(conexaoString);
 
             this.Load += UC_Devolucao_Load;
+            dataGridViewDevolucoes.CellFormatting += dataGridViewDevolucoes_CellFormatting;
         }
 
         private void UC_Devolucao_Load(object sender, EventArgs e)
@@ -71,32 +72,6 @@ namespace GerenciamentoBiblioteca
             dataGridViewDevolucoes.DataSource = lista;
         }
 
-        private void dataGridViewDevolucoes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            // Exemplo básico para colorir células dependendo do status
-            if (dataGridViewDevolucoes.Columns[e.ColumnIndex].Name == "status" && e.Value != null)
-            {
-                string status = e.Value.ToString();
-
-                if (status == "Em atraso")
-                {
-                    e.CellStyle.BackColor = Color.Red;
-                    e.CellStyle.ForeColor = Color.White;
-                }
-                else if (status == "Em andamento")
-                {
-                    e.CellStyle.BackColor = Color.Orange;
-                    e.CellStyle.ForeColor = Color.Black;
-                }
-                else if (status == "Devolvido")
-                {
-                    e.CellStyle.BackColor = Color.LightGreen;
-                    e.CellStyle.ForeColor = Color.Black;
-                }
-            }
-        }
-
-
         private void buttonDevolver_Click(object sender, EventArgs e)
         {
             if (dataGridViewDevolucoes.SelectedRows.Count > 0)
@@ -124,9 +99,6 @@ namespace GerenciamentoBiblioteca
                         conexao.Close();
                     }
                 }
-            
-
-                // Atualizar o DataGridView após a devolução
                 CarregarEmprestimosEmAndamento();
             }
             else
@@ -135,6 +107,29 @@ namespace GerenciamentoBiblioteca
             }
 
         }
-    }
 
+        private void dataGridViewDevolucoes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridViewDevolucoes.Columns[e.ColumnIndex].Name.Equals("status", StringComparison.OrdinalIgnoreCase) && e.Value != null)
+            {
+                string status = e.Value.ToString();
+
+                if (status == "Em atraso")
+                {
+                    e.CellStyle.BackColor = Color.Red;
+                    e.CellStyle.ForeColor = Color.White;
+                }
+                else if (status == "Em andamento")
+                {
+                    e.CellStyle.BackColor = Color.Orange;
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+                else if (status == "Devolvido")
+                {
+                    e.CellStyle.BackColor = Color.LightGreen;
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+            }
+        }
+    }
 }

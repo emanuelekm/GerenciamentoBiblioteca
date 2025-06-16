@@ -77,5 +77,16 @@ namespace GerenciamentoBiblioteca
                 formularioPai.CarregarTela(uCDevolucao);
             }
         }
+
+        private void buttonRelatorio_Click(object sender, EventArgs e)
+        {
+            FormPrincipalAdmin formularioPai = this.FindForm() as FormPrincipalAdmin;
+            if (formularioPai != null)
+            {
+                UC_Relatorios uC_Relatorios = new UC_Relatorios();
+
+                formularioPai.CarregarTela(uC_Relatorios);
+            }
+        }
     }
 }

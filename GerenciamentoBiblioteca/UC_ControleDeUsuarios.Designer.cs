@@ -48,7 +48,7 @@
             this.dataGridViewUsuarios.ReadOnly = true;
             this.dataGridViewUsuarios.RowHeadersWidth = 62;
             this.dataGridViewUsuarios.RowTemplate.Height = 28;
-            this.dataGridViewUsuarios.Size = new System.Drawing.Size(1200, 530);
+            this.dataGridViewUsuarios.Size = new System.Drawing.Size(1381, 599);
             this.dataGridViewUsuarios.TabIndex = 0;
             // 
             // label1
@@ -65,7 +65,7 @@
             // buttonAdicionar
             // 
             this.buttonAdicionar.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionar.Location = new System.Drawing.Point(826, 32);
+            this.buttonAdicionar.Location = new System.Drawing.Point(1012, 32);
             this.buttonAdicionar.Name = "buttonAdicionar";
             this.buttonAdicionar.Size = new System.Drawing.Size(121, 60);
             this.buttonAdicionar.TabIndex = 2;
@@ -76,7 +76,7 @@
             // buttonEditar
             // 
             this.buttonEditar.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditar.Location = new System.Drawing.Point(970, 33);
+            this.buttonEditar.Location = new System.Drawing.Point(1156, 33);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(121, 59);
             this.buttonEditar.TabIndex = 3;
@@ -87,7 +87,7 @@
             // buttonExcluir
             // 
             this.buttonExcluir.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluir.Location = new System.Drawing.Point(1115, 33);
+            this.buttonExcluir.Location = new System.Drawing.Point(1301, 33);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(119, 59);
             this.buttonExcluir.TabIndex = 4;
@@ -95,7 +95,7 @@
             this.buttonExcluir.UseVisualStyleBackColor = true;
             this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
-            // UCControleDeUsuarios
+            // UC_ControleDeUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -104,8 +104,8 @@
             this.Controls.Add(this.buttonAdicionar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewUsuarios);
-            this.Name = "UCControleDeUsuarios";
-            this.Size = new System.Drawing.Size(1316, 696);
+            this.Name = "UC_ControleDeUsuarios";
+            this.Size = new System.Drawing.Size(1543, 801);
             this.Load += new System.EventHandler(this.UCControleDeUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).EndInit();
             this.ResumeLayout(false);

@@ -197,6 +197,12 @@
     <Compile Include="UC_Devolucao.Designer.cs">
       <DependentUpon>UC_Devolucao.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Relatorios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Relatorios.Designer.cs">
+      <DependentUpon>UC_Relatorios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Devolucao.resx">
       <DependentUpon>UC_Devolucao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Relatorios.resx">
+      <DependentUpon>UC_Relatorios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

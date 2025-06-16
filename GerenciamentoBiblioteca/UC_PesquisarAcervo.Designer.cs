@@ -41,7 +41,7 @@
             // 
             this.textBoxPesquisar.Location = new System.Drawing.Point(32, 120);
             this.textBoxPesquisar.Name = "textBoxPesquisar";
-            this.textBoxPesquisar.Size = new System.Drawing.Size(1186, 26);
+            this.textBoxPesquisar.Size = new System.Drawing.Size(1372, 26);
             this.textBoxPesquisar.TabIndex = 0;
             this.textBoxPesquisar.TextChanged += new System.EventHandler(this.textBoxPesquisar_TextChanged_1);
             // 
@@ -57,7 +57,7 @@
             this.dataGridViewPesquisar.ReadOnly = true;
             this.dataGridViewPesquisar.RowHeadersWidth = 62;
             this.dataGridViewPesquisar.RowTemplate.Height = 28;
-            this.dataGridViewPesquisar.Size = new System.Drawing.Size(1231, 308);
+            this.dataGridViewPesquisar.Size = new System.Drawing.Size(1416, 584);
             this.dataGridViewPesquisar.TabIndex = 1;
             // 
             // label1
@@ -75,7 +75,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.Image = global::GerenciamentoBiblioteca.Properties.Resources.icons8_pesquisar_24;
-            this.pictureBox1.Location = new System.Drawing.Point(1239, 122);
+            this.pictureBox1.Location = new System.Drawing.Point(1424, 122);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -88,10 +88,10 @@
             this.panelFiltros.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panelFiltros.Location = new System.Drawing.Point(32, 167);
             this.panelFiltros.Name = "panelFiltros";
-            this.panelFiltros.Size = new System.Drawing.Size(1231, 54);
+            this.panelFiltros.Size = new System.Drawing.Size(1416, 54);
             this.panelFiltros.TabIndex = 5;
             // 
-            // UCPesquisarAcervo
+            // UC_PesquisarAcervo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,8 +100,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewPesquisar);
             this.Controls.Add(this.textBoxPesquisar);
-            this.Name = "UCPesquisarAcervo";
-            this.Size = new System.Drawing.Size(1350, 645);
+            this.Name = "UC_PesquisarAcervo";
+            this.Size = new System.Drawing.Size(1509, 885);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPesquisar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

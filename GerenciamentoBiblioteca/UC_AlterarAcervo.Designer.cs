@@ -61,7 +61,7 @@
             this.dataGridViewModificarAcervo.Name = "dataGridViewModificarAcervo";
             this.dataGridViewModificarAcervo.RowHeadersWidth = 62;
             this.dataGridViewModificarAcervo.RowTemplate.Height = 28;
-            this.dataGridViewModificarAcervo.Size = new System.Drawing.Size(1328, 596);
+            this.dataGridViewModificarAcervo.Size = new System.Drawing.Size(1431, 691);
             this.dataGridViewModificarAcervo.TabIndex = 1;
             // 
             // textBoxPesquisarColecao
@@ -69,13 +69,13 @@
             this.textBoxPesquisarColecao.Location = new System.Drawing.Point(46, 109);
             this.textBoxPesquisarColecao.Multiline = true;
             this.textBoxPesquisarColecao.Name = "textBoxPesquisarColecao";
-            this.textBoxPesquisarColecao.Size = new System.Drawing.Size(672, 34);
+            this.textBoxPesquisarColecao.Size = new System.Drawing.Size(851, 34);
             this.textBoxPesquisarColecao.TabIndex = 2;
             // 
             // pictureBoxLupa
             // 
             this.pictureBoxLupa.Image = global::GerenciamentoBiblioteca.Properties.Resources.icons8_pesquisar_24;
-            this.pictureBoxLupa.Location = new System.Drawing.Point(734, 114);
+            this.pictureBoxLupa.Location = new System.Drawing.Point(903, 113);
             this.pictureBoxLupa.Name = "pictureBoxLupa";
             this.pictureBoxLupa.Size = new System.Drawing.Size(24, 24);
             this.pictureBoxLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -86,7 +86,7 @@
             // buttonEditar
             // 
             this.buttonEditar.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditar.Location = new System.Drawing.Point(1035, 84);
+            this.buttonEditar.Location = new System.Drawing.Point(1145, 77);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(150, 66);
             this.buttonEditar.TabIndex = 4;
@@ -97,7 +97,7 @@
             // buttonExcluir
             // 
             this.buttonExcluir.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluir.Location = new System.Drawing.Point(1219, 84);
+            this.buttonExcluir.Location = new System.Drawing.Point(1329, 77);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(150, 66);
             this.buttonExcluir.TabIndex = 5;
@@ -108,7 +108,7 @@
             // buttonAdicionar
             // 
             this.buttonAdicionar.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionar.Location = new System.Drawing.Point(841, 84);
+            this.buttonAdicionar.Location = new System.Drawing.Point(951, 77);
             this.buttonAdicionar.Name = "buttonAdicionar";
             this.buttonAdicionar.Size = new System.Drawing.Size(150, 66);
             this.buttonAdicionar.TabIndex = 6;
@@ -116,7 +116,7 @@
             this.buttonAdicionar.UseVisualStyleBackColor = true;
             this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
             // 
-            // UCAlterarAcervo
+            // UC_AlterarAcervo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -127,8 +127,8 @@
             this.Controls.Add(this.textBoxPesquisarColecao);
             this.Controls.Add(this.dataGridViewModificarAcervo);
             this.Controls.Add(this.label1);
-            this.Name = "UCAlterarAcervo";
-            this.Size = new System.Drawing.Size(1440, 866);
+            this.Name = "UC_AlterarAcervo";
+            this.Size = new System.Drawing.Size(1513, 913);
             this.Load += new System.EventHandler(this.UCAlterarAcervo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModificarAcervo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLupa)).EndInit();

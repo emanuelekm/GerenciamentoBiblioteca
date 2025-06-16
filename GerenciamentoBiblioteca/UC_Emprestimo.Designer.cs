@@ -54,7 +54,7 @@
             this.comboBoxLeitor.FormattingEnabled = true;
             this.comboBoxLeitor.Location = new System.Drawing.Point(242, 110);
             this.comboBoxLeitor.Name = "comboBoxLeitor";
-            this.comboBoxLeitor.Size = new System.Drawing.Size(585, 28);
+            this.comboBoxLeitor.Size = new System.Drawing.Size(647, 28);
             this.comboBoxLeitor.TabIndex = 0;
             // 
             // comboBoxLivro
@@ -63,15 +63,15 @@
             this.comboBoxLivro.FormattingEnabled = true;
             this.comboBoxLivro.Location = new System.Drawing.Point(241, 160);
             this.comboBoxLivro.Name = "comboBoxLivro";
-            this.comboBoxLivro.Size = new System.Drawing.Size(586, 28);
+            this.comboBoxLivro.Size = new System.Drawing.Size(648, 28);
             this.comboBoxLivro.TabIndex = 1;
             // 
             // dtpEmprestimo
             // 
             this.dtpEmprestimo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.dtpEmprestimo.Location = new System.Drawing.Point(242, 213);
+            this.dtpEmprestimo.Location = new System.Drawing.Point(242, 214);
             this.dtpEmprestimo.Name = "dtpEmprestimo";
-            this.dtpEmprestimo.Size = new System.Drawing.Size(585, 26);
+            this.dtpEmprestimo.Size = new System.Drawing.Size(647, 26);
             this.dtpEmprestimo.TabIndex = 2;
             // 
             // dtpDevolucao
@@ -79,7 +79,7 @@
             this.dtpDevolucao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.dtpDevolucao.Location = new System.Drawing.Point(241, 267);
             this.dtpDevolucao.Name = "dtpDevolucao";
-            this.dtpDevolucao.Size = new System.Drawing.Size(586, 26);
+            this.dtpDevolucao.Size = new System.Drawing.Size(648, 26);
             this.dtpDevolucao.TabIndex = 3;
             // 
             // buttonConfirmarEmprestimo
@@ -88,7 +88,7 @@
             this.buttonConfirmarEmprestimo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonConfirmarEmprestimo.Location = new System.Drawing.Point(32, 336);
             this.buttonConfirmarEmprestimo.Name = "buttonConfirmarEmprestimo";
-            this.buttonConfirmarEmprestimo.Size = new System.Drawing.Size(258, 53);
+            this.buttonConfirmarEmprestimo.Size = new System.Drawing.Size(325, 53);
             this.buttonConfirmarEmprestimo.TabIndex = 4;
             this.buttonConfirmarEmprestimo.Text = "Confirmar Empréstimo";
             this.buttonConfirmarEmprestimo.UseVisualStyleBackColor = true;
@@ -172,7 +172,7 @@
             this.dataGridViewEmprestimo.ReadOnly = true;
             this.dataGridViewEmprestimo.RowHeadersWidth = 62;
             this.dataGridViewEmprestimo.RowTemplate.Height = 28;
-            this.dataGridViewEmprestimo.Size = new System.Drawing.Size(1364, 341);
+            this.dataGridViewEmprestimo.Size = new System.Drawing.Size(1420, 341);
             this.dataGridViewEmprestimo.TabIndex = 11;
             // 
             // panel1
@@ -180,7 +180,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.labelResumo);
-            this.panel1.Location = new System.Drawing.Point(877, 110);
+            this.panel1.Location = new System.Drawing.Point(933, 110);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(518, 189);
             this.panel1.TabIndex = 12;
@@ -210,9 +210,9 @@
             // buttonLimpar
             // 
             this.buttonLimpar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLimpar.Location = new System.Drawing.Point(321, 336);
+            this.buttonLimpar.Location = new System.Drawing.Point(725, 336);
             this.buttonLimpar.Name = "buttonLimpar";
-            this.buttonLimpar.Size = new System.Drawing.Size(276, 53);
+            this.buttonLimpar.Size = new System.Drawing.Size(164, 53);
             this.buttonLimpar.TabIndex = 14;
             this.buttonLimpar.Text = "Limpar";
             this.buttonLimpar.UseVisualStyleBackColor = true;

@@ -100,6 +100,7 @@
             this.buttonRelatorio.Text = "Relatórios";
             this.buttonRelatorio.UseVisualStyleBackColor = true;
             this.buttonRelatorio.UseWaitCursor = true;
+            this.buttonRelatorio.Click += new System.EventHandler(this.buttonRelatorio_Click);
             // 
             // label1
             // 
@@ -126,7 +127,7 @@
             this.buttonPesquisarAcervo.UseWaitCursor = true;
             this.buttonPesquisarAcervo.Click += new System.EventHandler(this.buttonPesquisarAcervo_Click);
             // 
-            // UCInicioAdmin
+            // UC_InicioAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -137,8 +138,8 @@
             this.Controls.Add(this.buttonRelatorio);
             this.Controls.Add(this.buttonAlterarColeção);
             this.Controls.Add(this.buttonUsuarios);
-            this.Name = "UCInicioAdmin";
-            this.Size = new System.Drawing.Size(1665, 886);
+            this.Name = "UC_InicioAdmin";
+            this.Size = new System.Drawing.Size(1329, 886);
             this.UseWaitCursor = true;
             this.ResumeLayout(false);
             this.PerformLayout();
