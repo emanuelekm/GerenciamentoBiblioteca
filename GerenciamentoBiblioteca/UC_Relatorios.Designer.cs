@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.chartEmprestimo = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dataGridViewEmprestimo = new System.Windows.Forms.DataGridView();
@@ -51,17 +51,18 @@
             // 
             // chartEmprestimo
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartEmprestimo.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartEmprestimo.Legends.Add(legend1);
-            this.chartEmprestimo.Location = new System.Drawing.Point(46, 90);
+            chartArea2.Name = "ChartArea1";
+            this.chartEmprestimo.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartEmprestimo.Legends.Add(legend2);
+            this.chartEmprestimo.Location = new System.Drawing.Point(46, 106);
             this.chartEmprestimo.Name = "chartEmprestimo";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartEmprestimo.Series.Add(series1);
-            this.chartEmprestimo.Size = new System.Drawing.Size(747, 448);
+            this.chartEmprestimo.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartEmprestimo.Series.Add(series2);
+            this.chartEmprestimo.Size = new System.Drawing.Size(597, 344);
             this.chartEmprestimo.TabIndex = 1;
             this.chartEmprestimo.Text = "chartEmprestimo";
             // 
@@ -69,14 +70,17 @@
             // 
             this.dataGridViewEmprestimo.AllowUserToAddRows = false;
             this.dataGridViewEmprestimo.AllowUserToDeleteRows = false;
+            this.dataGridViewEmprestimo.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridViewEmprestimo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewEmprestimo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmprestimo.Location = new System.Drawing.Point(24, 562);
+            this.dataGridViewEmprestimo.Location = new System.Drawing.Point(46, 532);
             this.dataGridViewEmprestimo.Name = "dataGridViewEmprestimo";
             this.dataGridViewEmprestimo.ReadOnly = true;
             this.dataGridViewEmprestimo.RowHeadersWidth = 62;
             this.dataGridViewEmprestimo.RowTemplate.Height = 28;
-            this.dataGridViewEmprestimo.Size = new System.Drawing.Size(1313, 280);
+            this.dataGridViewEmprestimo.Size = new System.Drawing.Size(1291, 310);
             this.dataGridViewEmprestimo.TabIndex = 2;
+            this.dataGridViewEmprestimo.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridViewEmprestimo_RowPrePaint);
             // 
             // UC_Relatorios
             // 

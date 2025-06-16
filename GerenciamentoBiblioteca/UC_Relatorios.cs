@@ -17,7 +17,6 @@ namespace GerenciamentoBiblioteca
         private MySqlConnection conexao;
         private Timer timerAtualizacao;
         private DataGridView dataGridViewRelatorio;
-
         public UC_Relatorios()
         {
             InitializeComponent();
@@ -25,27 +24,20 @@ namespace GerenciamentoBiblioteca
             string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
             conexao = new MySqlConnection(conexaoString);
 
-            //InicializarDataGridView();
             InicializarTimer();
             CarregarEmprestimosNoDataGridView();
+
+            dataGridViewEmprestimo.RowPrePaint += dataGridViewEmprestimo_RowPrePaint;
+            dataGridViewEmprestimo.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dataGridViewEmprestimo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-        /*private void InicializarDataGridView()
-        {
-            dataGridViewRelatorio = new DataGridView();
-            {
-                Dock = DockStyle.Fill,
-                ReadOnly = true,
-                AutoGenerateColumns = true,
-                AllowUserToAddRows = false,
-            };
-            this.Controls.Add(dataGridViewRelatorio);
-        }*/
+       
 
         private void InicializarTimer()
         {
             timerAtualizacao = new Timer
             {
-                Interval = 5000 // 5 segundos
+                Interval = 5000 
             };
             timerAtualizacao.Tick += (s, e) => CarregarEmprestimosNoDataGridView();
             timerAtualizacao.Start();
@@ -55,8 +47,6 @@ namespace GerenciamentoBiblioteca
             try
             {
                 var lista = ObterTodosEmprestimos();
-                // Supondo que você já tenha adicionado pelo designer
-                // um DataGridView chamado dataGridViewEmprestimo
                 dataGridViewEmprestimo.DataSource = null;
                 dataGridViewEmprestimo.DataSource = lista;
                 AtualizarGrafico(lista);
@@ -69,9 +59,9 @@ namespace GerenciamentoBiblioteca
 
         private void AtualizarGrafico(List<Emprestimo> emprestimos)
         {
-            // Supondo que você já tenha adicionado pelo designer
-            // um Chart chamado chartEmprestimos
             var chart = chartEmprestimo;
+            chart.Series.Clear();
+
             if (chart == null) return;
 
             chart.Series.Clear();
@@ -88,7 +78,11 @@ namespace GerenciamentoBiblioteca
 
             series.Points.AddXY("Efetuados", efetuados);
             series.Points.AddXY("Em Andamento", andamento);
-            series.Points.AddXY("Em Atraso", atraso);
+            series.Points.AddXY("Em Atraso", atraso);  
+
+            series.Points[0].Color = Color.FromArgb(144, 238, 144);  // Verde suave
+            series.Points[1].Color = Color.FromArgb(255, 255, 192);  // Amarelo suave
+            series.Points[2].Color = Color.FromArgb(255, 182, 193);  // Vermelho suave
 
             chart.Series.Add(series);
         }
@@ -127,6 +121,22 @@ namespace GerenciamentoBiblioteca
                 conexao.Close();
             }
             return lista;
+        }
+
+        private void dataGridViewEmprestimo_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            var dgv = sender as DataGridView;
+            if (dgv == null) return;
+
+            var row = dgv.Rows[e.RowIndex];
+            var status = row.Cells["Status"].Value?.ToString();
+
+            if (status == "Em andamento")
+                row.DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 192); // Amarelo suave
+            else if (status == "Em atraso")
+                row.DefaultCellStyle.BackColor = Color.FromArgb(255, 182, 193); // Vermelho suave
+            else if (status == "Devolvido" || status == "Efetuados")
+                row.DefaultCellStyle.BackColor = Color.FromArgb(144, 238, 144); // Verde suave
         }
     }
 }
