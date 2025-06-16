@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.chartEmprestimo = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dataGridViewEmprestimo = new System.Windows.Forms.DataGridView();
+            this.buttonExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chartEmprestimo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmprestimo)).BeginInit();
             this.SuspendLayout();
@@ -82,10 +83,21 @@
             this.dataGridViewEmprestimo.TabIndex = 2;
             this.dataGridViewEmprestimo.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridViewEmprestimo_RowPrePaint);
             // 
+            // buttonExportar
+            // 
+            this.buttonExportar.Location = new System.Drawing.Point(1108, 431);
+            this.buttonExportar.Name = "buttonExportar";
+            this.buttonExportar.Size = new System.Drawing.Size(217, 69);
+            this.buttonExportar.TabIndex = 3;
+            this.buttonExportar.Text = "Exportar dados paraPDF";
+            this.buttonExportar.UseVisualStyleBackColor = true;
+            this.buttonExportar.Click += new System.EventHandler(this.buttonExportar_Click);
+            // 
             // UC_Relatorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonExportar);
             this.Controls.Add(this.dataGridViewEmprestimo);
             this.Controls.Add(this.chartEmprestimo);
             this.Controls.Add(this.label1);
@@ -103,5 +115,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartEmprestimo;
         private System.Windows.Forms.DataGridView dataGridViewEmprestimo;
+        private System.Windows.Forms.Button buttonExportar;
     }
 }

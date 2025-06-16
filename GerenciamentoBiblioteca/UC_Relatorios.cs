@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 using MySql.Data.MySqlClient;
 
 namespace GerenciamentoBiblioteca
@@ -137,6 +140,54 @@ namespace GerenciamentoBiblioteca
                 row.DefaultCellStyle.BackColor = Color.FromArgb(255, 182, 193); // Vermelho suave
             else if (status == "Devolvido" || status == "Efetuados")
                 row.DefaultCellStyle.BackColor = Color.FromArgb(144, 238, 144); // Verde suave
+        }
+
+        private void buttonExportar_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Arquivo PDF (*.pdf)|*.pdf";
+            sfd.FileName = "RelatorioEmprestimos.pdf";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                ExportarParaPDF(dataGridViewEmprestimo, sfd.FileName);
+            }
+        }
+
+        private void ExportarParaPDF(DataGridView dgv, string caminhoArquivo)
+        {
+            Document doc = new Document(PageSize.A4, 10, 10, 10, 10);
+
+            using (FileStream stream = new FileStream(caminhoArquivo, FileMode.Create))
+            {
+                PdfWriter writer = PdfWriter.GetInstance(doc, stream);
+                doc.Open();
+
+                PdfPTable tabela = new PdfPTable(dgv.Columns.Count);
+
+                foreach (DataGridViewColumn coluna in dgv.Columns)
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(coluna.HeaderText));
+                    cell.BackgroundColor = BaseColor.LIGHT_GRAY;
+                    tabela.AddCell(cell);
+                }
+
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            tabela.AddCell(cell.Value?.ToString() ?? "");
+                        }
+                    }
+                }
+
+                doc.Add(tabela);
+                doc.Close();
+                writer.Close();
+                stream.Close();
+            }
+            MessageBox.Show("PDF exportado com sucesso!");
         }
     }
 }
