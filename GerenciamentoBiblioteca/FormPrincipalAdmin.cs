@@ -50,10 +50,10 @@ namespace GerenciamentoBiblioteca
             CarregarTela(new UC_InicioAdmin());
         }
 
-        private void linkLabelMeuPerfil_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            CarregarTela(new UC_MeuPerfilAdmin());
-        }
+        //private void linkLabelMeuPerfil_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        //{
+        //    CarregarTela(new UC_MeuPerfilAdmin());
+        //}
 
         private void linkLabelAlterarCadastro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

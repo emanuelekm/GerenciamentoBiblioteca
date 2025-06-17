@@ -22,6 +22,14 @@ namespace GerenciamentoBiblioteca
         private void FormPrincipalLeitor_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+            CarregarTela(new UC_InicioLeitor());
+        }
+
+        public void CarregarTela(UserControl tela)
+        {
+            panelTelaInternaLeitor.Controls.Clear();
+            tela.Dock = DockStyle.Fill;
+            panelTelaInternaLeitor.Controls.Add(tela);
         }
     }
 }

@@ -41,9 +41,9 @@
             // 
             this.buttonAlterarColeção.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlterarColeção.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonAlterarColeção.Location = new System.Drawing.Point(465, 144);
+            this.buttonAlterarColeção.Location = new System.Drawing.Point(522, 144);
             this.buttonAlterarColeção.Name = "buttonAlterarColeção";
-            this.buttonAlterarColeção.Size = new System.Drawing.Size(381, 197);
+            this.buttonAlterarColeção.Size = new System.Drawing.Size(428, 283);
             this.buttonAlterarColeção.TabIndex = 0;
             this.buttonAlterarColeção.Text = "Alterar coleção";
             this.buttonAlterarColeção.UseVisualStyleBackColor = true;
@@ -54,9 +54,9 @@
             // 
             this.buttonUsuarios.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUsuarios.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonUsuarios.Location = new System.Drawing.Point(878, 144);
+            this.buttonUsuarios.Location = new System.Drawing.Point(995, 144);
             this.buttonUsuarios.Name = "buttonUsuarios";
-            this.buttonUsuarios.Size = new System.Drawing.Size(381, 197);
+            this.buttonUsuarios.Size = new System.Drawing.Size(428, 283);
             this.buttonUsuarios.TabIndex = 1;
             this.buttonUsuarios.Text = "Visualizar/ \r\nCadastrar novos usuários";
             this.buttonUsuarios.UseVisualStyleBackColor = true;
@@ -67,9 +67,9 @@
             // 
             this.buttonEmprestimo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEmprestimo.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonEmprestimo.Location = new System.Drawing.Point(55, 384);
+            this.buttonEmprestimo.Location = new System.Drawing.Point(55, 144);
             this.buttonEmprestimo.Name = "buttonEmprestimo";
-            this.buttonEmprestimo.Size = new System.Drawing.Size(381, 197);
+            this.buttonEmprestimo.Size = new System.Drawing.Size(428, 283);
             this.buttonEmprestimo.TabIndex = 2;
             this.buttonEmprestimo.Text = "Empréstimos";
             this.buttonEmprestimo.UseVisualStyleBackColor = true;
@@ -80,9 +80,9 @@
             // 
             this.buttonDevolucoes.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDevolucoes.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonDevolucoes.Location = new System.Drawing.Point(465, 384);
+            this.buttonDevolucoes.Location = new System.Drawing.Point(55, 461);
             this.buttonDevolucoes.Name = "buttonDevolucoes";
-            this.buttonDevolucoes.Size = new System.Drawing.Size(381, 197);
+            this.buttonDevolucoes.Size = new System.Drawing.Size(428, 283);
             this.buttonDevolucoes.TabIndex = 3;
             this.buttonDevolucoes.Text = "Devoluções";
             this.buttonDevolucoes.UseVisualStyleBackColor = true;
@@ -93,9 +93,9 @@
             // 
             this.buttonRelatorio.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRelatorio.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonRelatorio.Location = new System.Drawing.Point(878, 384);
+            this.buttonRelatorio.Location = new System.Drawing.Point(995, 461);
             this.buttonRelatorio.Name = "buttonRelatorio";
-            this.buttonRelatorio.Size = new System.Drawing.Size(381, 197);
+            this.buttonRelatorio.Size = new System.Drawing.Size(428, 283);
             this.buttonRelatorio.TabIndex = 4;
             this.buttonRelatorio.Text = "Relatórios";
             this.buttonRelatorio.UseVisualStyleBackColor = true;
@@ -107,7 +107,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(49, 60);
+            this.label1.Location = new System.Drawing.Point(49, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 34);
             this.label1.TabIndex = 9;
@@ -118,9 +118,9 @@
             // 
             this.buttonPesquisarAcervo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPesquisarAcervo.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonPesquisarAcervo.Location = new System.Drawing.Point(55, 144);
+            this.buttonPesquisarAcervo.Location = new System.Drawing.Point(522, 461);
             this.buttonPesquisarAcervo.Name = "buttonPesquisarAcervo";
-            this.buttonPesquisarAcervo.Size = new System.Drawing.Size(381, 197);
+            this.buttonPesquisarAcervo.Size = new System.Drawing.Size(428, 283);
             this.buttonPesquisarAcervo.TabIndex = 10;
             this.buttonPesquisarAcervo.Text = "Pesquisar acervo";
             this.buttonPesquisarAcervo.UseVisualStyleBackColor = true;
@@ -139,7 +139,7 @@
             this.Controls.Add(this.buttonAlterarColeção);
             this.Controls.Add(this.buttonUsuarios);
             this.Name = "UC_InicioAdmin";
-            this.Size = new System.Drawing.Size(1329, 886);
+            this.Size = new System.Drawing.Size(1540, 886);
             this.UseWaitCursor = true;
             this.ResumeLayout(false);
             this.PerformLayout();

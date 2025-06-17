@@ -10,14 +10,11 @@ using System.Windows.Forms;
 
 namespace GerenciamentoBiblioteca
 {
-    public partial class UC_MeuPerfilAdmin : UserControl
+    public partial class UC_InicioLeitor : UserControl
     {
-        
-
-        public UC_MeuPerfilAdmin()
+        public UC_InicioLeitor()
         {
             InitializeComponent();
-            
         }
     }
 }

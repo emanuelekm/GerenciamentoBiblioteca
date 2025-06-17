@@ -171,17 +171,17 @@
     <Compile Include="UC_Emprestimo.Designer.cs">
       <DependentUpon>UC_Emprestimo.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_MeuPerfilAdmin.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_MeuPerfilAdmin.Designer.cs">
-      <DependentUpon>UC_MeuPerfilAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_InicioAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_InicioAdmin.Designer.cs">
       <DependentUpon>UC_InicioAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_InicioLeitor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_InicioLeitor.Designer.cs">
+      <DependentUpon>UC_InicioLeitor.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_NotificacoesAdmin.cs">
       <SubType>UserControl</SubType>
@@ -248,11 +248,11 @@
     <EmbeddedResource Include="UC_Emprestimo.resx">
       <DependentUpon>UC_Emprestimo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_MeuPerfilAdmin.resx">
-      <DependentUpon>UC_MeuPerfilAdmin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC_InicioAdmin.resx">
       <DependentUpon>UC_InicioAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_InicioLeitor.resx">
+      <DependentUpon>UC_InicioLeitor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_NotificacoesAdmin.resx">
       <DependentUpon>UC_NotificacoesAdmin.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace GerenciamentoBiblioteca
 {
-    partial class UC_MeuPerfilAdmin
+    partial class UC_InicioLeitor
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -34,21 +34,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(37, 38);
+            this.label1.Location = new System.Drawing.Point(41, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 34);
+            this.label1.Size = new System.Drawing.Size(75, 28);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Meu Perfil";
+            this.label1.Text = "Início";
             // 
-            // UCMeuPerfilAdmin
+            // UC_InicioLeitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Name = "UCMeuPerfilAdmin";
-            this.Size = new System.Drawing.Size(824, 481);
+            this.Name = "UC_InicioLeitor";
+            this.Size = new System.Drawing.Size(1003, 536);
             this.ResumeLayout(false);
             this.PerformLayout();
 
