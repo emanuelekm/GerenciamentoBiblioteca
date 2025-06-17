@@ -22,6 +22,7 @@ namespace GerenciamentoBiblioteca
             conexao = new MySqlConnection(conexaoString);
 
             this.Load += UC_Devolucao_Load;
+            dataGridViewDevolucoes.RowPrePaint += dataGridViewDevolucoes_RowPrePaint;
             dataGridViewDevolucoes.CellFormatting += dataGridViewDevolucoes_CellFormatting;
         }
 
@@ -77,6 +78,11 @@ namespace GerenciamentoBiblioteca
             if (dataGridViewDevolucoes.SelectedRows.Count > 0)
             {
                 int idEmprestimo = Convert.ToInt32(dataGridViewDevolucoes.SelectedRows[0].Cells["id"].Value);
+               
+                DateTime dataHoje = DateTime.Today;
+                DateTime dataPrevistaDevolucao = Convert.ToDateTime(dataGridViewDevolucoes.SelectedRows[0].Cells["DataDevolucao"].Value);
+
+                string novoStatus = dataHoje > dataPrevistaDevolucao ? "Devolvido com atraso" : "Devolvido";
 
                 string updateQuery = "UPDATE emprestimos SET status = 'Devolvido', data_devolvido = @dataHoje WHERE id = @id";
                 using (var cmd = new MySqlCommand(updateQuery, conexao))
@@ -110,7 +116,7 @@ namespace GerenciamentoBiblioteca
 
         private void dataGridViewDevolucoes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dataGridViewDevolucoes.Columns[e.ColumnIndex].Name.Equals("status", StringComparison.OrdinalIgnoreCase) && e.Value != null)
+            /*if (dataGridViewDevolucoes.Columns[e.ColumnIndex].Name.Equals("Status", StringComparison.OrdinalIgnoreCase) && e.Value != null)
             {
                 string status = e.Value.ToString();
 
@@ -129,7 +135,52 @@ namespace GerenciamentoBiblioteca
                     e.CellStyle.BackColor = Color.LightGreen;
                     e.CellStyle.ForeColor = Color.Black;
                 }
+                else if (status == "Devolvido com atraso")
+                {
+                    e.CellStyle.BackColor = Color.Pink;
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+                else
+                {
+                    // Volta para o padrão caso não seja nenhum dos status acima
+                    e.CellStyle.BackColor = dataGridViewDevolucoes.DefaultCellStyle.BackColor;
+                    e.CellStyle.ForeColor = dataGridViewDevolucoes.DefaultCellStyle.ForeColor;
+                }
+            }*/
+        }
+
+        private void dataGridViewDevolucoes_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            var grid = sender as DataGridView;
+            if (grid?.Rows[e.RowIndex].DataBoundItem is Emprestimo emprestimo)
+            {
+                // Se não devolveu e já venceu, está em atraso
+                if (!emprestimo.DataDevolvido.HasValue &&
+                    emprestimo.DataDevolucao.HasValue &&
+                    emprestimo.DataDevolucao.Value.Date < DateTime.Now.Date)
+                {
+                    grid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                    grid.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+                    // Opcional: Atualize o status visualmente para "Em atraso"
+                    grid.Rows[e.RowIndex].Cells["Status"].Value = "Em atraso";
+                }
+                else if (emprestimo.Status == "Devolvido")
+                {
+                    grid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;
+                    grid.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
+                }
+                else if (emprestimo.Status == "Em andamento")
+                {
+                    grid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Orange;
+                    grid.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
+                }
+                else
+                {
+                    grid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                    grid.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
+                }
             }
         }
+    
     }
 }
