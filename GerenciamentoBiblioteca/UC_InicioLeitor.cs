@@ -16,5 +16,16 @@ namespace GerenciamentoBiblioteca
         {
             InitializeComponent();
         }
+
+        private void buttonPesquisa_Click(object sender, EventArgs e)
+        {
+            FormPrincipalLeitor formularioPai = this.FindForm() as FormPrincipalLeitor;
+            if (formularioPai != null)
+            {
+                UC_PesquisarAcervo userControlPesquisarAcervoAdmin = new UC_PesquisarAcervo();
+
+                formularioPai.CarregarTela(userControlPesquisarAcervoAdmin);
+            }
+        }
     }
 }

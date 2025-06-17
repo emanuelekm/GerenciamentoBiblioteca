@@ -57,7 +57,7 @@ namespace GerenciamentoBiblioteca
 
         private void linkLabelAlterarCadastro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CarregarTela(new UC_AlterarCadastroAdmin());
+            CarregarTela(new UC_AlterarCadastro());
         }
 
         private void linkLabelNotificacoes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -67,7 +67,7 @@ namespace GerenciamentoBiblioteca
 
         private void linkLabelDuvidas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CarregarTela(new UC_DuvidasAdmin());
+            CarregarTela(new UC_Duvidas());
         }
     }
 }

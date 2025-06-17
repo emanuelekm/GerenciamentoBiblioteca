@@ -31,5 +31,25 @@ namespace GerenciamentoBiblioteca
             tela.Dock = DockStyle.Fill;
             panelTelaInternaLeitor.Controls.Add(tela);
         }
+
+        private void linkLabelInicioLeitor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CarregarTela(new UC_InicioLeitor());
+        }
+
+        private void linkLabelAlterarCadastroLeitor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CarregarTela(new UC_AlterarCadastro());
+        }
+
+        private void linkLabelNotificacoesLeitor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void linkLabelDuvidasLeitor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

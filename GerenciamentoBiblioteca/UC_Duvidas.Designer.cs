@@ -1,6 +1,6 @@
 ﻿namespace GerenciamentoBiblioteca
 {
-    partial class UC_DuvidasAdmin
+    partial class UC_Duvidas
     {
         /// <summary> 
         /// Variável de designer necessária.

@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace GerenciamentoBiblioteca
 {
-    public partial class UC_AlterarCadastroAdmin : UserControl
+    public partial class UC_AlterarCadastro : UserControl
     {
-        public UC_AlterarCadastroAdmin()
+        public UC_AlterarCadastro()
         {
             InitializeComponent();
         }

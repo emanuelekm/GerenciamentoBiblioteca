@@ -32,14 +32,13 @@
             this.dataGridViewPesquisar = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelFiltros = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPesquisar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxPesquisar
             // 
-            this.textBoxPesquisar.Location = new System.Drawing.Point(32, 120);
+            this.textBoxPesquisar.Location = new System.Drawing.Point(32, 91);
             this.textBoxPesquisar.Name = "textBoxPesquisar";
             this.textBoxPesquisar.Size = new System.Drawing.Size(1372, 26);
             this.textBoxPesquisar.TabIndex = 0;
@@ -52,7 +51,7 @@
             this.dataGridViewPesquisar.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridViewPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewPesquisar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPesquisar.Location = new System.Drawing.Point(32, 248);
+            this.dataGridViewPesquisar.Location = new System.Drawing.Point(32, 145);
             this.dataGridViewPesquisar.Name = "dataGridViewPesquisar";
             this.dataGridViewPesquisar.ReadOnly = true;
             this.dataGridViewPesquisar.RowHeadersWidth = 62;
@@ -75,7 +74,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.Image = global::GerenciamentoBiblioteca.Properties.Resources.icons8_pesquisar_24;
-            this.pictureBox1.Location = new System.Drawing.Point(1424, 122);
+            this.pictureBox1.Location = new System.Drawing.Point(1424, 91);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -83,19 +82,10 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // panelFiltros
-            // 
-            this.panelFiltros.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panelFiltros.Location = new System.Drawing.Point(32, 167);
-            this.panelFiltros.Name = "panelFiltros";
-            this.panelFiltros.Size = new System.Drawing.Size(1416, 54);
-            this.panelFiltros.TabIndex = 5;
-            // 
             // UC_PesquisarAcervo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelFiltros);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewPesquisar);
@@ -115,6 +105,5 @@
         private System.Windows.Forms.DataGridView dataGridViewPesquisar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panelFiltros;
     }
 }

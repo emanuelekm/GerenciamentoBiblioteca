@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GerenciamentoBiblioteca
 {
-    public partial class UC_DuvidasAdmin : UserControl
+    public partial class UC_Duvidas : UserControl
     {
-        public UC_DuvidasAdmin()
+        public UC_Duvidas()
         {
             InitializeComponent();
         }

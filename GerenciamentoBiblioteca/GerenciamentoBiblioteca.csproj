@@ -147,11 +147,11 @@
     <Compile Include="UC_AlterarAcervo.Designer.cs">
       <DependentUpon>UC_AlterarAcervo.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_AlterarCadastroAdmin.cs">
+    <Compile Include="UC_AlterarCadastro.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_AlterarCadastroAdmin.Designer.cs">
-      <DependentUpon>UC_AlterarCadastroAdmin.cs</DependentUpon>
+    <Compile Include="UC_AlterarCadastro.Designer.cs">
+      <DependentUpon>UC_AlterarCadastro.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_ControleDeUsuarios.cs">
       <SubType>UserControl</SubType>
@@ -159,11 +159,11 @@
     <Compile Include="UC_ControleDeUsuarios.Designer.cs">
       <DependentUpon>UC_ControleDeUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_DuvidasAdmin.cs">
+    <Compile Include="UC_Duvidas.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_DuvidasAdmin.Designer.cs">
-      <DependentUpon>UC_DuvidasAdmin.cs</DependentUpon>
+    <Compile Include="UC_Duvidas.Designer.cs">
+      <DependentUpon>UC_Duvidas.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_Emprestimo.cs">
       <SubType>UserControl</SubType>
@@ -236,14 +236,14 @@
     <EmbeddedResource Include="UC_AlterarAcervo.resx">
       <DependentUpon>UC_AlterarAcervo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_AlterarCadastroAdmin.resx">
-      <DependentUpon>UC_AlterarCadastroAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="UC_AlterarCadastro.resx">
+      <DependentUpon>UC_AlterarCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ControleDeUsuarios.resx">
       <DependentUpon>UC_ControleDeUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_DuvidasAdmin.resx">
-      <DependentUpon>UC_DuvidasAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="UC_Duvidas.resx">
+      <DependentUpon>UC_Duvidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Emprestimo.resx">
       <DependentUpon>UC_Emprestimo.cs</DependentUpon>

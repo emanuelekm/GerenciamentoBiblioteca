@@ -1,6 +1,6 @@
 ﻿namespace GerenciamentoBiblioteca
 {
-    partial class UC_AlterarCadastroAdmin
+    partial class UC_AlterarCadastro
     {
         /// <summary> 
         /// Variável de designer necessária.
