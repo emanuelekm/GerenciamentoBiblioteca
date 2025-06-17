@@ -171,6 +171,12 @@
     <Compile Include="UC_Emprestimo.Designer.cs">
       <DependentUpon>UC_Emprestimo.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_HistoricoLeitor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_HistoricoLeitor.Designer.cs">
+      <DependentUpon>UC_HistoricoLeitor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_InicioAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -183,11 +189,23 @@
     <Compile Include="UC_InicioLeitor.Designer.cs">
       <DependentUpon>UC_InicioLeitor.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_MeuPerfilLeitor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_MeuPerfilLeitor.Designer.cs">
+      <DependentUpon>UC_MeuPerfilLeitor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_NotificacoesAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_NotificacoesAdmin.Designer.cs">
       <DependentUpon>UC_NotificacoesAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_NotificacoesLeitor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_NotificacoesLeitor.Designer.cs">
+      <DependentUpon>UC_NotificacoesLeitor.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_PesquisarAcervo.cs">
       <SubType>UserControl</SubType>
@@ -200,6 +218,12 @@
     </Compile>
     <Compile Include="UC_Devolucao.Designer.cs">
       <DependentUpon>UC_Devolucao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Ranking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Ranking.Designer.cs">
+      <DependentUpon>UC_Ranking.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_Relatorios.cs">
       <SubType>UserControl</SubType>
@@ -248,20 +272,32 @@
     <EmbeddedResource Include="UC_Emprestimo.resx">
       <DependentUpon>UC_Emprestimo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_HistoricoLeitor.resx">
+      <DependentUpon>UC_HistoricoLeitor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_InicioAdmin.resx">
       <DependentUpon>UC_InicioAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_InicioLeitor.resx">
       <DependentUpon>UC_InicioLeitor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_MeuPerfilLeitor.resx">
+      <DependentUpon>UC_MeuPerfilLeitor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_NotificacoesAdmin.resx">
       <DependentUpon>UC_NotificacoesAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_NotificacoesLeitor.resx">
+      <DependentUpon>UC_NotificacoesLeitor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_PesquisarAcervo.resx">
       <DependentUpon>UC_PesquisarAcervo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Devolucao.resx">
       <DependentUpon>UC_Devolucao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Ranking.resx">
+      <DependentUpon>UC_Ranking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Relatorios.resx">
       <DependentUpon>UC_Relatorios.cs</DependentUpon>

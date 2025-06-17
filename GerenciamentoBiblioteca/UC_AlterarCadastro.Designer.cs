@@ -47,11 +47,11 @@
             // labelTitulo
             // 
             this.labelTitulo.AutoSize = true;
-            this.labelTitulo.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitulo.ForeColor = System.Drawing.Color.MidnightBlue;
             this.labelTitulo.Location = new System.Drawing.Point(35, 28);
             this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(236, 34);
+            this.labelTitulo.Size = new System.Drawing.Size(205, 28);
             this.labelTitulo.TabIndex = 0;
             this.labelTitulo.Text = "Alterar Cadastro";
             // 
@@ -174,14 +174,14 @@
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
-            // UC_AlterarCadastroAdmin
+            // UC_AlterarCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelTitulo);
             this.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "UC_AlterarCadastroAdmin";
+            this.Name = "UC_AlterarCadastro";
             this.Size = new System.Drawing.Size(844, 466);
             this.Load += new System.EventHandler(this.UCAlterarCadastroAdmin_Load);
             this.groupBox1.ResumeLayout(false);

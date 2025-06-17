@@ -27,5 +27,27 @@ namespace GerenciamentoBiblioteca
                 formularioPai.CarregarTela(userControlPesquisarAcervoAdmin);
             }
         }
+
+        private void buttonRanking_Click(object sender, EventArgs e)
+        {
+            FormPrincipalLeitor formularioPai = this.FindForm() as FormPrincipalLeitor;
+            if (formularioPai != null)
+            {
+                UC_Ranking uC_Ranking = new UC_Ranking();
+
+                formularioPai.CarregarTela(uC_Ranking);
+            }
+        }
+
+        private void buttonHistorico_Click(object sender, EventArgs e)
+        {
+            FormPrincipalLeitor formularioPai = this.FindForm() as FormPrincipalLeitor;
+            if (formularioPai != null)
+            {
+                UC_HistoricoLeitor uC_HistoricoLeitor = new UC_HistoricoLeitor();
+
+                formularioPai.CarregarTela(uC_HistoricoLeitor);
+            }
+        }
     }
 }
