@@ -34,21 +34,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(42, 39);
+            this.label1.Location = new System.Drawing.Point(37, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 34);
+            this.label1.Size = new System.Drawing.Size(179, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Notificações";
             // 
-            // UCNotificacoes
+            // UC_NotificacoesAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Name = "UCNotificacoes";
-            this.Size = new System.Drawing.Size(689, 481);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "UC_NotificacoesAdmin";
+            this.Size = new System.Drawing.Size(612, 385);
             this.ResumeLayout(false);
             this.PerformLayout();
 

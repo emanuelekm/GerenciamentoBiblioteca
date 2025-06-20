@@ -38,11 +38,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(42, 44);
+            this.label1.Location = new System.Drawing.Point(37, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(237, 28);
+            this.label1.Size = new System.Drawing.Size(265, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Realizar Devolução";
             // 
@@ -53,12 +53,13 @@
             this.dataGridViewDevolucoes.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridViewDevolucoes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewDevolucoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDevolucoes.Location = new System.Drawing.Point(47, 160);
+            this.dataGridViewDevolucoes.Location = new System.Drawing.Point(42, 128);
+            this.dataGridViewDevolucoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewDevolucoes.Name = "dataGridViewDevolucoes";
             this.dataGridViewDevolucoes.ReadOnly = true;
             this.dataGridViewDevolucoes.RowHeadersWidth = 62;
             this.dataGridViewDevolucoes.RowTemplate.Height = 28;
-            this.dataGridViewDevolucoes.Size = new System.Drawing.Size(1363, 444);
+            this.dataGridViewDevolucoes.Size = new System.Drawing.Size(1212, 355);
             this.dataGridViewDevolucoes.TabIndex = 1;
             this.dataGridViewDevolucoes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewDevolucoes_CellFormatting);
             this.dataGridViewDevolucoes.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridViewDevolucoes_RowPrePaint);
@@ -66,21 +67,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(42, 98);
+            this.label2.Location = new System.Drawing.Point(37, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(264, 21);
+            this.label2.Size = new System.Drawing.Size(230, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Empréstimos em andamento";
             // 
             // buttonDevolver
             // 
-            this.buttonDevolver.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDevolver.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDevolver.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonDevolver.Location = new System.Drawing.Point(1163, 44);
+            this.buttonDevolver.Location = new System.Drawing.Point(1006, 35);
+            this.buttonDevolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDevolver.Name = "buttonDevolver";
-            this.buttonDevolver.Size = new System.Drawing.Size(247, 64);
+            this.buttonDevolver.Size = new System.Drawing.Size(248, 51);
             this.buttonDevolver.TabIndex = 3;
             this.buttonDevolver.Text = "Confirmar devolução";
             this.buttonDevolver.UseVisualStyleBackColor = true;
@@ -88,14 +90,15 @@
             // 
             // UC_Devolucao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.buttonDevolver);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewDevolucoes);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_Devolucao";
-            this.Size = new System.Drawing.Size(1477, 632);
+            this.Size = new System.Drawing.Size(1313, 506);
             this.Load += new System.EventHandler(this.UC_Devolucao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDevolucoes)).EndInit();
             this.ResumeLayout(false);

@@ -43,31 +43,34 @@
             this.dataGridViewUsuarios.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridViewUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsuarios.Location = new System.Drawing.Point(44, 119);
+            this.dataGridViewUsuarios.Location = new System.Drawing.Point(39, 95);
+            this.dataGridViewUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewUsuarios.Name = "dataGridViewUsuarios";
             this.dataGridViewUsuarios.ReadOnly = true;
             this.dataGridViewUsuarios.RowHeadersWidth = 62;
             this.dataGridViewUsuarios.RowTemplate.Height = 28;
-            this.dataGridViewUsuarios.Size = new System.Drawing.Size(1381, 599);
+            this.dataGridViewUsuarios.Size = new System.Drawing.Size(1228, 479);
             this.dataGridViewUsuarios.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(39, 46);
+            this.label1.Location = new System.Drawing.Point(35, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 28);
+            this.label1.Size = new System.Drawing.Size(287, 38);
             this.label1.TabIndex = 1;
             this.label1.Text = "Controle de usuários";
             // 
             // buttonAdicionar
             // 
-            this.buttonAdicionar.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdicionar.Location = new System.Drawing.Point(1012, 32);
+            this.buttonAdicionar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdicionar.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.buttonAdicionar.Location = new System.Drawing.Point(900, 26);
+            this.buttonAdicionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonAdicionar.Name = "buttonAdicionar";
-            this.buttonAdicionar.Size = new System.Drawing.Size(121, 60);
+            this.buttonAdicionar.Size = new System.Drawing.Size(108, 48);
             this.buttonAdicionar.TabIndex = 2;
             this.buttonAdicionar.Text = "Adicionar";
             this.buttonAdicionar.UseVisualStyleBackColor = true;
@@ -75,10 +78,12 @@
             // 
             // buttonEditar
             // 
-            this.buttonEditar.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditar.Location = new System.Drawing.Point(1156, 33);
+            this.buttonEditar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEditar.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.buttonEditar.Location = new System.Drawing.Point(1028, 26);
+            this.buttonEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(121, 59);
+            this.buttonEditar.Size = new System.Drawing.Size(108, 47);
             this.buttonEditar.TabIndex = 3;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
@@ -86,10 +91,12 @@
             // 
             // buttonExcluir
             // 
-            this.buttonExcluir.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExcluir.Location = new System.Drawing.Point(1301, 33);
+            this.buttonExcluir.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExcluir.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.buttonExcluir.Location = new System.Drawing.Point(1156, 26);
+            this.buttonExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Size = new System.Drawing.Size(119, 59);
+            this.buttonExcluir.Size = new System.Drawing.Size(106, 47);
             this.buttonExcluir.TabIndex = 4;
             this.buttonExcluir.Text = "Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
@@ -97,15 +104,16 @@
             // 
             // UC_ControleDeUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.buttonExcluir);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.buttonAdicionar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewUsuarios);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_ControleDeUsuarios";
-            this.Size = new System.Drawing.Size(1543, 801);
+            this.Size = new System.Drawing.Size(1372, 641);
             this.Load += new System.EventHandler(this.UCControleDeUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).EndInit();
             this.ResumeLayout(false);

@@ -34,21 +34,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(60, 61);
+            this.label1.Location = new System.Drawing.Point(34, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 34);
+            this.label1.Size = new System.Drawing.Size(271, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Dúvidas frequentes";
             // 
-            // UCDuvidas
+            // UC_Duvidas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Name = "UCDuvidas";
-            this.Size = new System.Drawing.Size(905, 527);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "UC_Duvidas";
+            this.Size = new System.Drawing.Size(804, 422);
             this.ResumeLayout(false);
             this.PerformLayout();
 

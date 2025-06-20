@@ -232,7 +232,7 @@
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
             this.label1.Location = new System.Drawing.Point(241, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 46);
+            this.label1.Size = new System.Drawing.Size(106, 45);
             this.label1.TabIndex = 4;
             this.label1.Text = "Login";
             // 
@@ -243,7 +243,7 @@
             this.linkLabelSenha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelSenha.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabelSenha.LinkColor = System.Drawing.Color.SteelBlue;
-            this.linkLabelSenha.Location = new System.Drawing.Point(205, 172);
+            this.linkLabelSenha.Location = new System.Drawing.Point(205, 178);
             this.linkLabelSenha.Name = "linkLabelSenha";
             this.linkLabelSenha.Size = new System.Drawing.Size(146, 20);
             this.linkLabelSenha.TabIndex = 3;
@@ -473,7 +473,7 @@
             this.buttonCadastrar.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonCadastrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCadastrar.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonCadastrar.Location = new System.Drawing.Point(197, 572);
+            this.buttonCadastrar.Location = new System.Drawing.Point(197, 591);
             this.buttonCadastrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCadastrar.Name = "buttonCadastrar";
             this.buttonCadastrar.Size = new System.Drawing.Size(229, 63);
@@ -499,7 +499,7 @@
             this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
             this.label3.Location = new System.Drawing.Point(213, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 46);
+            this.label3.Size = new System.Drawing.Size(158, 45);
             this.label3.TabIndex = 4;
             this.label3.Text = "Cadastro";
             // 
@@ -673,10 +673,10 @@
             // 
             // textBoxNovaSenha
             // 
-            this.textBoxNovaSenha.Location = new System.Drawing.Point(139, 122);
+            this.textBoxNovaSenha.Location = new System.Drawing.Point(158, 122);
             this.textBoxNovaSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNovaSenha.Name = "textBoxNovaSenha";
-            this.textBoxNovaSenha.Size = new System.Drawing.Size(395, 30);
+            this.textBoxNovaSenha.Size = new System.Drawing.Size(376, 30);
             this.textBoxNovaSenha.TabIndex = 1;
             this.textBoxNovaSenha.TextChanged += new System.EventHandler(this.textBoxNovaSenha_TextChanged);
             // 
@@ -684,11 +684,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(22, 325);
+            this.label12.Location = new System.Drawing.Point(23, 324);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(230, 25);
+            this.label12.Size = new System.Drawing.Size(136, 50);
             this.label12.TabIndex = 7;
-            this.label12.Text = "Confirme a sua nova senha:";
+            this.label12.Text = "Confirme a sua \r\nnova senha:";
             // 
             // label10
             // 
@@ -720,10 +720,10 @@
             // 
             // textBoxConfirmarNovaSenha
             // 
-            this.textBoxConfirmarNovaSenha.Location = new System.Drawing.Point(271, 324);
+            this.textBoxConfirmarNovaSenha.Location = new System.Drawing.Point(158, 324);
             this.textBoxConfirmarNovaSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConfirmarNovaSenha.Name = "textBoxConfirmarNovaSenha";
-            this.textBoxConfirmarNovaSenha.Size = new System.Drawing.Size(263, 30);
+            this.textBoxConfirmarNovaSenha.Size = new System.Drawing.Size(376, 30);
             this.textBoxConfirmarNovaSenha.TabIndex = 2;
             // 
             // buttonRedefinir
@@ -731,7 +731,7 @@
             this.buttonRedefinir.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonRedefinir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRedefinir.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonRedefinir.Location = new System.Drawing.Point(194, 375);
+            this.buttonRedefinir.Location = new System.Drawing.Point(186, 385);
             this.buttonRedefinir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRedefinir.Name = "buttonRedefinir";
             this.buttonRedefinir.Size = new System.Drawing.Size(207, 63);
@@ -747,7 +747,7 @@
             this.label4.ForeColor = System.Drawing.Color.MidnightBlue;
             this.label4.Location = new System.Drawing.Point(129, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(333, 46);
+            this.label4.Size = new System.Drawing.Size(328, 45);
             this.label4.TabIndex = 4;
             this.label4.Text = "Redefina sua senha ";
             // 
