@@ -32,8 +32,9 @@
             this.textBoxSenha = new System.Windows.Forms.TextBox();
             this.panelLogin = new System.Windows.Forms.Panel();
             this.panelInterno = new System.Windows.Forms.Panel();
-            this.picOlho = new System.Windows.Forms.PictureBox();
             this.buttonLogin = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.picOlho = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.linkLabelMensagem = new System.Windows.Forms.LinkLabel();
@@ -86,7 +87,6 @@
             this.buttonRedefinir = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.panelLogin.SuspendLayout();
             this.panelInterno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picOlho)).BeginInit();
@@ -109,7 +109,7 @@
             this.textBoxUser.Location = new System.Drawing.Point(98, 93);
             this.textBoxUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxUser.Name = "textBoxUser";
-            this.textBoxUser.Size = new System.Drawing.Size(375, 22);
+            this.textBoxUser.Size = new System.Drawing.Size(447, 30);
             this.textBoxUser.TabIndex = 0;
             // 
             // textBoxSenha
@@ -117,7 +117,7 @@
             this.textBoxSenha.Location = new System.Drawing.Point(96, 137);
             this.textBoxSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSenha.Name = "textBoxSenha";
-            this.textBoxSenha.Size = new System.Drawing.Size(343, 22);
+            this.textBoxSenha.Size = new System.Drawing.Size(449, 30);
             this.textBoxSenha.TabIndex = 1;
             this.textBoxSenha.UseSystemPasswordChar = true;
             // 
@@ -128,7 +128,7 @@
             this.panelLogin.Location = new System.Drawing.Point(11, 10);
             this.panelLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(525, 394);
+            this.panelLogin.Size = new System.Drawing.Size(612, 394);
             this.panelLogin.TabIndex = 2;
             // 
             // panelInterno
@@ -143,23 +143,12 @@
             this.panelInterno.Controls.Add(this.linkLabelMensagem);
             this.panelInterno.Controls.Add(this.label1);
             this.panelInterno.Controls.Add(this.linkLabelSenha);
+            this.panelInterno.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelInterno.Location = new System.Drawing.Point(3, 17);
             this.panelInterno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelInterno.Name = "panelInterno";
-            this.panelInterno.Size = new System.Drawing.Size(519, 362);
+            this.panelInterno.Size = new System.Drawing.Size(593, 362);
             this.panelInterno.TabIndex = 7;
-            // 
-            // picOlho
-            // 
-            this.picOlho.Image = global::GerenciamentoBiblioteca.Properties.Resources.olho_fechado;
-            this.picOlho.Location = new System.Drawing.Point(449, 137);
-            this.picOlho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picOlho.Name = "picOlho";
-            this.picOlho.Size = new System.Drawing.Size(24, 24);
-            this.picOlho.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picOlho.TabIndex = 7;
-            this.picOlho.TabStop = false;
-            this.picOlho.Click += new System.EventHandler(this.picOlho_Click);
             // 
             // buttonLogin
             // 
@@ -168,7 +157,7 @@
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.buttonLogin.Location = new System.Drawing.Point(137, 213);
+            this.buttonLogin.Location = new System.Drawing.Point(182, 223);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(214, 59);
@@ -177,12 +166,34 @@
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(138, 303);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(164, 20);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "Não possui uma conta?";
+            // 
+            // picOlho
+            // 
+            this.picOlho.Image = global::GerenciamentoBiblioteca.Properties.Resources.olho_fechado;
+            this.picOlho.Location = new System.Drawing.Point(555, 138);
+            this.picOlho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picOlho.Name = "picOlho";
+            this.picOlho.Size = new System.Drawing.Size(24, 24);
+            this.picOlho.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picOlho.TabIndex = 7;
+            this.picOlho.TabStop = false;
+            this.picOlho.Click += new System.EventHandler(this.picOlho_Click);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(25, 134);
+            this.label9.Location = new System.Drawing.Point(25, 139);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(64, 25);
             this.label9.TabIndex = 6;
@@ -193,7 +204,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(25, 90);
+            this.label8.Location = new System.Drawing.Point(25, 96);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 25);
             this.label8.TabIndex = 5;
@@ -206,7 +217,7 @@
             this.linkLabelMensagem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelMensagem.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabelMensagem.LinkColor = System.Drawing.Color.RoyalBlue;
-            this.linkLabelMensagem.Location = new System.Drawing.Point(262, 285);
+            this.linkLabelMensagem.Location = new System.Drawing.Point(314, 303);
             this.linkLabelMensagem.Name = "linkLabelMensagem";
             this.linkLabelMensagem.Size = new System.Drawing.Size(124, 20);
             this.linkLabelMensagem.TabIndex = 4;
@@ -219,7 +230,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(180, 11);
+            this.label1.Location = new System.Drawing.Point(241, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 46);
             this.label1.TabIndex = 4;
@@ -232,7 +243,7 @@
             this.linkLabelSenha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelSenha.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabelSenha.LinkColor = System.Drawing.Color.SteelBlue;
-            this.linkLabelSenha.Location = new System.Drawing.Point(175, 173);
+            this.linkLabelSenha.Location = new System.Drawing.Point(205, 172);
             this.linkLabelSenha.Name = "linkLabelSenha";
             this.linkLabelSenha.Size = new System.Drawing.Size(146, 20);
             this.linkLabelSenha.TabIndex = 3;
@@ -254,6 +265,7 @@
             // 
             this.panelCadastro.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panelCadastro.Controls.Add(this.panelInternoCadastro);
+            this.panelCadastro.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelCadastro.Location = new System.Drawing.Point(661, 35);
             this.panelCadastro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelCadastro.Name = "panelCadastro";
@@ -380,7 +392,7 @@
             this.textBoxNome.Location = new System.Drawing.Point(197, 146);
             this.textBoxNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(389, 22);
+            this.textBoxNome.Size = new System.Drawing.Size(389, 30);
             this.textBoxNome.TabIndex = 16;
             // 
             // pictureBox1
@@ -400,7 +412,7 @@
             this.textBoxTelefone.Location = new System.Drawing.Point(134, 236);
             this.textBoxTelefone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTelefone.Name = "textBoxTelefone";
-            this.textBoxTelefone.Size = new System.Drawing.Size(452, 22);
+            this.textBoxTelefone.Size = new System.Drawing.Size(452, 30);
             this.textBoxTelefone.TabIndex = 9;
             // 
             // label15
@@ -418,7 +430,7 @@
             this.textBoxSenhaCadastro.Location = new System.Drawing.Point(118, 330);
             this.textBoxSenhaCadastro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSenhaCadastro.Name = "textBoxSenhaCadastro";
-            this.textBoxSenhaCadastro.Size = new System.Drawing.Size(424, 22);
+            this.textBoxSenhaCadastro.Size = new System.Drawing.Size(424, 30);
             this.textBoxSenhaCadastro.TabIndex = 1;
             this.textBoxSenhaCadastro.TextChanged += new System.EventHandler(this.textBoxSenhaCadastro_TextChanged_1);
             // 
@@ -440,7 +452,7 @@
             this.textBoxConfirmarSenha.Location = new System.Drawing.Point(222, 519);
             this.textBoxConfirmarSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConfirmarSenha.Name = "textBoxConfirmarSenha";
-            this.textBoxConfirmarSenha.Size = new System.Drawing.Size(320, 22);
+            this.textBoxConfirmarSenha.Size = new System.Drawing.Size(320, 30);
             this.textBoxConfirmarSenha.TabIndex = 2;
             // 
             // radioButtonLeitor
@@ -461,10 +473,10 @@
             this.buttonCadastrar.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonCadastrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCadastrar.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonCadastrar.Location = new System.Drawing.Point(197, 576);
+            this.buttonCadastrar.Location = new System.Drawing.Point(197, 572);
             this.buttonCadastrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCadastrar.Name = "buttonCadastrar";
-            this.buttonCadastrar.Size = new System.Drawing.Size(177, 63);
+            this.buttonCadastrar.Size = new System.Drawing.Size(229, 63);
             this.buttonCadastrar.TabIndex = 3;
             this.buttonCadastrar.Text = "CADASTRAR";
             this.buttonCadastrar.UseVisualStyleBackColor = false;
@@ -506,7 +518,7 @@
             this.textBoxUsuario.Location = new System.Drawing.Point(134, 192);
             this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(452, 22);
+            this.textBoxUsuario.Size = new System.Drawing.Size(452, 30);
             this.textBoxUsuario.TabIndex = 0;
             // 
             // dtpNascimento
@@ -522,7 +534,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(32, 513);
+            this.label5.Location = new System.Drawing.Point(32, 524);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(172, 25);
             this.label5.TabIndex = 5;
@@ -532,7 +544,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(33, 328);
+            this.label6.Location = new System.Drawing.Point(33, 334);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 25);
             this.label6.TabIndex = 6;
@@ -542,7 +554,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(33, 190);
+            this.label7.Location = new System.Drawing.Point(33, 194);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 25);
             this.label7.TabIndex = 7;
@@ -556,7 +568,7 @@
             this.panelRedefinirSenha.Location = new System.Drawing.Point(14, 430);
             this.panelRedefinirSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelRedefinirSenha.Name = "panelRedefinirSenha";
-            this.panelRedefinirSenha.Size = new System.Drawing.Size(574, 513);
+            this.panelRedefinirSenha.Size = new System.Drawing.Size(624, 513);
             this.panelRedefinirSenha.TabIndex = 6;
             // 
             // panelInternoSenha
@@ -572,16 +584,17 @@
             this.panelInternoSenha.Controls.Add(this.textBoxConfirmarNovaSenha);
             this.panelInternoSenha.Controls.Add(this.buttonRedefinir);
             this.panelInternoSenha.Controls.Add(this.label4);
+            this.panelInternoSenha.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelInternoSenha.Location = new System.Drawing.Point(3, 34);
             this.panelInternoSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelInternoSenha.Name = "panelInternoSenha";
-            this.panelInternoSenha.Size = new System.Drawing.Size(558, 468);
+            this.panelInternoSenha.Size = new System.Drawing.Size(606, 468);
             this.panelInternoSenha.TabIndex = 7;
             // 
             // picOlhoConfirmarNovaSenha
             // 
             this.picOlhoConfirmarNovaSenha.Image = global::GerenciamentoBiblioteca.Properties.Resources.olho_fechado;
-            this.picOlhoConfirmarNovaSenha.Location = new System.Drawing.Point(495, 304);
+            this.picOlhoConfirmarNovaSenha.Location = new System.Drawing.Point(552, 330);
             this.picOlhoConfirmarNovaSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picOlhoConfirmarNovaSenha.Name = "picOlhoConfirmarNovaSenha";
             this.picOlhoConfirmarNovaSenha.Size = new System.Drawing.Size(24, 24);
@@ -593,7 +606,7 @@
             // picOlhoNovaSenha
             // 
             this.picOlhoNovaSenha.Image = global::GerenciamentoBiblioteca.Properties.Resources.olho_fechado;
-            this.picOlhoNovaSenha.Location = new System.Drawing.Point(495, 122);
+            this.picOlhoNovaSenha.Location = new System.Drawing.Point(552, 128);
             this.picOlhoNovaSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picOlhoNovaSenha.Name = "picOlhoNovaSenha";
             this.picOlhoNovaSenha.Size = new System.Drawing.Size(24, 24);
@@ -610,11 +623,11 @@
             this.groupBoxRedefinirSenha.Controls.Add(this.labelRequisitoMaiusculaRedefinir);
             this.groupBoxRedefinirSenha.Controls.Add(this.labelRequisitoTamanhoRedefinir);
             this.groupBoxRedefinirSenha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxRedefinirSenha.Location = new System.Drawing.Point(28, 148);
+            this.groupBoxRedefinirSenha.Location = new System.Drawing.Point(28, 156);
             this.groupBoxRedefinirSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxRedefinirSenha.Name = "groupBoxRedefinirSenha";
             this.groupBoxRedefinirSenha.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxRedefinirSenha.Size = new System.Drawing.Size(491, 141);
+            this.groupBoxRedefinirSenha.Size = new System.Drawing.Size(506, 155);
             this.groupBoxRedefinirSenha.TabIndex = 8;
             this.groupBoxRedefinirSenha.TabStop = false;
             // 
@@ -660,10 +673,10 @@
             // 
             // textBoxNovaSenha
             // 
-            this.textBoxNovaSenha.Location = new System.Drawing.Point(137, 122);
+            this.textBoxNovaSenha.Location = new System.Drawing.Point(139, 122);
             this.textBoxNovaSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNovaSenha.Name = "textBoxNovaSenha";
-            this.textBoxNovaSenha.Size = new System.Drawing.Size(350, 22);
+            this.textBoxNovaSenha.Size = new System.Drawing.Size(395, 30);
             this.textBoxNovaSenha.TabIndex = 1;
             this.textBoxNovaSenha.TextChanged += new System.EventHandler(this.textBoxNovaSenha_TextChanged);
             // 
@@ -671,7 +684,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(23, 303);
+            this.label12.Location = new System.Drawing.Point(22, 325);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(230, 25);
             this.label12.TabIndex = 7;
@@ -681,7 +694,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(22, 80);
+            this.label10.Location = new System.Drawing.Point(22, 85);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 25);
             this.label10.TabIndex = 5;
@@ -692,14 +705,14 @@
             this.textBoxUsuarioRedefinir.Location = new System.Drawing.Point(95, 83);
             this.textBoxUsuarioRedefinir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxUsuarioRedefinir.Name = "textBoxUsuarioRedefinir";
-            this.textBoxUsuarioRedefinir.Size = new System.Drawing.Size(424, 22);
+            this.textBoxUsuarioRedefinir.Size = new System.Drawing.Size(439, 30);
             this.textBoxUsuarioRedefinir.TabIndex = 0;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(22, 119);
+            this.label11.Location = new System.Drawing.Point(22, 126);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(109, 25);
             this.label11.TabIndex = 6;
@@ -707,10 +720,10 @@
             // 
             // textBoxConfirmarNovaSenha
             // 
-            this.textBoxConfirmarNovaSenha.Location = new System.Drawing.Point(257, 307);
+            this.textBoxConfirmarNovaSenha.Location = new System.Drawing.Point(271, 324);
             this.textBoxConfirmarNovaSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxConfirmarNovaSenha.Name = "textBoxConfirmarNovaSenha";
-            this.textBoxConfirmarNovaSenha.Size = new System.Drawing.Size(232, 22);
+            this.textBoxConfirmarNovaSenha.Size = new System.Drawing.Size(263, 30);
             this.textBoxConfirmarNovaSenha.TabIndex = 2;
             // 
             // buttonRedefinir
@@ -718,10 +731,10 @@
             this.buttonRedefinir.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonRedefinir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRedefinir.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonRedefinir.Location = new System.Drawing.Point(176, 371);
+            this.buttonRedefinir.Location = new System.Drawing.Point(194, 375);
             this.buttonRedefinir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRedefinir.Name = "buttonRedefinir";
-            this.buttonRedefinir.Size = new System.Drawing.Size(172, 63);
+            this.buttonRedefinir.Size = new System.Drawing.Size(207, 63);
             this.buttonRedefinir.TabIndex = 3;
             this.buttonRedefinir.Text = "REDEFINIR";
             this.buttonRedefinir.UseVisualStyleBackColor = false;
@@ -732,7 +745,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label4.Location = new System.Drawing.Point(99, 8);
+            this.label4.Location = new System.Drawing.Point(129, 11);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(333, 46);
             this.label4.TabIndex = 4;
@@ -749,16 +762,6 @@
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(94, 285);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(164, 20);
-            this.label16.TabIndex = 8;
-            this.label16.Text = "Não possui uma conta?";
             // 
             // FormLogin
             // 

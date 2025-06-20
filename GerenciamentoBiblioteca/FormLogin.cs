@@ -522,7 +522,5 @@ namespace GerenciamentoBiblioteca
             textBoxConfirmarNovaSenha.Focus();
             textBoxConfirmarNovaSenha.SelectionStart = textBoxConfirmarNovaSenha.Text.Length;
         }
-
-        
     }
 }
