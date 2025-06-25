@@ -52,78 +52,78 @@
             // 
             // textBoxTituloNovoLivro
             // 
-            this.textBoxTituloNovoLivro.Location = new System.Drawing.Point(92, 20);
+            this.textBoxTituloNovoLivro.Location = new System.Drawing.Point(104, 25);
             this.textBoxTituloNovoLivro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTituloNovoLivro.Name = "textBoxTituloNovoLivro";
-            this.textBoxTituloNovoLivro.Size = new System.Drawing.Size(648, 30);
+            this.textBoxTituloNovoLivro.Size = new System.Drawing.Size(728, 35);
             this.textBoxTituloNovoLivro.TabIndex = 0;
             // 
             // textBoxAutorNovoLivro
             // 
-            this.textBoxAutorNovoLivro.Location = new System.Drawing.Point(92, 56);
+            this.textBoxAutorNovoLivro.Location = new System.Drawing.Point(104, 70);
             this.textBoxAutorNovoLivro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxAutorNovoLivro.Name = "textBoxAutorNovoLivro";
-            this.textBoxAutorNovoLivro.Size = new System.Drawing.Size(647, 30);
+            this.textBoxAutorNovoLivro.Size = new System.Drawing.Size(727, 35);
             this.textBoxAutorNovoLivro.TabIndex = 1;
             // 
             // textBoxAnoNovoLivro
             // 
-            this.textBoxAnoNovoLivro.Location = new System.Drawing.Point(92, 93);
+            this.textBoxAnoNovoLivro.Location = new System.Drawing.Point(104, 116);
             this.textBoxAnoNovoLivro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxAnoNovoLivro.Name = "textBoxAnoNovoLivro";
-            this.textBoxAnoNovoLivro.Size = new System.Drawing.Size(647, 30);
+            this.textBoxAnoNovoLivro.Size = new System.Drawing.Size(727, 35);
             this.textBoxAnoNovoLivro.TabIndex = 2;
             // 
             // textBoxNpgNovoLivro
             // 
-            this.textBoxNpgNovoLivro.Location = new System.Drawing.Point(202, 175);
+            this.textBoxNpgNovoLivro.Location = new System.Drawing.Point(224, 219);
             this.textBoxNpgNovoLivro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNpgNovoLivro.Name = "textBoxNpgNovoLivro";
-            this.textBoxNpgNovoLivro.Size = new System.Drawing.Size(538, 30);
+            this.textBoxNpgNovoLivro.Size = new System.Drawing.Size(608, 35);
             this.textBoxNpgNovoLivro.TabIndex = 3;
             // 
             // comboBoxGeneroNovoLivro
             // 
             this.comboBoxGeneroNovoLivro.FormattingEnabled = true;
-            this.comboBoxGeneroNovoLivro.Location = new System.Drawing.Point(92, 132);
+            this.comboBoxGeneroNovoLivro.Location = new System.Drawing.Point(104, 165);
             this.comboBoxGeneroNovoLivro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxGeneroNovoLivro.Name = "comboBoxGeneroNovoLivro";
-            this.comboBoxGeneroNovoLivro.Size = new System.Drawing.Size(647, 31);
+            this.comboBoxGeneroNovoLivro.Size = new System.Drawing.Size(727, 36);
             this.comboBoxGeneroNovoLivro.TabIndex = 4;
             // 
             // textBoxQtdNovoLivro
             // 
-            this.textBoxQtdNovoLivro.Location = new System.Drawing.Point(252, 214);
+            this.textBoxQtdNovoLivro.Location = new System.Drawing.Point(295, 268);
             this.textBoxQtdNovoLivro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxQtdNovoLivro.Name = "textBoxQtdNovoLivro";
-            this.textBoxQtdNovoLivro.Size = new System.Drawing.Size(487, 30);
+            this.textBoxQtdNovoLivro.Size = new System.Drawing.Size(536, 35);
             this.textBoxQtdNovoLivro.TabIndex = 5;
             // 
             // comboBoxEstadoNovoLivro
             // 
             this.comboBoxEstadoNovoLivro.FormattingEnabled = true;
-            this.comboBoxEstadoNovoLivro.Location = new System.Drawing.Point(92, 255);
+            this.comboBoxEstadoNovoLivro.Location = new System.Drawing.Point(104, 319);
             this.comboBoxEstadoNovoLivro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxEstadoNovoLivro.Name = "comboBoxEstadoNovoLivro";
-            this.comboBoxEstadoNovoLivro.Size = new System.Drawing.Size(648, 31);
+            this.comboBoxEstadoNovoLivro.Size = new System.Drawing.Size(728, 36);
             this.comboBoxEstadoNovoLivro.TabIndex = 6;
             // 
             // comboBoxStatusNovoLivro
             // 
             this.comboBoxStatusNovoLivro.FormattingEnabled = true;
-            this.comboBoxStatusNovoLivro.Location = new System.Drawing.Point(92, 298);
+            this.comboBoxStatusNovoLivro.Location = new System.Drawing.Point(104, 372);
             this.comboBoxStatusNovoLivro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxStatusNovoLivro.Name = "comboBoxStatusNovoLivro";
-            this.comboBoxStatusNovoLivro.Size = new System.Drawing.Size(647, 31);
+            this.comboBoxStatusNovoLivro.Size = new System.Drawing.Size(727, 36);
             this.comboBoxStatusNovoLivro.TabIndex = 7;
             // 
             // buttonSalvar
             // 
             this.buttonSalvar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalvar.Location = new System.Drawing.Point(319, 458);
+            this.buttonSalvar.Location = new System.Drawing.Point(359, 572);
             this.buttonSalvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(149, 62);
+            this.buttonSalvar.Size = new System.Drawing.Size(168, 78);
             this.buttonSalvar.TabIndex = 8;
             this.buttonSalvar.Text = "SALVAR";
             this.buttonSalvar.UseVisualStyleBackColor = true;
@@ -134,9 +134,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(22, 26);
+            this.label1.Location = new System.Drawing.Point(25, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 28);
+            this.label1.Size = new System.Drawing.Size(320, 32);
             this.label1.TabIndex = 9;
             this.label1.Text = "Cadastro / Edição de livros";
             // 
@@ -146,9 +146,9 @@
             this.label2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(10, 24);
+            this.label2.Location = new System.Drawing.Point(11, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 25);
+            this.label2.Size = new System.Drawing.Size(72, 30);
             this.label2.TabIndex = 10;
             this.label2.Text = "Título:";
             // 
@@ -158,9 +158,9 @@
             this.label3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label3.Location = new System.Drawing.Point(10, 60);
+            this.label3.Location = new System.Drawing.Point(11, 75);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 25);
+            this.label3.Size = new System.Drawing.Size(72, 30);
             this.label3.TabIndex = 11;
             this.label3.Text = "Autor:";
             // 
@@ -170,9 +170,9 @@
             this.label4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label4.Location = new System.Drawing.Point(10, 96);
+            this.label4.Location = new System.Drawing.Point(11, 120);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 25);
+            this.label4.Size = new System.Drawing.Size(57, 30);
             this.label4.TabIndex = 12;
             this.label4.Text = "Ano:";
             // 
@@ -182,9 +182,9 @@
             this.label5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label5.Location = new System.Drawing.Point(10, 135);
+            this.label5.Location = new System.Drawing.Point(11, 169);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 25);
+            this.label5.Size = new System.Drawing.Size(90, 30);
             this.label5.TabIndex = 13;
             this.label5.Text = "Gênero:";
             // 
@@ -194,9 +194,9 @@
             this.label6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label6.Location = new System.Drawing.Point(10, 176);
+            this.label6.Location = new System.Drawing.Point(11, 220);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(171, 25);
+            this.label6.Size = new System.Drawing.Size(207, 30);
             this.label6.TabIndex = 14;
             this.label6.Text = "Número de Páginas:";
             // 
@@ -206,9 +206,9 @@
             this.label7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label7.Location = new System.Drawing.Point(10, 217);
+            this.label7.Location = new System.Drawing.Point(11, 271);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(228, 25);
+            this.label7.Size = new System.Drawing.Size(278, 30);
             this.label7.TabIndex = 15;
             this.label7.Text = "Quantidade de Exemplares:";
             // 
@@ -218,9 +218,9 @@
             this.label8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label8.Location = new System.Drawing.Point(9, 260);
+            this.label8.Location = new System.Drawing.Point(10, 325);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 25);
+            this.label8.Size = new System.Drawing.Size(82, 30);
             this.label8.TabIndex = 16;
             this.label8.Text = "Estado:";
             // 
@@ -230,10 +230,10 @@
             this.label9.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label9.Location = new System.Drawing.Point(10, 301);
+            this.label9.Location = new System.Drawing.Point(11, 376);
             this.label9.Name = "label9";
             this.label9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label9.Size = new System.Drawing.Size(64, 25);
+            this.label9.Size = new System.Drawing.Size(75, 30);
             this.label9.TabIndex = 17;
             this.label9.Text = "Status:";
             // 
@@ -257,17 +257,17 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.comboBoxEstadoNovoLivro);
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(27, 73);
+            this.panel1.Location = new System.Drawing.Point(30, 91);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(769, 357);
+            this.panel1.Size = new System.Drawing.Size(865, 446);
             this.panel1.TabIndex = 18;
             // 
             // FormLivro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 537);
+            this.ClientSize = new System.Drawing.Size(944, 671);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.panel1);

@@ -55,10 +55,28 @@ namespace GerenciamentoBiblioteca
             DateTime dataEmprestimo = dtpEmprestimo.Value;
             DateTime dataPrevistaDevolucao = dtpDevolucao.Value;
 
+            // 1. Verificar quantidade disponível
+            int qtdExemplares = 0;
+            string queryQtd = "SELECT qtd_exemplares FROM livros WHERE id = @id_livro";
+            using (MySqlCommand cmdQtd = new MySqlCommand(queryQtd, conexao))
+            {
+                cmdQtd.Parameters.AddWithValue("@id_livro", idLivro);
+                conexao.Open();
+                qtdExemplares = Convert.ToInt32(cmdQtd.ExecuteScalar());
+                conexao.Close();
+            }
+
+            if (qtdExemplares < 1)
+            {
+                MessageBox.Show("Este livro não possui exemplares disponíveis para empréstimo.");
+                return;
+            }
+
+            // 2. Fazer o empréstimo
             string query = @"INSERT INTO emprestimos 
-                     (id_usuario, id_livro, data_emprestimo, data_devolucao, status)
-                     VALUES 
-                     (@id_usuario, @id_livro, @data_emprestimo, @data_devolucao, 'Em andamento')";
+                (id_usuario, id_livro, data_emprestimo, data_devolucao, status)
+                VALUES 
+                (@id_usuario, @id_livro, @data_emprestimo, @data_devolucao, 'Em andamento')";
 
             using (MySqlCommand cmd = new MySqlCommand(query, conexao))
             {
@@ -71,20 +89,54 @@ namespace GerenciamentoBiblioteca
                 {
                     conexao.Open();
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Empréstimo realizado com sucesso!");
-
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Erro ao realizar empréstimo: " + ex.Message);
+                    conexao.Close();
+                    return;
                 }
                 finally
                 {
                     conexao.Close();
-                    CarregarEmprestimosNoDataGridView();
-                    AtualizarResumoEmprestimo();
                 }
             }
+
+            // 3. Atualizar quantidade de exemplares
+            string updateQtd = "UPDATE livros SET qtd_exemplares = qtd_exemplares - 1 WHERE id = @id_livro";
+            using (MySqlCommand cmdUpdate = new MySqlCommand(updateQtd, conexao))
+            {
+                cmdUpdate.Parameters.AddWithValue("@id_livro", idLivro);
+                conexao.Open();
+                cmdUpdate.ExecuteNonQuery();
+                conexao.Close();
+            }
+
+            // 4. Se zerou, atualizar status para 'Indisponível'
+            int novaQtd = 0;
+            using (MySqlCommand cmdCheck = new MySqlCommand(queryQtd, conexao))
+            {
+                cmdCheck.Parameters.AddWithValue("@id_livro", idLivro);
+                conexao.Open();
+                novaQtd = Convert.ToInt32(cmdCheck.ExecuteScalar());
+                conexao.Close();
+            }
+            if (novaQtd == 0)
+            {
+                string updateStatus = "UPDATE livros SET status = 'Indisponível' WHERE id = @id_livro";
+                using (MySqlCommand cmdStatus = new MySqlCommand(updateStatus, conexao))
+                {
+                    cmdStatus.Parameters.AddWithValue("@id_livro", idLivro);
+                    conexao.Open();
+                    cmdStatus.ExecuteNonQuery();
+                    conexao.Close();
+                }
+            }
+
+            MessageBox.Show("Empréstimo realizado com sucesso!");
+
+            CarregarEmprestimosNoDataGridView();
+            AtualizarResumoEmprestimo();
         }
 
         private void AtualizarResumoEmprestimo()

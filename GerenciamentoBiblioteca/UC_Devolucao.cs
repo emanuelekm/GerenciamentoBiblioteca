@@ -78,30 +78,74 @@ namespace GerenciamentoBiblioteca
             if (dataGridViewDevolucoes.SelectedRows.Count > 0)
             {
                 int idEmprestimo = Convert.ToInt32(dataGridViewDevolucoes.SelectedRows[0].Cells["id"].Value);
-               
+
                 DateTime dataHoje = DateTime.Today;
                 DateTime dataPrevistaDevolucao = Convert.ToDateTime(dataGridViewDevolucoes.SelectedRows[0].Cells["DataDevolucao"].Value);
-
                 string novoStatus = dataHoje > dataPrevistaDevolucao ? "Devolvido com atraso" : "Devolvido";
 
-                string updateQuery = "UPDATE emprestimos SET status = 'Devolvido', data_devolvido = @dataHoje WHERE id = @id";
+                string updateQuery = "UPDATE emprestimos SET status = @status, data_devolvido = @dataHoje WHERE id = @id";
+                int idLivro = 0;
+
+                // 1. Descobrir o id_livro deste empréstimo
+                string queryIdLivro = "SELECT id_livro FROM emprestimos WHERE id = @idEmprestimo";
+                using (var cmdLivro = new MySqlCommand(queryIdLivro, conexao))
+                {
+                    cmdLivro.Parameters.AddWithValue("@idEmprestimo", idEmprestimo);
+                    conexao.Open();
+                    idLivro = Convert.ToInt32(cmdLivro.ExecuteScalar());
+                    conexao.Close();
+                }
+
+                // 2. Atualizar status e data_devolvido do empréstimo
                 using (var cmd = new MySqlCommand(updateQuery, conexao))
                 {
                     cmd.Parameters.AddWithValue("@id", idEmprestimo);
-                    cmd.Parameters.AddWithValue("@dataHoje", DateTime.Today);
+                    cmd.Parameters.AddWithValue("@dataHoje", dataHoje);
+                    cmd.Parameters.AddWithValue("@status", novoStatus);
 
                     try
                     {
                         conexao.Open();
                         cmd.ExecuteNonQuery();
+                        conexao.Close();
+
+                        // 3. Atualizar quantidade de exemplares do livro
+                        string updateQtd = "UPDATE livros SET qtd_exemplares = qtd_exemplares + 1 WHERE id = @id_livro";
+                        using (var cmdUpdate = new MySqlCommand(updateQtd, conexao))
+                        {
+                            cmdUpdate.Parameters.AddWithValue("@id_livro", idLivro);
+                            conexao.Open();
+                            cmdUpdate.ExecuteNonQuery();
+                            conexao.Close();
+                        }
+
+                        // 4. Consultar nova quantidade e garantir status Disponível, se necessário
+                        int novaQtd = 0;
+                        string queryQtd = "SELECT qtd_exemplares FROM livros WHERE id = @id_livro";
+                        using (var cmdQtd = new MySqlCommand(queryQtd, conexao))
+                        {
+                            cmdQtd.Parameters.AddWithValue("@id_livro", idLivro);
+                            conexao.Open();
+                            novaQtd = Convert.ToInt32(cmdQtd.ExecuteScalar());
+                            conexao.Close();
+                        }
+                        if (novaQtd > 0)
+                        {
+                            string updateStatus = "UPDATE livros SET status = 'Disponível' WHERE id = @id_livro";
+                            using (var cmdStatus = new MySqlCommand(updateStatus, conexao))
+                            {
+                                cmdStatus.Parameters.AddWithValue("@id_livro", idLivro);
+                                conexao.Open();
+                                cmdStatus.ExecuteNonQuery();
+                                conexao.Close();
+                            }
+                        }
+
                         MessageBox.Show("Livro devolvido com sucesso!");
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Erro: " + ex.Message);
-                    }
-                    finally
-                    {
                         conexao.Close();
                     }
                 }
