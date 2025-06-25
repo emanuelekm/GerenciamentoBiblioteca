@@ -28,8 +28,10 @@ namespace GerenciamentoBiblioteca
             conexao = new MySqlConnection(conexaoString);
 
             InicializarTimer();
+
             CarregarEmprestimosNoDataGridView();
             AtualizarGraficoPizza();
+            AtualizarGraficoEstadoLivro();
 
             dataGridViewEmprestimo.RowPrePaint += dataGridViewEmprestimo_RowPrePaint;
             dataGridViewEmprestimo.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -87,6 +89,8 @@ namespace GerenciamentoBiblioteca
             series.Points[0].Color = Color.FromArgb(144, 238, 144);  // Verde suave
             series.Points[1].Color = Color.FromArgb(255, 255, 192);  // Amarelo suave
             series.Points[2].Color = Color.FromArgb(255, 182, 193);  // Vermelho suave
+            
+            chartEmprestimo.Legends[0].Docking = Docking.Bottom;
 
             chart.Series.Add(series);
         }
@@ -228,6 +232,8 @@ namespace GerenciamentoBiblioteca
             serie.Points[0].Color = Color.FromArgb(144, 238, 144); // Verde claro
             serie.Points[1].Color = Color.FromArgb(255, 182, 193); // Vermelho claro
 
+            chartLivroDisponibilidade.Legends[0].Docking = Docking.Bottom;
+
             chartLivroDisponibilidade.Series.Add(serie);
             chartLivroDisponibilidade.Titles.Clear();
             chartLivroDisponibilidade.Titles.Add("Disponibilidade de Livros");
@@ -256,6 +262,49 @@ namespace GerenciamentoBiblioteca
                 conexao.Close();
             }
             return (disponiveis, indisponiveis);
+        }
+        private Dictionary<string, int> ObterLivrosPorEstado()
+        {
+            var resultado = new Dictionary<string, int> { { "Bom", 0 }, { "Regular", 0 }, { "Ruim", 0 } };
+            string query = @"SELECT estado, COUNT(*) as total FROM livros GROUP BY estado";
+            var cmd = new MySqlCommand(query, conexao);
+
+            conexao.Open();
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                string estado = reader["estado"].ToString();
+                int total = Convert.ToInt32(reader["total"]);
+                if (resultado.ContainsKey(estado))
+                    resultado[estado] = total;
+            }
+            conexao.Close();
+            return resultado;
+        }
+        private void AtualizarGraficoEstadoLivro()
+        {
+            var dados = ObterLivrosPorEstado();
+            var chart = chartEstadoLivro;
+            chart.Series.Clear();
+
+            var series = new Series
+            {
+                Name = "Estados",
+                ChartType = SeriesChartType.Bar,
+                IsVisibleInLegend = false
+            };
+
+            series.Points.AddXY("Bom", dados["Bom"]);
+            series.Points.AddXY("Regular", dados["Regular"]);
+            series.Points.AddXY("Ruim", dados["Ruim"]);
+
+            series.Points[0].Color = Color.LightGreen;
+            series.Points[1].Color = Color.Yellow;
+            series.Points[2].Color = Color.LightCoral;
+
+            chart.Series.Add(series);
+
+            chartEstadoLivro.Legends[0].Docking = Docking.Bottom;
         }
     }
 
