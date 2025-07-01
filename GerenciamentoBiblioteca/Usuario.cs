@@ -14,5 +14,6 @@ namespace GerenciamentoBiblioteca
         public DateTime Data_nascimento { get; set; }
         public string Telefone { get; set; }
         public string Tipo_usuario { get; set; }
+        public string Senha { get; set; }
     }
 }

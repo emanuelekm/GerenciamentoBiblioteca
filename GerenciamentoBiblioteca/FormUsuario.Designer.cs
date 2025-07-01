@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,13 +42,14 @@
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSalvarUsuario = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxSenhaPadrao = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.Controls.Add(this.textBoxSenhaPadrao);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -65,6 +67,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(715, 265);
             this.panel1.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label7.Location = new System.Drawing.Point(19, 213);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(124, 25);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Senha Padrão:";
             // 
             // label6
             // 
@@ -140,10 +153,10 @@
             // 
             // textBoxTelefone
             // 
-            this.textBoxTelefone.Location = new System.Drawing.Point(104, 130);
+            this.textBoxTelefone.Location = new System.Drawing.Point(117, 130);
             this.textBoxTelefone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTelefone.Name = "textBoxTelefone";
-            this.textBoxTelefone.Size = new System.Drawing.Size(552, 30);
+            this.textBoxTelefone.Size = new System.Drawing.Size(539, 30);
             this.textBoxTelefone.TabIndex = 2;
             // 
             // textBoxEmail
@@ -186,16 +199,12 @@
             this.buttonSalvarUsuario.UseVisualStyleBackColor = true;
             this.buttonSalvarUsuario.Click += new System.EventHandler(this.buttonSalvarUsuario_Click);
             // 
-            // label7
+            // textBoxSenhaPadrao
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label7.Location = new System.Drawing.Point(19, 213);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 25);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Senha Padrão:";
+            this.textBoxSenhaPadrao.Location = new System.Drawing.Point(184, 212);
+            this.textBoxSenhaPadrao.Name = "textBoxSenhaPadrao";
+            this.textBoxSenhaPadrao.Size = new System.Drawing.Size(472, 30);
+            this.textBoxSenhaPadrao.TabIndex = 12;
             // 
             // FormUsuario
             // 
@@ -232,5 +241,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxSenhaPadrao;
     }
 }
