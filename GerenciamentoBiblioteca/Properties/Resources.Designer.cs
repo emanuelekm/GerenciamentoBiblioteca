@@ -103,6 +103,16 @@ namespace GerenciamentoBiblioteca.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap excluir {
+            get {
+                object obj = ResourceManager.GetObject("excluir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fundo {
             get {
                 object obj = ResourceManager.GetObject("fundo", resourceCulture);
@@ -296,6 +306,26 @@ namespace GerenciamentoBiblioteca.Properties {
         internal static System.Drawing.Bitmap icons8_voltar_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-voltar-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lixeira {
+            get {
+                object obj = ResourceManager.GetObject("lixeira", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lixeira_azul {
+            get {
+                object obj = ResourceManager.GetObject("lixeira_azul", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

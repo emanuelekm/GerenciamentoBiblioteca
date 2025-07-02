@@ -12,15 +12,9 @@ namespace GerenciamentoBiblioteca
 {
     public partial class FormPrincipalAdmin : Form
     {
-        //private string nomeUsuario;
-        //private string tipoUsuario;
-        //string nome, string tipo
         public FormPrincipalAdmin()
         {
             InitializeComponent();
-
-            //nomeUsuario = nome;
-           // tipoUsuario = tipo;
 
             labelBemVindo.Text = $"Bem-vindo(a), {Sessao.TipoUsuario}!\n{Sessao.Nome}";
 
@@ -49,11 +43,6 @@ namespace GerenciamentoBiblioteca
         {
             CarregarTela(new UC_InicioAdmin());
         }
-
-        //private void linkLabelMeuPerfil_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        //{
-        //    CarregarTela(new UC_MeuPerfilAdmin());
-        //}
 
         private void linkLabelAlterarCadastro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

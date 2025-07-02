@@ -19,7 +19,7 @@ namespace GerenciamentoBiblioteca
     {
         private MySqlConnection conexao;
         private Timer timerAtualizacao;
-        private DataGridView dataGridViewRelatorio;
+        //private DataGridView dataGridViewRelatorio;
         public UC_Relatorios()
         {
             InitializeComponent();
@@ -83,7 +83,7 @@ namespace GerenciamentoBiblioteca
             int atraso = emprestimos.Count(e => e.Status == "Em atraso");
 
             series.Points.AddXY("Efetuados", efetuados);
-            series.Points.AddXY("Em Andamento", andamento);
+            series.Points.AddXY("Emprestado", andamento);
             series.Points.AddXY("Em Atraso", atraso);
 
             series.Points[0].Color = Color.FromArgb(144, 238, 144);  // Verde suave
@@ -139,7 +139,7 @@ namespace GerenciamentoBiblioteca
             var row = dgv.Rows[e.RowIndex];
             var status = row.Cells["Status"].Value?.ToString();
 
-            if (status == "Em andamento")
+            if (status == "Emprestado")
                 row.DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 192); // Amarelo suave
             else if (status == "Em atraso")
                 row.DefaultCellStyle.BackColor = Color.FromArgb(255, 182, 193); // Vermelho suave
