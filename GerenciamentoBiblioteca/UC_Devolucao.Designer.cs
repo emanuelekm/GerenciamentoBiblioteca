@@ -59,7 +59,7 @@
             this.dataGridViewDevolucoes.ReadOnly = true;
             this.dataGridViewDevolucoes.RowHeadersWidth = 62;
             this.dataGridViewDevolucoes.RowTemplate.Height = 28;
-            this.dataGridViewDevolucoes.Size = new System.Drawing.Size(1212, 355);
+            this.dataGridViewDevolucoes.Size = new System.Drawing.Size(1527, 583);
             this.dataGridViewDevolucoes.TabIndex = 1;
             this.dataGridViewDevolucoes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewDevolucoes_CellFormatting);
             this.dataGridViewDevolucoes.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridViewDevolucoes_RowPrePaint);
@@ -79,7 +79,7 @@
             // 
             this.buttonDevolver.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDevolver.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonDevolver.Location = new System.Drawing.Point(1006, 35);
+            this.buttonDevolver.Location = new System.Drawing.Point(1321, 50);
             this.buttonDevolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDevolver.Name = "buttonDevolver";
             this.buttonDevolver.Size = new System.Drawing.Size(248, 51);
@@ -98,7 +98,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_Devolucao";
-            this.Size = new System.Drawing.Size(1313, 506);
+            this.Size = new System.Drawing.Size(1632, 746);
             this.Load += new System.EventHandler(this.UC_Devolucao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDevolucoes)).EndInit();
             this.ResumeLayout(false);

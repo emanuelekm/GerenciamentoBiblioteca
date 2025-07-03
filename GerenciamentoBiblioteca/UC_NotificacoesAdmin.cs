@@ -82,7 +82,7 @@ namespace GerenciamentoBiblioteca
         /// Se mostrarLixeira for true, o painel terá o ícone da lixeira; senão, não terá.
         /// Se mostrarRestaurar for true, mostra o botão de restaurar.
         /// </summary>
-        private void AdicionarPainelNotificacao(NotificacaoEmprestimo notif, FlowLayoutPanel destino, bool mostrarLixeira, bool mostrarRestaurar)
+        private void AdicionarPainelNotificacao(Emprestimo notif, FlowLayoutPanel destino, bool mostrarLixeira, bool mostrarRestaurar)
         {
             Panel panel = new Panel();
             panel.Width = 500;
@@ -90,13 +90,13 @@ namespace GerenciamentoBiblioteca
             panel.Margin = new Padding(6);
 
             Label lblUsuario = new Label();
-            lblUsuario.Text = $"Usuário: {notif.Usuario}";
+            lblUsuario.Text = $"Usuário: {notif.NomeUsuario}";
             lblUsuario.AutoSize = true;
             lblUsuario.Location = new Point(7, 8);
             lblUsuario.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
 
             Label lblLivro = new Label();
-            lblLivro.Text = $"Livro: {notif.Livro}";
+            lblLivro.Text = $"Livro: {notif.TituloLivro}";
             lblLivro.AutoSize = true;
             lblLivro.Location = new Point(7, 32);
             lblLivro.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
@@ -155,7 +155,7 @@ namespace GerenciamentoBiblioteca
                     if (resultado == DialogResult.Yes)
                     {
                         // Marca como excluída no banco
-                        MarcarNotificacaoComoExcluida(notif.IdEmprestimo, true);
+                        MarcarNotificacaoComoExcluida(notif.Id, true);
 
                         // Atualiza a tela
                         CarregarTodasNotificacoes();
@@ -177,7 +177,7 @@ namespace GerenciamentoBiblioteca
                 btnRestaurar.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
                 btnRestaurar.Click += (s, ev) =>
                 {
-                    MarcarNotificacaoComoExcluida(notif.IdEmprestimo, false);
+                    MarcarNotificacaoComoExcluida(notif.Id, false);
                     CarregarTodasNotificacoes();
                 };
                 panel.Controls.Add(btnRestaurar);
@@ -206,9 +206,9 @@ namespace GerenciamentoBiblioteca
         /// <summary>
         /// Busca as notificações ativas ou excluídas.
         /// </summary>
-        private List<NotificacaoEmprestimo> BuscarNotificacoes(bool apenasExcluidas)
+        private List<Emprestimo> BuscarNotificacoes(bool apenasExcluidas)
         {
-            var lista = new List<NotificacaoEmprestimo>();
+            var lista = new List<Emprestimo>();
             string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
             string condicaoExcluida = apenasExcluidas ? "1" : "0";
 
@@ -246,11 +246,11 @@ namespace GerenciamentoBiblioteca
                 {
                     while (reader.Read())
                     {
-                        lista.Add(new NotificacaoEmprestimo
+                        lista.Add(new Emprestimo
                         {
-                            IdEmprestimo = reader.GetInt32("id"),
-                            Usuario = reader.GetString("Nome"),
-                            Livro = reader.GetString("Titulo"),
+                            Id = reader.GetInt32("id"),
+                            NomeUsuario = reader.GetString("Nome"),
+                            TituloLivro = reader.GetString("Titulo"),
                             DataDevolucao = reader.GetDateTime("data_devolucao"),
                             Status = "Atrasado"
                         });
@@ -263,11 +263,11 @@ namespace GerenciamentoBiblioteca
                 {
                     while (reader.Read())
                     {
-                        lista.Add(new NotificacaoEmprestimo
+                        lista.Add(new Emprestimo
                         {
-                            IdEmprestimo = reader.GetInt32("id"),
-                            Usuario = reader.GetString("Nome"),
-                            Livro = reader.GetString("Titulo"),
+                            Id = reader.GetInt32("id"),
+                            NomeUsuario = reader.GetString("Nome"),
+                            TituloLivro = reader.GetString("Titulo"),
                             DataDevolucao = reader.GetDateTime("data_devolucao"),
                             DataDevolvido = reader.GetDateTime("data_devolvido"),
                             Status = "DevolvidoNoPrazo"
@@ -281,11 +281,11 @@ namespace GerenciamentoBiblioteca
                 {
                     while (reader.Read())
                     {
-                        lista.Add(new NotificacaoEmprestimo
+                        lista.Add(new Emprestimo
                         {
-                            IdEmprestimo = reader.GetInt32("id"),
-                            Usuario = reader.GetString("Nome"),
-                            Livro = reader.GetString("Titulo"),
+                            Id = reader.GetInt32("id"),
+                            NomeUsuario = reader.GetString("Nome"),
+                            TituloLivro = reader.GetString("Titulo"),
                             DataDevolucao = reader.GetDateTime("data_devolucao"),
                             Status = "EmAndamento"
                         });
@@ -306,15 +306,6 @@ namespace GerenciamentoBiblioteca
         }
     }
 
-    public class NotificacaoEmprestimo
-    {
-        public int IdEmprestimo { get; set; }
-        public string Usuario { get; set; }
-        public string Livro { get; set; }
-        public DateTime DataDevolucao { get; set; }
-        public DateTime? DataDevolvido { get; set; }
-        public string Status { get; set; }
-    }
 }
 
 

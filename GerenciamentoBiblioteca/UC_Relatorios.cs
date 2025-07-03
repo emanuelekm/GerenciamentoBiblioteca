@@ -66,11 +66,12 @@ namespace GerenciamentoBiblioteca
         private void AtualizarGrafico(List<Emprestimo> emprestimos)
         {
             var chart = chartEmprestimo;
-            chart.Series.Clear();
-
             if (chart == null) return;
 
             chart.Series.Clear();
+
+            chartEmprestimo.ChartAreas[0].AxisX.LabelStyle.Angle = 0;
+
             var series = new Series
             {
                 Name = "Empréstimos",
@@ -78,20 +79,26 @@ namespace GerenciamentoBiblioteca
                 IsVisibleInLegend = false
             };
 
-            int efetuados = emprestimos.Count;
             int andamento = emprestimos.Count(e => e.Status == "Em andamento");
             int atraso = emprestimos.Count(e => e.Status == "Em atraso");
+            int devolvidoAtraso = emprestimos.Count(e => e.Status == "Devolvido com atraso");
+            int devolvido = emprestimos.Count(e => e.Status == "Devolvido");
 
-            series.Points.AddXY("Efetuados", efetuados);
-            series.Points.AddXY("Emprestado", andamento);
-            series.Points.AddXY("Em Atraso", atraso);
+            series.Points.AddXY("Em andamento", andamento);
+            series.Points.AddXY("Em atraso", atraso);
+            series.Points.AddXY("Devolvido c/ atraso", devolvidoAtraso);
+            series.Points.AddXY("Devolvido", devolvido);
 
-            series.Points[0].Color = Color.FromArgb(144, 238, 144);  // Verde suave
-            series.Points[1].Color = Color.FromArgb(255, 255, 192);  // Amarelo suave
-            series.Points[2].Color = Color.FromArgb(255, 182, 193);  // Vermelho suave
-            
+            // Amarelo vibrante para "Em andamento"
+            series.Points[0].Color = Color.Yellow;
+            // Azul vibrante para "Em atraso"
+            series.Points[1].Color = Color.FromArgb(30, 144, 255); // DodgerBlue
+                                                                   // Vermelho vibrante para "Devolvido com atraso"
+            series.Points[2].Color = Color.Red;
+            // Verde para "Devolvido"
+            series.Points[3].Color = Color.LightGreen;
+
             chartEmprestimo.Legends[0].Docking = Docking.Bottom;
-
             chart.Series.Add(series);
         }
 
@@ -111,17 +118,37 @@ namespace GerenciamentoBiblioteca
                 {
                     while (reader.Read())
                     {
+                        DateTime? dataDevolucao = reader.IsDBNull(reader.GetOrdinal("data_devolucao"))
+                            ? (DateTime?)null : reader.GetDateTime("data_devolucao");
+                        DateTime? dataDevolvido = reader.IsDBNull(reader.GetOrdinal("data_devolvido"))
+                            ? (DateTime?)null : reader.GetDateTime("data_devolvido");
+
+                        string status;
+                        if (dataDevolvido != null && dataDevolucao != null)
+                        {
+                            if (dataDevolvido > dataDevolucao)
+                                status = "Devolvido com atraso";
+                            else
+                                status = "Devolvido";
+                        }
+                        else if (dataDevolucao != null && DateTime.Now > dataDevolucao)
+                        {
+                            status = "Em atraso";
+                        }
+                        else
+                        {
+                            status = "Em andamento";
+                        }
+
                         var emp = new Emprestimo
                         {
                             Id = reader.GetInt32("id"),
                             NomeUsuario = reader.GetString("NomeUsuario"),
                             TituloLivro = reader.GetString("TituloLivro"),
                             DataEmprestimo = reader.GetDateTime("data_emprestimo"),
-                            DataDevolucao = reader.IsDBNull(reader.GetOrdinal("data_devolucao"))
-                                ? (DateTime?)null : reader.GetDateTime("data_devolucao"),
-                            DataDevolvido = reader.IsDBNull(reader.GetOrdinal("data_devolvido"))
-                                ? (DateTime?)null : reader.GetDateTime("data_devolvido"),
-                            Status = reader.GetString("status"),
+                            DataDevolucao = dataDevolucao,
+                            DataDevolvido = dataDevolvido,
+                            Status = status
                         };
                         lista.Add(emp);
                     }
@@ -139,24 +166,21 @@ namespace GerenciamentoBiblioteca
             var row = dgv.Rows[e.RowIndex];
             var status = row.Cells["Status"].Value?.ToString();
 
-            if (status == "Emprestado")
-                row.DefaultCellStyle.BackColor = Color.FromArgb(255, 255, 192); // Amarelo suave
-            else if (status == "Em atraso")
-                row.DefaultCellStyle.BackColor = Color.FromArgb(255, 182, 193); // Vermelho suave
+            // Azul para "Em atraso" (ainda não devolvido)
+            if (status == "Em atraso")
+                row.DefaultCellStyle.BackColor = Color.FromArgb(30, 144, 255); // Azul vibrante (DodgerBlue)
+                                                                               // Vermelho para "Devolvido com atraso"
+            else if (status == "Devolvido com atraso")
+                row.DefaultCellStyle.BackColor = Color.Red; // Vermelho vibrante
+                                                            // Outras cores para outros status
+            else if (status == "Em andamento")
+                row.DefaultCellStyle.BackColor = Color.Yellow; // Amarelo vibrante
             else if (status == "Devolvido" || status == "Efetuados")
                 row.DefaultCellStyle.BackColor = Color.FromArgb(144, 238, 144); // Verde suave
         }
 
         private void buttonExportar_Click(object sender, EventArgs e)
         {
-            /*SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Arquivo PDF (*.pdf)|*.pdf";
-            sfd.FileName = "RelatorioEmprestimos.pdf";
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                ExportarParaPDF(dataGridViewEmprestimo, sfd.FileName);
-            }*/
-
             ExportarParaPDF(dataGridViewEmprestimo, chartLivroDisponibilidade);
         }
 
@@ -229,8 +253,8 @@ namespace GerenciamentoBiblioteca
             serie.Points.AddXY("Indisponíveis", indisponiveis);
 
             // Cores suaves
-            serie.Points[0].Color = Color.FromArgb(144, 238, 144); // Verde claro
-            serie.Points[1].Color = Color.FromArgb(255, 182, 193); // Vermelho claro
+            serie.Points[0].Color = Color.LightGreen;
+            serie.Points[1].Color = Color.Red;
 
             chartLivroDisponibilidade.Legends[0].Docking = Docking.Bottom;
 
@@ -300,7 +324,7 @@ namespace GerenciamentoBiblioteca
 
             series.Points[0].Color = Color.LightGreen;
             series.Points[1].Color = Color.Yellow;
-            series.Points[2].Color = Color.LightCoral;
+            series.Points[2].Color = Color.Red;
 
             chart.Series.Add(series);
 
@@ -308,4 +332,4 @@ namespace GerenciamentoBiblioteca
         }
     }
 
-    }
+}
