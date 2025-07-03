@@ -170,10 +170,10 @@
             this.linkLabelMeuPerfil.LinkColor = System.Drawing.Color.Navy;
             this.linkLabelMeuPerfil.Location = new System.Drawing.Point(82, 26);
             this.linkLabelMeuPerfil.Name = "linkLabelMeuPerfil";
-            this.linkLabelMeuPerfil.Size = new System.Drawing.Size(105, 28);
+            this.linkLabelMeuPerfil.Size = new System.Drawing.Size(118, 28);
             this.linkLabelMeuPerfil.TabIndex = 5;
             this.linkLabelMeuPerfil.TabStop = true;
-            this.linkLabelMeuPerfil.Text = "Meu Perfil";
+            this.linkLabelMeuPerfil.Text = "Publicações";
             this.linkLabelMeuPerfil.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelMeuPerfil_LinkClicked);
             // 
             // pictureBox8
