@@ -50,6 +50,8 @@ namespace GerenciamentoBiblioteca
             {
                 Label lbl = new Label();
                 lbl.Text = "Nenhuma notificação!";
+                lbl.Font = new Font("Segoe UI", 11F, FontStyle.Italic);
+                lbl.ForeColor = Color.Gray;
                 lbl.AutoSize = true;
                 flowLayoutPanel1.Controls.Add(lbl);
             }
@@ -65,6 +67,8 @@ namespace GerenciamentoBiblioteca
             {
                 Label lbl = new Label();
                 lbl.Text = "Nenhuma notificação excluída!";
+                lbl.Font = new Font("Segoe UI", 11F, FontStyle.Italic);
+                lbl.ForeColor = Color.Gray;
                 lbl.AutoSize = true;
                 flowLayoutPanelLixeira.Controls.Add(lbl);
             }

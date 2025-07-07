@@ -54,12 +54,14 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Window;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(44, 89);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(705, 695);
             this.flowLayoutPanel1.TabIndex = 1;
+            this.flowLayoutPanel1.WrapContents = false;
             // 
             // panelLixeira
             // 
@@ -85,6 +87,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::GerenciamentoBiblioteca.Properties.Resources.excluir;
             this.pictureBox2.Location = new System.Drawing.Point(682, 13);
             this.pictureBox2.Name = "pictureBox2";
@@ -96,11 +99,13 @@
             // 
             // flowLayoutPanelLixeira
             // 
+            this.flowLayoutPanelLixeira.AutoScroll = true;
             this.flowLayoutPanelLixeira.BackColor = System.Drawing.SystemColors.Window;
             this.flowLayoutPanelLixeira.Location = new System.Drawing.Point(10, 56);
             this.flowLayoutPanelLixeira.Name = "flowLayoutPanelLixeira";
             this.flowLayoutPanelLixeira.Size = new System.Drawing.Size(696, 615);
             this.flowLayoutPanelLixeira.TabIndex = 0;
+            this.flowLayoutPanelLixeira.WrapContents = false;
             // 
             // pictureBox1
             // 

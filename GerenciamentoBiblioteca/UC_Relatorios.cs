@@ -92,8 +92,8 @@ namespace GerenciamentoBiblioteca
             // Amarelo vibrante para "Em andamento"
             series.Points[0].Color = Color.Yellow;
             // Azul vibrante para "Em atraso"
-            series.Points[1].Color = Color.FromArgb(30, 144, 255); // DodgerBlue
-                                                                   // Vermelho vibrante para "Devolvido com atraso"
+            series.Points[1].Color = Color.Orange; 
+            // Vermelho vibrante para "Devolvido com atraso"
             series.Points[2].Color = Color.Red;
             // Verde para "Devolvido"
             series.Points[3].Color = Color.LightGreen;
@@ -168,7 +168,7 @@ namespace GerenciamentoBiblioteca
 
             // Azul para "Em atraso" (ainda não devolvido)
             if (status == "Em atraso")
-                row.DefaultCellStyle.BackColor = Color.FromArgb(30, 144, 255); // Azul vibrante (DodgerBlue)
+                row.DefaultCellStyle.BackColor = Color.Orange;
                                                                                // Vermelho para "Devolvido com atraso"
             else if (status == "Devolvido com atraso")
                 row.DefaultCellStyle.BackColor = Color.Red; // Vermelho vibrante
