@@ -18,8 +18,8 @@ namespace GerenciamentoBiblioteca
     public partial class UC_Relatorios : UserControl
     {
         private MySqlConnection conexao;
-        private Timer timerAtualizacao;
-        //private DataGridView dataGridViewRelatorio;
+        //private Timer timerAtualizacao;
+        
         public UC_Relatorios()
         {
             InitializeComponent();
@@ -27,40 +27,18 @@ namespace GerenciamentoBiblioteca
             string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
             conexao = new MySqlConnection(conexaoString);
 
-            InicializarTimer();
-
-            CarregarEmprestimosNoDataGridView();
             AtualizarGraficoPizza();
+
+            List<Emprestimo> listaEmprestimos = ObterTodosEmprestimos();
+            AtualizarGrafico(listaEmprestimos);
+
             AtualizarGraficoEstadoLivro();
 
-            dataGridViewEmprestimo.RowPrePaint += dataGridViewEmprestimo_RowPrePaint;
-            dataGridViewEmprestimo.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            dataGridViewEmprestimo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
+            List<Emprestimo> emprestimos = ObterTodosEmprestimos();
+            CarregarLivrosEmAtraso(emprestimos);
 
-
-        private void InicializarTimer()
-        {
-            timerAtualizacao = new Timer
-            {
-                Interval = 5000
-            };
-            timerAtualizacao.Tick += (s, e) => CarregarEmprestimosNoDataGridView();
-            timerAtualizacao.Start();
-        }
-        private void CarregarEmprestimosNoDataGridView()
-        {
-            try
-            {
-                var lista = ObterTodosEmprestimos();
-                dataGridViewEmprestimo.DataSource = null;
-                dataGridViewEmprestimo.DataSource = lista;
-                AtualizarGrafico(lista);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao carregar empréstimos: " + ex.Message);
-            }
+            dataGridViewLivrosEmAtraso.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dataGridViewLivrosEmAtraso.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void AtualizarGrafico(List<Emprestimo> emprestimos)
@@ -89,13 +67,9 @@ namespace GerenciamentoBiblioteca
             series.Points.AddXY("Devolvido c/ atraso", devolvidoAtraso);
             series.Points.AddXY("Devolvido", devolvido);
 
-            // Amarelo vibrante para "Em andamento"
             series.Points[0].Color = Color.Yellow;
-            // Azul vibrante para "Em atraso"
             series.Points[1].Color = Color.Orange; 
-            // Vermelho vibrante para "Devolvido com atraso"
             series.Points[2].Color = Color.Red;
-            // Verde para "Devolvido"
             series.Points[3].Color = Color.LightGreen;
 
             chartEmprestimo.Legends[0].Docking = Docking.Bottom;
@@ -158,33 +132,20 @@ namespace GerenciamentoBiblioteca
             return lista;
         }
 
-        private void dataGridViewEmprestimo_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
-        {
-            var dgv = sender as DataGridView;
-            if (dgv == null) return;
-
-            var row = dgv.Rows[e.RowIndex];
-            var status = row.Cells["Status"].Value?.ToString();
-
-            // Azul para "Em atraso" (ainda não devolvido)
-            if (status == "Em atraso")
-                row.DefaultCellStyle.BackColor = Color.Orange;
-                                                                               // Vermelho para "Devolvido com atraso"
-            else if (status == "Devolvido com atraso")
-                row.DefaultCellStyle.BackColor = Color.Red; // Vermelho vibrante
-                                                            // Outras cores para outros status
-            else if (status == "Em andamento")
-                row.DefaultCellStyle.BackColor = Color.Yellow; // Amarelo vibrante
-            else if (status == "Devolvido" || status == "Efetuados")
-                row.DefaultCellStyle.BackColor = Color.FromArgb(144, 238, 144); // Verde suave
-        }
+        
 
         private void buttonExportar_Click(object sender, EventArgs e)
         {
-            ExportarParaPDF(dataGridViewEmprestimo, chartLivroDisponibilidade);
+            var charts = new List<Chart>
+            {
+            chartLivroDisponibilidade,
+            chartEmprestimo,
+            chartEstadoLivro
+            };
+            ExportarParaPDF(charts, dataGridViewLivrosEmAtraso);
         }
 
-        private void ExportarParaPDF(DataGridView dgv, Chart chart)
+        private void ExportarParaPDF(List<Chart> charts, DataGridView dataGridViewLivrosEmAtraso)
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "Arquivo PDF (*.pdf)|*.pdf";
@@ -197,48 +158,50 @@ namespace GerenciamentoBiblioteca
                 PdfWriter writer = PdfWriter.GetInstance(doc, stream);
                 doc.Open();
 
-                // Adiciona o gráfico de pizza como imagem
-                using (MemoryStream ms = new MemoryStream())
+                foreach (var chart in charts)
                 {
-                    chart.SaveImage(ms, ChartImageFormat.Png);
-                    iTextSharp.text.Image chartImg = iTextSharp.text.Image.GetInstance(ms.ToArray());
-                    chartImg.ScaleToFit(400f, 300f);
-                    chartImg.Alignment = Element.ALIGN_CENTER;
-                    doc.Add(chartImg);
-                }
-
-                doc.Add(new Paragraph("\n"));
-
-                // Tabela do DataGridView
-                PdfPTable tabela = new PdfPTable(dgv.Columns.Count);
-
-                // Cabeçalhos
-                foreach (DataGridViewColumn coluna in dgv.Columns)
-                {
-                    PdfPCell cell = new PdfPCell(new Phrase(coluna.HeaderText));
-                    cell.BackgroundColor = BaseColor.LIGHT_GRAY;
-                    tabela.AddCell(cell);
-                }
-
-                // Dados
-                foreach (DataGridViewRow row in dgv.Rows)
-                {
-                    if (!row.IsNewRow)
+                    using (MemoryStream ms = new MemoryStream())
                     {
-                        foreach (DataGridViewCell cell in row.Cells)
+                        chart.SaveImage(ms, ChartImageFormat.Png);
+                        iTextSharp.text.Image chartImg = iTextSharp.text.Image.GetInstance(ms.ToArray());
+                        chartImg.ScaleToFit(400f, 300f);
+                        chartImg.Alignment = Element.ALIGN_CENTER;
+                        doc.Add(chartImg);
+                    }
+                    doc.Add(new Paragraph("\n"));
+                }
+
+                if (dataGridViewLivrosEmAtraso != null && dataGridViewLivrosEmAtraso.Rows.Count > 0)
+                {
+                    doc.Add(new Paragraph("Livros em Atraso", FontFactory.GetFont("Arial", 14, iTextSharp.text.Font.BOLD)));
+                    doc.Add(new Paragraph("\n"));
+
+                    PdfPTable table = new PdfPTable(dataGridViewLivrosEmAtraso.ColumnCount);
+                    // Cabeçalhos
+                    foreach (DataGridViewColumn column in dataGridViewLivrosEmAtraso.Columns)
+                    {
+                        table.AddCell(new Phrase(column.HeaderText, FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD)));
+                    }
+                    // Linhas
+                    foreach (DataGridViewRow row in dataGridViewLivrosEmAtraso.Rows)
+                    {
+                        if (!row.IsNewRow)
                         {
-                            tabela.AddCell(cell.Value?.ToString() ?? "");
+                            foreach (DataGridViewCell cell in row.Cells)
+                            {
+                                table.AddCell(new Phrase(cell.Value?.ToString() ?? "", FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.NORMAL)));
+                            }
                         }
                     }
+                    doc.Add(table);
                 }
-                doc.Add(tabela);
 
                 doc.Close();
-                writer.Close();
-                stream.Close();
+                MessageBox.Show("PDF exportado com sucesso!");
             }
-            MessageBox.Show("PDF exportado com sucesso!");
         }
+        
+
         private void AtualizarGraficoPizza()
         {
             var (disponiveis, indisponiveis) = ObterQuantidadesLivros();
@@ -252,7 +215,6 @@ namespace GerenciamentoBiblioteca
             serie.Points.AddXY("Disponíveis", disponiveis);
             serie.Points.AddXY("Indisponíveis", indisponiveis);
 
-            // Cores suaves
             serie.Points[0].Color = Color.LightGreen;
             serie.Points[1].Color = Color.Red;
 
@@ -263,7 +225,6 @@ namespace GerenciamentoBiblioteca
             chartLivroDisponibilidade.Titles.Add("Disponibilidade de Livros");
         }
 
-        // Método para buscar do banco
         private (int disponiveis, int indisponiveis) ObterQuantidadesLivros()
         {
             int disponiveis = 0, indisponiveis = 0;
@@ -330,6 +291,33 @@ namespace GerenciamentoBiblioteca
 
             chartEstadoLivro.Legends[0].Docking = Docking.Bottom;
         }
-    }
 
+        private void buttonTabelaEmprestimo_Click(object sender, EventArgs e)
+        {
+            UC_RelatoriosTabela ucEmprestimos = new UC_RelatoriosTabela();
+
+            FormPrincipalAdmin form = this.FindForm() as FormPrincipalAdmin;
+            if (form != null)
+            {
+                form.CarregarTela(ucEmprestimos);
+            }
+        }
+
+        private void CarregarLivrosEmAtraso(List<Emprestimo> emprestimos)
+        {
+            var atrasos = emprestimos
+                .Where(e => e.Status == "Em atraso")
+                .Select(e => new
+                {
+                    IDEmprestimo = e.Id,
+                    NomeUsuario = e.NomeUsuario,
+                    TituloLivro = e.TituloLivro,
+                    DataDevolucao = e.DataDevolucao.HasValue ? e.DataDevolucao.Value.ToString("dd/MM/yyyy") : "N/A"
+                })
+                .ToList();
+
+            dataGridViewLivrosEmAtraso.DataSource = atrasos;
+        }
+
+    }
 }

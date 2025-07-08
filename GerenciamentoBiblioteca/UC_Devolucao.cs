@@ -172,7 +172,7 @@ namespace GerenciamentoBiblioteca
                     emprestimo.DataDevolucao.HasValue &&
                     emprestimo.DataDevolucao.Value.Date < DateTime.Now.Date)
                 {
-                    grid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                    grid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Orange;
                     grid.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
                     
                     grid.Rows[e.RowIndex].Cells["Status"].Value = "Em atraso";
@@ -184,12 +184,12 @@ namespace GerenciamentoBiblioteca
                 }
                 else if (emprestimo.Status == "Em andamento")
                 {
-                    grid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Orange;
+                    grid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
                     grid.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
                 }
                 else if (emprestimo.Status == "Devolvido com atraso")
                 {
-                    grid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Pink;
+                    grid.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
                     grid.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
                 }
                 else
