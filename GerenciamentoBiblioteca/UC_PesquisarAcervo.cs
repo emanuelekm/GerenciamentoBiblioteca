@@ -19,13 +19,13 @@ namespace GerenciamentoBiblioteca
             InitializeComponent();
             string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
             conexao = new MySqlConnection(conexaoString);
-            this.Load += UserControlPesquisarAcervoAdmin_Load;
+            this.Load += UC_PesquisarAcervo_Load;
 
         }
 
         public class AcervoBiblioteca
         {
-            public List<Livro> BuscarLivros(string searchTerm)
+            public List<Livro> BuscarLivros(string tituloOuAutor, string genero = "", string status = "", int? ano = null)
             {
                 List<Livro> livros = new List<Livro>();
 
@@ -36,11 +36,29 @@ namespace GerenciamentoBiblioteca
                         conn.Open();
 
                         string query = "SELECT id, titulo, autor, ano, genero, numero_paginas, qtd_exemplares, status, estado " +
-                                       "FROM livros WHERE titulo LIKE @searchTerm OR autor LIKE @searchTerm";
+                                       "FROM livros WHERE (titulo LIKE @search OR autor LIKE @search)";
+
+                        if (!string.IsNullOrEmpty(genero))
+                            query += " AND genero = @genero";
+
+                        if (!string.IsNullOrEmpty(status))
+                            query += " AND status = @status";
+
+                        if (ano.HasValue)
+                            query += " AND ano = @ano";
 
                         using (MySqlCommand cmd = new MySqlCommand(query, conn))
                         {
-                            cmd.Parameters.AddWithValue("@searchTerm", "%" + searchTerm + "%");
+                            cmd.Parameters.AddWithValue("@search", "%" + tituloOuAutor + "%");
+
+                            if (!string.IsNullOrEmpty(genero))
+                                cmd.Parameters.AddWithValue("@genero", genero);
+
+                            if (!string.IsNullOrEmpty(status))
+                                cmd.Parameters.AddWithValue("@status", status);
+
+                            if (ano.HasValue)
+                                cmd.Parameters.AddWithValue("@ano", ano.Value);
 
                             using (MySqlDataReader reader = cmd.ExecuteReader())
                             {
@@ -103,14 +121,30 @@ namespace GerenciamentoBiblioteca
 
         private void textBoxPesquisar_TextChanged_1(object sender, EventArgs e)
         {
-            string searchTerm = textBoxPesquisar.Text.ToLower();
+            RealizarPesquisa();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            RealizarPesquisa();
+
+            //textBoxPesquisar.Clear();
+            //comboBoxGenero.SelectedIndex = -1;
+            //comboBoxStatus.SelectedIndex = -1;
+            //textBoxAno.Clear();
+        }
+
+        private void RealizarPesquisa()
+        {
+            string termo = textBoxPesquisar.Text.Trim();
+            string genero = comboBoxGenero.SelectedItem?.ToString() ?? "";
+            string status = comboBoxStatus.SelectedItem?.ToString() ?? "";
+            //int? ano = string.IsNullOrEmpty(textBoxAno.Text.Trim()) ? (int?)null : int.Parse(textBoxAno.Text);
 
             AcervoBiblioteca db = new AcervoBiblioteca();
-            List<Livro> livrosFiltrados = db.BuscarLivros(searchTerm);
+            List<Livro> livrosFiltrados = db.BuscarLivros(termo, genero, status);
 
             dataGridViewPesquisar.DataSource = livrosFiltrados;
-
-            dataGridViewPesquisar.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dataGridViewPesquisar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             if (dataGridViewPesquisar.Columns.Contains("Id"))
@@ -119,28 +153,36 @@ namespace GerenciamentoBiblioteca
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void UC_PesquisarAcervo_Load(object sender, EventArgs e)
         {
-            string searchTerm = textBoxPesquisar.Text.Trim().ToLower();
+            CarregarLivros();
 
-            AcervoBiblioteca db = new AcervoBiblioteca();
-            List<Livro> livrosFiltrados = db.BuscarLivros(searchTerm);
+            comboBoxGenero.Items.AddRange(new string[] { "Aventura",
+                "Autoajuda",
+                "Biografia / Autobiografia",
+                "Ciência",
+                "Distopia / Utopia",
+                "Drama",
+                "Educação / Didáticos",
+                "Fantasia",
+                "Ficção científica",
+                "Filosofia",
+                "História",
+                "Histórico",
+                "Mistério / Suspense",
+                "Negócios / Finanças",
+                "Religião / Espiritualidade",
+                "Romance",
+                "Saúde / Bem-estar",
+                "Terror / Horror",
+                "Thriller",
+                "Viagem / Turismo" 
+            });
 
-            if (livrosFiltrados.Count == 0)
-            {
-                MessageBox.Show("Nenhum exemplar encontrado com o termo informado.", "Pesquisa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                textBoxPesquisar.Clear();
-            }
-            else
-            {
-                dataGridViewPesquisar.DataSource = livrosFiltrados;
-                dataGridViewPesquisar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //comboBoxStatus.Items.AddRange(new string[] { "Bom", "Regular", "Ruim" });
 
-                if (dataGridViewPesquisar.Columns.Contains("Id"))
-                {
-                    dataGridViewPesquisar.Columns["Id"].Visible = false;
-                }
-            }
+            comboBoxGenero.SelectedIndex = -1;
+            comboBoxStatus.SelectedIndex = -1;
         }
     }
 }

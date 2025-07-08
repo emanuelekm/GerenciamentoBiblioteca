@@ -32,6 +32,9 @@
             this.dataGridViewPesquisar = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBoxGenero = new System.Windows.Forms.ComboBox();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+            this.textBoxAno = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPesquisar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -39,11 +42,13 @@
             // textBoxPesquisar
             // 
             this.textBoxPesquisar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPesquisar.Location = new System.Drawing.Point(28, 73);
+            this.textBoxPesquisar.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBoxPesquisar.Location = new System.Drawing.Point(28, 89);
             this.textBoxPesquisar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPesquisar.Name = "textBoxPesquisar";
-            this.textBoxPesquisar.Size = new System.Drawing.Size(1220, 30);
+            this.textBoxPesquisar.Size = new System.Drawing.Size(589, 30);
             this.textBoxPesquisar.TabIndex = 0;
+            this.textBoxPesquisar.Text = "Título";
             this.textBoxPesquisar.TextChanged += new System.EventHandler(this.textBoxPesquisar_TextChanged_1);
             // 
             // dataGridViewPesquisar
@@ -53,13 +58,13 @@
             this.dataGridViewPesquisar.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridViewPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewPesquisar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPesquisar.Location = new System.Drawing.Point(28, 132);
+            this.dataGridViewPesquisar.Location = new System.Drawing.Point(28, 158);
             this.dataGridViewPesquisar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewPesquisar.Name = "dataGridViewPesquisar";
             this.dataGridViewPesquisar.ReadOnly = true;
             this.dataGridViewPesquisar.RowHeadersWidth = 62;
             this.dataGridViewPesquisar.RowTemplate.Height = 28;
-            this.dataGridViewPesquisar.Size = new System.Drawing.Size(1259, 467);
+            this.dataGridViewPesquisar.Size = new System.Drawing.Size(1259, 441);
             this.dataGridViewPesquisar.TabIndex = 1;
             // 
             // label1
@@ -77,7 +82,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.Image = global::GerenciamentoBiblioteca.Properties.Resources.icons8_pesquisar_24;
-            this.pictureBox1.Location = new System.Drawing.Point(1266, 73);
+            this.pictureBox1.Location = new System.Drawing.Point(1263, 89);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
@@ -86,10 +91,49 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // comboBoxGenero
+            // 
+            this.comboBoxGenero.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxGenero.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.comboBoxGenero.FormattingEnabled = true;
+            this.comboBoxGenero.Location = new System.Drawing.Point(640, 89);
+            this.comboBoxGenero.Name = "comboBoxGenero";
+            this.comboBoxGenero.Size = new System.Drawing.Size(291, 31);
+            this.comboBoxGenero.TabIndex = 5;
+            this.comboBoxGenero.Text = "Gênero";
+            // 
+            // comboBoxStatus
+            // 
+            this.comboBoxStatus.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxStatus.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Items.AddRange(new object[] {
+            "Bom",
+            "Regular",
+            "Ruim"});
+            this.comboBoxStatus.Location = new System.Drawing.Point(952, 90);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(134, 31);
+            this.comboBoxStatus.TabIndex = 6;
+            this.comboBoxStatus.Text = "Estado";
+            // 
+            // textBoxAno
+            // 
+            this.textBoxAno.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAno.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBoxAno.Location = new System.Drawing.Point(1104, 89);
+            this.textBoxAno.Name = "textBoxAno";
+            this.textBoxAno.Size = new System.Drawing.Size(134, 30);
+            this.textBoxAno.TabIndex = 7;
+            this.textBoxAno.Text = "Ano";
+            // 
             // UC_PesquisarAcervo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBoxAno);
+            this.Controls.Add(this.comboBoxStatus);
+            this.Controls.Add(this.comboBoxGenero);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewPesquisar);
@@ -97,6 +141,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_PesquisarAcervo";
             this.Size = new System.Drawing.Size(1341, 708);
+            this.Load += new System.EventHandler(this.UC_PesquisarAcervo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPesquisar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -110,5 +155,8 @@
         private System.Windows.Forms.DataGridView dataGridViewPesquisar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox comboBoxGenero;
+        private System.Windows.Forms.ComboBox comboBoxStatus;
+        private System.Windows.Forms.TextBox textBoxAno;
     }
 }
