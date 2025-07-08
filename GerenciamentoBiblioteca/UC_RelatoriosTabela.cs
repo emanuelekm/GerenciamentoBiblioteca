@@ -159,6 +159,7 @@ namespace GerenciamentoBiblioteca
 
             string caminhoArquivo = null;
 
+            // Salvar o caminho do arquivo na thread UI
             using (var sfd = new SaveFileDialog())
             {
                 sfd.Filter = "Arquivo PDF (*.pdf)|*.pdf";
@@ -174,40 +175,44 @@ namespace GerenciamentoBiblioteca
                 caminhoArquivo = sfd.FileName;
             }
 
+            // Copiar dados do DataGridView para uma DataTable para uso thread-safe
             DataTable dados = new DataTable();
 
+            // Criar colunas
             foreach (DataGridViewColumn coluna in dataGridViewEmprestimo.Columns)
                 dados.Columns.Add(coluna.HeaderText);
 
+            // Copiar linhas
             foreach (DataGridViewRow row in dataGridViewEmprestimo.Rows)
             {
                 if (!row.IsNewRow)
                 {
                     DataRow dr = dados.NewRow();
                     for (int i = 0; i < dataGridViewEmprestimo.Columns.Count; i++)
+                    {
                         dr[i] = row.Cells[i].Value?.ToString() ?? "";
+                    }
                     dados.Rows.Add(dr);
                 }
             }
 
-            // Usa async/await para rodar a exportação sem travar UI
-            bool sucesso = false;
-            try
+            // Rodar exportação em background passando a DataTable
+            Task.Run(() =>
             {
-                sucesso = await Task.Run(() => ExportarDataTableParaPDF(dados, caminhoArquivo));
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro inesperado: " + ex.Message);
-            }
+                bool sucesso = ExportarDataTableParaPDF(dados, caminhoArquivo);
 
-            if (sucesso)
-                MessageBox.Show("PDF exportado com sucesso!");
-            else
-                MessageBox.Show("Erro ao exportar PDF.");
+                // Voltar para UI e mostrar mensagem / reativar botão e timer
+                this.Invoke((Action)(() =>
+                {
+                    if (sucesso)
+                        MessageBox.Show("PDF exportado com sucesso!");
+                    else
+                        MessageBox.Show("Erro ao exportar PDF.");
 
-            buttonTabelaPDF.Enabled = true;
-            timerAtualizacao?.Start();
+                    buttonTabelaPDF.Enabled = true;
+                    timerAtualizacao?.Start();
+                }));
+            });
         }
 
         private bool ExportarDataTableParaPDF(DataTable dados, string caminhoArquivo)
@@ -221,7 +226,7 @@ namespace GerenciamentoBiblioteca
                 {
                     var doc = new Document(PageSize.A4.Rotate(), 40, 40, 40, 40);
                     var writer = PdfWriter.GetInstance(doc, stream);
-                    writer.PageEvent = new PDFEvento(); // se você implementou rodapé com numeração
+                    writer.PageEvent = new PDFEvento(); // Rodapé com numeração
                     doc.Open();
 
                     Paragraph titulo = new Paragraph("Sistema de Gerenciamento de Biblioteca",
@@ -239,11 +244,13 @@ namespace GerenciamentoBiblioteca
                     PdfPTable table = new PdfPTable(dados.Columns.Count);
                     table.WidthPercentage = 100;
 
+                    // Cabeçalhos
                     foreach (DataColumn coluna in dados.Columns)
                     {
                         table.AddCell(new Phrase(coluna.ColumnName, FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD)));
                     }
 
+                    // Linhas
                     foreach (DataRow row in dados.Rows)
                     {
                         foreach (var item in row.ItemArray)
@@ -261,7 +268,7 @@ namespace GerenciamentoBiblioteca
             {
                 return false;
             }
-            }
+        }
 
         private void ExportarDataGridViewParaPDFThreadSafe()
         {
