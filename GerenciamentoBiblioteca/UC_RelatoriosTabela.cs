@@ -11,18 +11,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace GerenciamentoBiblioteca
 {
     public partial class UC_RelatoriosTabela : UserControl
     {
-        //private MySqlConnection conexao;
+        private MySqlConnection conexao;
         private Timer timerAtualizacao;
-        private readonly string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
+        //private readonly string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
 
         public UC_RelatoriosTabela()
         {
             InitializeComponent();
+
+            string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
+            conexao = new MySqlConnection(conexaoString);
 
             InicializarTimer();
             CarregarEmprestimosNoDataGridView();
@@ -64,7 +68,7 @@ namespace GerenciamentoBiblioteca
         {
             timerAtualizacao = new Timer
             {
-                Interval = 5000
+                Interval = 10000
             };
             timerAtualizacao.Tick += (s, e) => CarregarEmprestimosNoDataGridView();
             timerAtualizacao.Start();
@@ -93,10 +97,9 @@ namespace GerenciamentoBiblioteca
                      INNER JOIN usuarios u ON e.id_usuario = u.id
                      INNER JOIN livros l ON e.id_livro = l.id";
 
-            using (var conn = new MySqlConnection(conexaoString))
-            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            using (MySqlCommand cmd = new MySqlCommand(query, conexao))
             {
-                conn.Open();
+                conexao.Open();
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -136,6 +139,7 @@ namespace GerenciamentoBiblioteca
                         lista.Add(emp);
                     }
                 }
+                conexao.Close();
             }
             return lista;
         }
@@ -151,195 +155,74 @@ namespace GerenciamentoBiblioteca
             }
         }
 
-
         private void buttonTabelaPDF_Click(object sender, EventArgs e)
         {
-            buttonTabelaPDF.Enabled = false;
             timerAtualizacao?.Stop();
 
-            string caminhoArquivo = null;
-
-            // Salvar o caminho do arquivo na thread UI
-            using (var sfd = new SaveFileDialog())
+            SaveFileDialog saveFileDialog = new SaveFileDialog
             {
-                sfd.Filter = "Arquivo PDF (*.pdf)|*.pdf";
-                sfd.FileName = "TabelaEmprestimo_Relatorio.pdf";
+                Filter = "PDF file (*.pdf)|*.pdf",
+                FileName = "RelatorioEmprestimos.pdf"
+            };
 
-                if (sfd.ShowDialog() != DialogResult.OK)
-                {
-                    buttonTabelaPDF.Enabled = true;
-                    timerAtualizacao?.Start();
-                    return;
-                }
-
-                caminhoArquivo = sfd.FileName;
-            }
-
-            // Copiar dados do DataGridView para uma DataTable para uso thread-safe
-            DataTable dados = new DataTable();
-
-            // Criar colunas
-            foreach (DataGridViewColumn coluna in dataGridViewEmprestimo.Columns)
-                dados.Columns.Add(coluna.HeaderText);
-
-            // Copiar linhas
-            foreach (DataGridViewRow row in dataGridViewEmprestimo.Rows)
+            if (saveFileDialog.ShowDialog() != DialogResult.OK)
             {
-                if (!row.IsNewRow)
-                {
-                    DataRow dr = dados.NewRow();
-                    for (int i = 0; i < dataGridViewEmprestimo.Columns.Count; i++)
-                    {
-                        dr[i] = row.Cells[i].Value?.ToString() ?? "";
-                    }
-                    dados.Rows.Add(dr);
-                }
-            }
-
-            // Rodar exportação em background passando a DataTable
-            Task.Run(() =>
-            {
-                bool sucesso = ExportarDataTableParaPDF(dados, caminhoArquivo);
-
-                // Voltar para UI e mostrar mensagem / reativar botão e timer
-                this.Invoke((Action)(() =>
-                {
-                    if (sucesso)
-                        MessageBox.Show("PDF exportado com sucesso!");
-                    else
-                        MessageBox.Show("Erro ao exportar PDF.");
-
-                    buttonTabelaPDF.Enabled = true;
-                    timerAtualizacao?.Start();
-                }));
-            });
-        }
-
-        private bool ExportarDataTableParaPDF(DataTable dados, string caminhoArquivo)
-        {
-            try
-            {
-                if (dados == null || dados.Rows.Count == 0)
-                    return false;
-
-                using (var stream = new FileStream(caminhoArquivo, FileMode.Create))
-                {
-                    var doc = new Document(PageSize.A4.Rotate(), 40, 40, 40, 40);
-                    var writer = PdfWriter.GetInstance(doc, stream);
-                    writer.PageEvent = new PDFEvento(); // Rodapé com numeração
-                    doc.Open();
-
-                    Paragraph titulo = new Paragraph("Sistema de Gerenciamento de Biblioteca",
-                        FontFactory.GetFont("Arial", 16, iTextSharp.text.Font.BOLD));
-                    titulo.Alignment = Element.ALIGN_CENTER;
-                    doc.Add(titulo);
-
-                    doc.Add(new Paragraph("Relatório de Empréstimos",
-                        FontFactory.GetFont("Arial", 14, iTextSharp.text.Font.BOLD)));
-
-                    doc.Add(new Paragraph("Gerado em: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"),
-                        FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.ITALIC)));
-                    doc.Add(new Paragraph("\n"));
-
-                    PdfPTable table = new PdfPTable(dados.Columns.Count);
-                    table.WidthPercentage = 100;
-
-                    // Cabeçalhos
-                    foreach (DataColumn coluna in dados.Columns)
-                    {
-                        table.AddCell(new Phrase(coluna.ColumnName, FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD)));
-                    }
-
-                    // Linhas
-                    foreach (DataRow row in dados.Rows)
-                    {
-                        foreach (var item in row.ItemArray)
-                        {
-                            table.AddCell(new Phrase(item?.ToString() ?? "", FontFactory.GetFont("Arial", 10)));
-                        }
-                    }
-
-                    doc.Add(table);
-                    doc.Close();
-                }
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        private void ExportarDataGridViewParaPDFThreadSafe()
-        {
-            string caminhoArquivo = null;
-            if (InvokeRequired)
-            {
-                Invoke(new Action(ExportarDataGridViewParaPDFThreadSafe));
+                timerAtualizacao?.Start();
                 return;
             }
 
-            ExportarDataGridViewParaPDF(dataGridViewEmprestimo, caminhoArquivo);
-        }
-
-        private void ExportarDataGridViewParaPDF(DataGridView dgv, string caminhoArquivo)
-        {
             try
             {
-                if (dgv == null || dgv.Rows.Count == 0)
+                Application.DoEvents();
+
+                List<Emprestimo> emprestimos = ObterTodosEmprestimos(); // Usa a lista diretamente
+
+                var doc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4.Rotate(), 10f, 10f, 20f, 20f);
+                PdfWriter.GetInstance(doc, new FileStream(saveFileDialog.FileName, FileMode.Create));
+                doc.Open();
+
+                // Título
+                var titulo = new iTextSharp.text.Paragraph("Relatório de Empréstimos", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 18, iTextSharp.text.Font.BOLD));
+                titulo.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
+                titulo.SpacingAfter = 20f;
+                doc.Add(titulo);
+
+                PdfPTable pdfTable = new PdfPTable(7); // 7 colunas: ID, Usuário, Livro, Empréstimo, Devolução, Devolvido, Status
+                pdfTable.WidthPercentage = 100;
+
+                // Cabeçalhos
+                string[] headers = { "ID", "Usuário", "Livro", "Data Empréstimo", "Data Devolução", "Data Devolvido", "Status" };
+                foreach (string header in headers)
                 {
-                    MessageBox.Show("Não há dados para exportar.");
-                    return;
+                    PdfPCell cell = new PdfPCell(new Phrase(header));
+                    cell.BackgroundColor = BaseColor.LIGHT_GRAY;
+                    pdfTable.AddCell(cell);
                 }
 
-                using (var stream = new FileStream(caminhoArquivo, FileMode.Create))
+                // Dados
+                foreach (var emp in emprestimos)
                 {
-                    var doc = new Document(PageSize.A4.Rotate(), 40, 40, 40, 40);
-                    var writer = PdfWriter.GetInstance(doc, stream);
-                    writer.PageEvent = new PDFEvento(); // Rodapé com numeração
-                    doc.Open();
-
-                    Paragraph titulo = new Paragraph("Sistema de Gerenciamento de Biblioteca",
-                        FontFactory.GetFont("Arial", 16, iTextSharp.text.Font.BOLD));
-                    titulo.Alignment = Element.ALIGN_CENTER;
-                    doc.Add(titulo);
-
-                    doc.Add(new Paragraph("Relatório de Empréstimos",
-                        FontFactory.GetFont("Arial", 14, iTextSharp.text.Font.BOLD)));
-
-                    doc.Add(new Paragraph("Gerado em: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"),
-                        FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.ITALIC)));
-                    doc.Add(new Paragraph("\n"));
-
-                    PdfPTable table = new PdfPTable(dgv.ColumnCount);
-                    table.WidthPercentage = 100;
-
-                    foreach (DataGridViewColumn column in dgv.Columns)
-                    {
-                        table.AddCell(new Phrase(column.HeaderText, FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD)));
-                    }
-
-                    foreach (DataGridViewRow row in dgv.Rows)
-                    {
-                        if (!row.IsNewRow)
-                        {
-                            foreach (DataGridViewCell cell in row.Cells)
-                            {
-                                string value = cell.Value?.ToString() ?? "";
-                                table.AddCell(new Phrase(value, FontFactory.GetFont("Arial", 10)));
-                            }
-                        }
-                    }
-
-                    doc.Add(table);
-                    doc.Close();
+                    pdfTable.AddCell(emp.Id.ToString());
+                    pdfTable.AddCell(emp.NomeUsuario);
+                    pdfTable.AddCell(emp.TituloLivro);
+                    pdfTable.AddCell(emp.DataEmprestimo.ToString("dd/MM/yyyy"));
+                    pdfTable.AddCell(emp.DataDevolucao?.ToString("dd/MM/yyyy") ?? "-");
+                    pdfTable.AddCell(emp.DataDevolvido?.ToString("dd/MM/yyyy") ?? "-");
+                    pdfTable.AddCell(emp.Status);
                 }
+
+                doc.Add(pdfTable);
+                doc.Close();
 
                 MessageBox.Show("PDF exportado com sucesso!");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao exportar PDF: " + ex.Message);
+            }
+            finally
+            {
+                timerAtualizacao?.Start();
             }
         }
     }
