@@ -157,73 +157,7 @@ namespace GerenciamentoBiblioteca
 
         private void buttonTabelaPDF_Click(object sender, EventArgs e)
         {
-            timerAtualizacao?.Stop();
 
-            SaveFileDialog saveFileDialog = new SaveFileDialog
-            {
-                Filter = "PDF file (*.pdf)|*.pdf",
-                FileName = "RelatorioEmprestimos.pdf"
-            };
-
-            if (saveFileDialog.ShowDialog() != DialogResult.OK)
-            {
-                timerAtualizacao?.Start();
-                return;
-            }
-
-            try
-            {
-                Application.DoEvents();
-
-                List<Emprestimo> emprestimos = ObterTodosEmprestimos(); // Usa a lista diretamente
-
-                var doc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4.Rotate(), 10f, 10f, 20f, 20f);
-                PdfWriter.GetInstance(doc, new FileStream(saveFileDialog.FileName, FileMode.Create));
-                doc.Open();
-
-                // Título
-                var titulo = new iTextSharp.text.Paragraph("Relatório de Empréstimos", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 18, iTextSharp.text.Font.BOLD));
-                titulo.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
-                titulo.SpacingAfter = 20f;
-                doc.Add(titulo);
-
-                PdfPTable pdfTable = new PdfPTable(7); // 7 colunas: ID, Usuário, Livro, Empréstimo, Devolução, Devolvido, Status
-                pdfTable.WidthPercentage = 100;
-
-                // Cabeçalhos
-                string[] headers = { "ID", "Usuário", "Livro", "Data Empréstimo", "Data Devolução", "Data Devolvido", "Status" };
-                foreach (string header in headers)
-                {
-                    PdfPCell cell = new PdfPCell(new Phrase(header));
-                    cell.BackgroundColor = BaseColor.LIGHT_GRAY;
-                    pdfTable.AddCell(cell);
-                }
-
-                // Dados
-                foreach (var emp in emprestimos)
-                {
-                    pdfTable.AddCell(emp.Id.ToString());
-                    pdfTable.AddCell(emp.NomeUsuario);
-                    pdfTable.AddCell(emp.TituloLivro);
-                    pdfTable.AddCell(emp.DataEmprestimo.ToString("dd/MM/yyyy"));
-                    pdfTable.AddCell(emp.DataDevolucao?.ToString("dd/MM/yyyy") ?? "-");
-                    pdfTable.AddCell(emp.DataDevolvido?.ToString("dd/MM/yyyy") ?? "-");
-                    pdfTable.AddCell(emp.Status);
-                }
-
-                doc.Add(pdfTable);
-                doc.Close();
-
-                MessageBox.Show("PDF exportado com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao exportar PDF: " + ex.Message);
-            }
-            finally
-            {
-                timerAtualizacao?.Start();
-            }
         }
     }
 }
