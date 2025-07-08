@@ -152,36 +152,88 @@ namespace GerenciamentoBiblioteca
             sfd.FileName = "Relatorio.pdf";
             if (sfd.ShowDialog() != DialogResult.OK) return;
 
-            Document doc = new Document(PageSize.A4.Rotate(), 10, 10, 10, 10);
+            Document doc = new Document(PageSize.A4.Rotate(), 30, 30, 30, 30);
             using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
             {
                 PdfWriter writer = PdfWriter.GetInstance(doc, stream);
+                writer.PageEvent = new RodapePDF(); // Adiciona rodapé com data e numeração
                 doc.Open();
 
-                foreach (var chart in charts)
+                // Cabeçalho principal
+                Paragraph titulo = new Paragraph("Relatório da Biblioteca", FontFactory.GetFont("Arial", 18, iTextSharp.text.Font.BOLD));
+                titulo.Alignment = Element.ALIGN_CENTER;
+                doc.Add(titulo);
+                doc.Add(new Paragraph("\n"));
+
+                string[] titulosGraficos = {
+            "Disponibilidade dos Livros",
+            "Status dos Empréstimos",
+            "Estado dos Livros"
+        };
+
+                // Tabela com 2 colunas para os gráficos
+                PdfPTable tabelaGrafico = new PdfPTable(2);
+                tabelaGrafico.WidthPercentage = 100;
+                tabelaGrafico.SpacingAfter = 20f;
+
+                for (int i = 0; i < charts.Count; i++)
                 {
+                    PdfPTable bloco = new PdfPTable(1);
+                    bloco.WidthPercentage = 100;
+
+                    // Título do gráfico
+                    PdfPCell celulaTitulo = new PdfPCell(new Phrase(titulosGraficos[i], FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD)));
+                    celulaTitulo.HorizontalAlignment = Element.ALIGN_CENTER;
+                    celulaTitulo.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                    celulaTitulo.PaddingBottom = 5f;
+                    bloco.AddCell(celulaTitulo);
+
+                    // Gráfico
                     using (MemoryStream ms = new MemoryStream())
                     {
-                        chart.SaveImage(ms, ChartImageFormat.Png);
+                        charts[i].SaveImage(ms, ChartImageFormat.Png);
                         iTextSharp.text.Image chartImg = iTextSharp.text.Image.GetInstance(ms.ToArray());
-                        chartImg.ScaleToFit(400f, 300f);
+                        chartImg.ScaleToFit(260f, 180f);
                         chartImg.Alignment = Element.ALIGN_CENTER;
-                        doc.Add(chartImg);
+
+                        PdfPCell celulaImagem = new PdfPCell(chartImg, true);
+                        celulaImagem.HorizontalAlignment = Element.ALIGN_CENTER;
+                        celulaImagem.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                        bloco.AddCell(celulaImagem);
                     }
-                    doc.Add(new Paragraph("\n"));
+
+                    PdfPCell celulaBloco = new PdfPCell(bloco);
+                    celulaBloco.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                    tabelaGrafico.AddCell(celulaBloco);
                 }
 
+                // Se número ímpar de gráficos, adiciona célula vazia
+                if (charts.Count % 2 != 0)
+                {
+                    tabelaGrafico.AddCell(new PdfPCell(new Phrase("")) { Border = iTextSharp.text.Rectangle.NO_BORDER });
+                }
+
+                doc.Add(tabelaGrafico);
+
+                // Tabela de livros em atraso
                 if (dataGridViewLivrosEmAtraso != null && dataGridViewLivrosEmAtraso.Rows.Count > 0)
                 {
-                    doc.Add(new Paragraph("Livros em Atraso", FontFactory.GetFont("Arial", 14, iTextSharp.text.Font.BOLD)));
+                    Paragraph tituloTabela = new Paragraph("Tabela: Livros em Atraso", FontFactory.GetFont("Arial", 14, iTextSharp.text.Font.BOLD));
+                    tituloTabela.Alignment = Element.ALIGN_CENTER;
+                    doc.Add(tituloTabela);
                     doc.Add(new Paragraph("\n"));
 
                     PdfPTable table = new PdfPTable(dataGridViewLivrosEmAtraso.ColumnCount);
+                    table.WidthPercentage = 100;
+
                     // Cabeçalhos
                     foreach (DataGridViewColumn column in dataGridViewLivrosEmAtraso.Columns)
                     {
-                        table.AddCell(new Phrase(column.HeaderText, FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD)));
+                        PdfPCell headerCell = new PdfPCell(new Phrase(column.HeaderText, FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.BOLD)));
+                        headerCell.BackgroundColor = new BaseColor(230, 230, 250);
+                        table.AddCell(headerCell);
                     }
+
                     // Linhas
                     foreach (DataGridViewRow row in dataGridViewLivrosEmAtraso.Rows)
                     {
@@ -189,10 +241,11 @@ namespace GerenciamentoBiblioteca
                         {
                             foreach (DataGridViewCell cell in row.Cells)
                             {
-                                table.AddCell(new Phrase(cell.Value?.ToString() ?? "", FontFactory.GetFont("Arial", 10, iTextSharp.text.Font.NORMAL)));
+                                table.AddCell(new Phrase(cell.Value?.ToString() ?? "", FontFactory.GetFont("Arial", 10)));
                             }
                         }
                     }
+
                     doc.Add(table);
                 }
 

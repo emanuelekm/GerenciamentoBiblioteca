@@ -143,6 +143,7 @@
     <Compile Include="PasswordHasher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RodapePDF.cs" />
     <Compile Include="Sessao.cs" />
     <Compile Include="UC_AlterarAcervo.cs">
       <SubType>UserControl</SubType>
