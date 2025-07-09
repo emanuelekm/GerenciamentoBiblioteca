@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GerenciamentoBiblioteca
 {
-    public partial class UC_MeuPerfilLeitor : UserControl
+    public partial class UC_Publicacoes : UserControl
     {
-        public UC_MeuPerfilLeitor()
+        public UC_Publicacoes()
         {
             InitializeComponent();
         }

@@ -193,12 +193,6 @@
     <Compile Include="UC_InicioLeitor.Designer.cs">
       <DependentUpon>UC_InicioLeitor.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_MeuPerfilLeitor.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_MeuPerfilLeitor.Designer.cs">
-      <DependentUpon>UC_MeuPerfilLeitor.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_NotificacoesAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -222,6 +216,12 @@
     </Compile>
     <Compile Include="UC_Devolucao.Designer.cs">
       <DependentUpon>UC_Devolucao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Publicacoes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Publicacoes.Designer.cs">
+      <DependentUpon>UC_Publicacoes.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_Ranking.cs">
       <SubType>UserControl</SubType>
@@ -291,9 +291,6 @@
     <EmbeddedResource Include="UC_InicioLeitor.resx">
       <DependentUpon>UC_InicioLeitor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_MeuPerfilLeitor.resx">
-      <DependentUpon>UC_MeuPerfilLeitor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC_NotificacoesAdmin.resx">
       <DependentUpon>UC_NotificacoesAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Devolucao.resx">
       <DependentUpon>UC_Devolucao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Publicacoes.resx">
+      <DependentUpon>UC_Publicacoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Ranking.resx">
       <DependentUpon>UC_Ranking.cs</DependentUpon>
