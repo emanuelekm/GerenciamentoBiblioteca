@@ -196,7 +196,7 @@ namespace GerenciamentoBiblioteca
         private void MarcarNotificacaoComoExcluida(int idEmprestimo, bool excluir)
         {
             string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
-            string query = "UPDATE emprestimos SET notificacao_excluida = @excluida WHERE id = @id";
+            string query = "UPDATE emprestimos SET notificaçao_excluida = @excluida WHERE id = @id";
             using (MySqlConnection conexao = new MySqlConnection(conexaoString))
             using (MySqlCommand cmd = new MySqlCommand(query, conexao))
             {
@@ -222,7 +222,7 @@ namespace GerenciamentoBiblioteca
                 FROM usuarios u
                 JOIN emprestimos e ON u.Id = e.id_usuario
                 JOIN livros l ON e.id_livro = l.id
-                WHERE e.data_devolvido IS NULL AND e.data_devolucao < CURDATE() AND IFNULL(e.notificacao_excluida, 0) = {condicaoExcluida}";
+                WHERE e.data_devolvido IS NULL AND e.data_devolucao < CURDATE() AND IFNULL(e.notificaçao_excluida, 0) = {condicaoExcluida}";
 
             // Notificações devolvidas no prazo
             string queryDevolvido = $@"
@@ -230,7 +230,7 @@ namespace GerenciamentoBiblioteca
                 FROM usuarios u
                 JOIN emprestimos e ON u.Id = e.id_usuario
                 JOIN livros l ON e.id_livro = l.id
-                WHERE e.data_devolvido IS NOT NULL AND e.data_devolvido <= e.data_devolucao AND IFNULL(e.notificacao_excluida, 0) = {condicaoExcluida}";
+                WHERE e.data_devolvido IS NOT NULL AND e.data_devolvido <= e.data_devolucao AND IFNULL(e.notificaçao_excluida, 0) = {condicaoExcluida}";
 
             // Notificações em andamento e no prazo
             string queryAndamento = $@"
@@ -238,7 +238,7 @@ namespace GerenciamentoBiblioteca
                 FROM usuarios u
                 JOIN emprestimos e ON u.Id = e.id_usuario
                 JOIN livros l ON e.id_livro = l.id
-                WHERE e.data_devolvido IS NULL AND e.data_devolucao >= CURDATE() AND IFNULL(e.notificacao_excluida, 0) = {condicaoExcluida}";
+                WHERE e.data_devolvido IS NULL AND e.data_devolucao >= CURDATE() AND IFNULL(e.notificaçao_excluida, 0) = {condicaoExcluida}";
 
             using (MySqlConnection conexao = new MySqlConnection(conexaoString))
             {

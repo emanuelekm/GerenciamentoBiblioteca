@@ -14,6 +14,7 @@ namespace GerenciamentoBiblioteca
         public DateTime DataEmprestimo { get; set; }
         public DateTime? DataDevolucao { get; set; }
         public DateTime? DataDevolvido { get; set; }
+        public string NotificaçaoExcluida { get; set; }
         public string Status { get; set; }
     }
 }
