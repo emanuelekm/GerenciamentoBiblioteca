@@ -51,20 +51,20 @@
             this.flowComentarios.BackColor = System.Drawing.SystemColors.Control;
             this.flowComentarios.Location = new System.Drawing.Point(42, 104);
             this.flowComentarios.Name = "flowComentarios";
-            this.flowComentarios.Size = new System.Drawing.Size(937, 439);
+            this.flowComentarios.Size = new System.Drawing.Size(912, 439);
             this.flowComentarios.TabIndex = 1;
             this.flowComentarios.WrapContents = false;
             // 
             // buttonFazerComentario
             // 
             this.buttonFazerComentario.BackColor = System.Drawing.SystemColors.Window;
-            this.buttonFazerComentario.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFazerComentario.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFazerComentario.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.buttonFazerComentario.Location = new System.Drawing.Point(901, 36);
+            this.buttonFazerComentario.Location = new System.Drawing.Point(786, 36);
             this.buttonFazerComentario.Name = "buttonFazerComentario";
-            this.buttonFazerComentario.Size = new System.Drawing.Size(78, 54);
+            this.buttonFazerComentario.Size = new System.Drawing.Size(168, 39);
             this.buttonFazerComentario.TabIndex = 2;
-            this.buttonFazerComentario.Text = "+";
+            this.buttonFazerComentario.Text = "Fazer publicação";
             this.buttonFazerComentario.UseVisualStyleBackColor = false;
             this.buttonFazerComentario.Click += new System.EventHandler(this.buttonFazerComentario_Click);
             // 
