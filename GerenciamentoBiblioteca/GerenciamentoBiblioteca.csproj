@@ -133,6 +133,12 @@
     <Compile Include="FormPrincipalLeitor.Designer.cs">
       <DependentUpon>FormPrincipalLeitor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPublicar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPublicar.Designer.cs">
+      <DependentUpon>FormPublicar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,11 +223,17 @@
     <Compile Include="UC_Devolucao.Designer.cs">
       <DependentUpon>UC_Devolucao.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_Publicacoes.cs">
+    <Compile Include="UC_FeedPublicacoes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_Publicacoes.Designer.cs">
-      <DependentUpon>UC_Publicacoes.cs</DependentUpon>
+    <Compile Include="UC_FeedPublicacoes.Designer.cs">
+      <DependentUpon>UC_FeedPublicacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_PublicarResenha.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_PublicarResenha.Designer.cs">
+      <DependentUpon>UC_PublicarResenha.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_Ranking.cs">
       <SubType>UserControl</SubType>
@@ -253,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipalLeitor.resx">
       <DependentUpon>FormPrincipalLeitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPublicar.resx">
+      <DependentUpon>FormPublicar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsuario.resx">
       <DependentUpon>FormUsuario.cs</DependentUpon>
@@ -303,8 +318,11 @@
     <EmbeddedResource Include="UC_Devolucao.resx">
       <DependentUpon>UC_Devolucao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_Publicacoes.resx">
-      <DependentUpon>UC_Publicacoes.cs</DependentUpon>
+    <EmbeddedResource Include="UC_FeedPublicacoes.resx">
+      <DependentUpon>UC_FeedPublicacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_PublicarResenha.resx">
+      <DependentUpon>UC_PublicarResenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Ranking.resx">
       <DependentUpon>UC_Ranking.cs</DependentUpon>

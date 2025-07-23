@@ -54,7 +54,7 @@ namespace GerenciamentoBiblioteca
 
         private void linkLabelMeuPerfil_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CarregarTela(new UC_Publicacoes());
+            CarregarTela(new UC_FeedPublicacoes());
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)

@@ -107,7 +107,7 @@
             // textBoxUser
             // 
             this.textBoxUser.Location = new System.Drawing.Point(74, 76);
-            this.textBoxUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxUser.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUser.Name = "textBoxUser";
             this.textBoxUser.Size = new System.Drawing.Size(336, 26);
             this.textBoxUser.TabIndex = 0;
@@ -115,7 +115,7 @@
             // textBoxSenha
             // 
             this.textBoxSenha.Location = new System.Drawing.Point(72, 111);
-            this.textBoxSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxSenha.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(338, 26);
             this.textBoxSenha.TabIndex = 1;
@@ -126,7 +126,7 @@
             this.panelLogin.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panelLogin.Controls.Add(this.panelInterno);
             this.panelLogin.Location = new System.Drawing.Point(8, 8);
-            this.panelLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLogin.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(459, 320);
             this.panelLogin.TabIndex = 2;
@@ -145,7 +145,7 @@
             this.panelInterno.Controls.Add(this.linkLabelSenha);
             this.panelInterno.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelInterno.Location = new System.Drawing.Point(2, 14);
-            this.panelInterno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelInterno.Margin = new System.Windows.Forms.Padding(2);
             this.panelInterno.Name = "panelInterno";
             this.panelInterno.Size = new System.Drawing.Size(445, 294);
             this.panelInterno.TabIndex = 7;
@@ -158,7 +158,7 @@
             this.buttonLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.buttonLogin.Location = new System.Drawing.Point(136, 181);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(160, 48);
             this.buttonLogin.TabIndex = 2;
@@ -181,7 +181,7 @@
             // 
             this.picOlho.Image = global::GerenciamentoBiblioteca.Properties.Resources.olho_fechado;
             this.picOlho.Location = new System.Drawing.Point(416, 112);
-            this.picOlho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picOlho.Margin = new System.Windows.Forms.Padding(2);
             this.picOlho.Name = "picOlho";
             this.picOlho.Size = new System.Drawing.Size(24, 24);
             this.picOlho.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -274,9 +274,9 @@
             this.panelCadastro.Controls.Add(this.panelInternoCadastro);
             this.panelCadastro.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelCadastro.Location = new System.Drawing.Point(496, 28);
-            this.panelCadastro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelCadastro.Margin = new System.Windows.Forms.Padding(2);
             this.panelCadastro.Name = "panelCadastro";
-            this.panelCadastro.Size = new System.Drawing.Size(484, 567);
+            this.panelCadastro.Size = new System.Drawing.Size(511, 567);
             this.panelCadastro.TabIndex = 5;
             // 
             // panelInternoCadastro
@@ -304,16 +304,16 @@
             this.panelInternoCadastro.Controls.Add(this.label2);
             this.panelInternoCadastro.Controls.Add(this.label7);
             this.panelInternoCadastro.Location = new System.Drawing.Point(14, 11);
-            this.panelInternoCadastro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelInternoCadastro.Margin = new System.Windows.Forms.Padding(2);
             this.panelInternoCadastro.Name = "panelInternoCadastro";
-            this.panelInternoCadastro.Size = new System.Drawing.Size(454, 546);
+            this.panelInternoCadastro.Size = new System.Drawing.Size(486, 546);
             this.panelInternoCadastro.TabIndex = 7;
             // 
             // picOlhoConfirmar
             // 
             this.picOlhoConfirmar.Image = global::GerenciamentoBiblioteca.Properties.Resources.olho_fechado;
-            this.picOlhoConfirmar.Location = new System.Drawing.Point(422, 420);
-            this.picOlhoConfirmar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picOlhoConfirmar.Location = new System.Drawing.Point(441, 428);
+            this.picOlhoConfirmar.Margin = new System.Windows.Forms.Padding(2);
             this.picOlhoConfirmar.Name = "picOlhoConfirmar";
             this.picOlhoConfirmar.Size = new System.Drawing.Size(24, 24);
             this.picOlhoConfirmar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -324,8 +324,8 @@
             // picOlhoCadastro
             // 
             this.picOlhoCadastro.Image = global::GerenciamentoBiblioteca.Properties.Resources.olho_fechado;
-            this.picOlhoCadastro.Location = new System.Drawing.Point(422, 268);
-            this.picOlhoCadastro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picOlhoCadastro.Location = new System.Drawing.Point(441, 265);
+            this.picOlhoCadastro.Margin = new System.Windows.Forms.Padding(2);
             this.picOlhoCadastro.Name = "picOlhoCadastro";
             this.picOlhoCadastro.Size = new System.Drawing.Size(24, 24);
             this.picOlhoCadastro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -341,11 +341,11 @@
             this.groupBox1.Controls.Add(this.labelRequisitoMinuscula);
             this.groupBox1.Controls.Add(this.labelRequisitoMaiuscula);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(30, 293);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(30, 299);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(410, 115);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(435, 115);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
@@ -402,16 +402,16 @@
             // textBoxNome
             // 
             this.textBoxNome.Location = new System.Drawing.Point(148, 119);
-            this.textBoxNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNome.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(293, 26);
+            this.textBoxNome.Size = new System.Drawing.Size(317, 26);
             this.textBoxNome.TabIndex = 16;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GerenciamentoBiblioteca.Properties.Resources.icons8_voltar_24;
             this.pictureBox1.Location = new System.Drawing.Point(8, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -422,9 +422,9 @@
             // textBoxTelefone
             // 
             this.textBoxTelefone.Location = new System.Drawing.Point(100, 192);
-            this.textBoxTelefone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxTelefone.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxTelefone.Name = "textBoxTelefone";
-            this.textBoxTelefone.Size = new System.Drawing.Size(340, 26);
+            this.textBoxTelefone.Size = new System.Drawing.Size(365, 26);
             this.textBoxTelefone.TabIndex = 9;
             // 
             // label15
@@ -441,9 +441,9 @@
             // textBoxSenhaCadastro
             // 
             this.textBoxSenhaCadastro.Location = new System.Drawing.Point(88, 268);
-            this.textBoxSenhaCadastro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxSenhaCadastro.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSenhaCadastro.Name = "textBoxSenhaCadastro";
-            this.textBoxSenhaCadastro.Size = new System.Drawing.Size(319, 26);
+            this.textBoxSenhaCadastro.Size = new System.Drawing.Size(349, 26);
             this.textBoxSenhaCadastro.TabIndex = 1;
             this.textBoxSenhaCadastro.TextChanged += new System.EventHandler(this.textBoxSenhaCadastro_TextChanged_1);
             // 
@@ -452,7 +452,7 @@
             this.radioButtonAdmin.AutoSize = true;
             this.radioButtonAdmin.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonAdmin.Location = new System.Drawing.Point(109, 88);
-            this.radioButtonAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButtonAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonAdmin.Name = "radioButtonAdmin";
             this.radioButtonAdmin.Size = new System.Drawing.Size(114, 23);
             this.radioButtonAdmin.TabIndex = 14;
@@ -462,10 +462,10 @@
             // 
             // textBoxConfirmarSenha
             // 
-            this.textBoxConfirmarSenha.Location = new System.Drawing.Point(166, 422);
-            this.textBoxConfirmarSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxConfirmarSenha.Location = new System.Drawing.Point(166, 428);
+            this.textBoxConfirmarSenha.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxConfirmarSenha.Name = "textBoxConfirmarSenha";
-            this.textBoxConfirmarSenha.Size = new System.Drawing.Size(241, 26);
+            this.textBoxConfirmarSenha.Size = new System.Drawing.Size(271, 26);
             this.textBoxConfirmarSenha.TabIndex = 2;
             // 
             // radioButtonLeitor
@@ -473,7 +473,7 @@
             this.radioButtonLeitor.AutoSize = true;
             this.radioButtonLeitor.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonLeitor.Location = new System.Drawing.Point(30, 88);
-            this.radioButtonLeitor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButtonLeitor.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonLeitor.Name = "radioButtonLeitor";
             this.radioButtonLeitor.Size = new System.Drawing.Size(62, 23);
             this.radioButtonLeitor.TabIndex = 13;
@@ -487,7 +487,7 @@
             this.buttonCadastrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCadastrar.ForeColor = System.Drawing.Color.MidnightBlue;
             this.buttonCadastrar.Location = new System.Drawing.Point(148, 480);
-            this.buttonCadastrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCadastrar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCadastrar.Name = "buttonCadastrar";
             this.buttonCadastrar.Size = new System.Drawing.Size(172, 51);
             this.buttonCadastrar.TabIndex = 3;
@@ -532,25 +532,25 @@
             // textBoxUsuario
             // 
             this.textBoxUsuario.Location = new System.Drawing.Point(100, 156);
-            this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(340, 26);
+            this.textBoxUsuario.Size = new System.Drawing.Size(365, 26);
             this.textBoxUsuario.TabIndex = 0;
             // 
             // dtpNascimento
             // 
             this.dtpNascimento.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNascimento.Location = new System.Drawing.Point(175, 226);
-            this.dtpNascimento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNascimento.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNascimento.Name = "dtpNascimento";
-            this.dtpNascimento.Size = new System.Drawing.Size(266, 26);
+            this.dtpNascimento.Size = new System.Drawing.Size(290, 26);
             this.dtpNascimento.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 426);
+            this.label5.Location = new System.Drawing.Point(24, 432);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(141, 20);
@@ -585,7 +585,7 @@
             this.panelRedefinirSenha.Controls.Add(this.panelInternoSenha);
             this.panelRedefinirSenha.Controls.Add(this.pictureBox2);
             this.panelRedefinirSenha.Location = new System.Drawing.Point(10, 349);
-            this.panelRedefinirSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelRedefinirSenha.Margin = new System.Windows.Forms.Padding(2);
             this.panelRedefinirSenha.Name = "panelRedefinirSenha";
             this.panelRedefinirSenha.Size = new System.Drawing.Size(468, 417);
             this.panelRedefinirSenha.TabIndex = 6;
@@ -605,7 +605,7 @@
             this.panelInternoSenha.Controls.Add(this.label4);
             this.panelInternoSenha.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelInternoSenha.Location = new System.Drawing.Point(2, 28);
-            this.panelInternoSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelInternoSenha.Margin = new System.Windows.Forms.Padding(2);
             this.panelInternoSenha.Name = "panelInternoSenha";
             this.panelInternoSenha.Size = new System.Drawing.Size(454, 380);
             this.panelInternoSenha.TabIndex = 7;
@@ -614,7 +614,7 @@
             // 
             this.picOlhoConfirmarNovaSenha.Image = global::GerenciamentoBiblioteca.Properties.Resources.olho_fechado;
             this.picOlhoConfirmarNovaSenha.Location = new System.Drawing.Point(414, 268);
-            this.picOlhoConfirmarNovaSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picOlhoConfirmarNovaSenha.Margin = new System.Windows.Forms.Padding(2);
             this.picOlhoConfirmarNovaSenha.Name = "picOlhoConfirmarNovaSenha";
             this.picOlhoConfirmarNovaSenha.Size = new System.Drawing.Size(24, 24);
             this.picOlhoConfirmarNovaSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -626,7 +626,7 @@
             // 
             this.picOlhoNovaSenha.Image = global::GerenciamentoBiblioteca.Properties.Resources.olho_fechado;
             this.picOlhoNovaSenha.Location = new System.Drawing.Point(414, 104);
-            this.picOlhoNovaSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picOlhoNovaSenha.Margin = new System.Windows.Forms.Padding(2);
             this.picOlhoNovaSenha.Name = "picOlhoNovaSenha";
             this.picOlhoNovaSenha.Size = new System.Drawing.Size(24, 24);
             this.picOlhoNovaSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -643,9 +643,9 @@
             this.groupBoxRedefinirSenha.Controls.Add(this.labelRequisitoTamanhoRedefinir);
             this.groupBoxRedefinirSenha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxRedefinirSenha.Location = new System.Drawing.Point(21, 127);
-            this.groupBoxRedefinirSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxRedefinirSenha.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxRedefinirSenha.Name = "groupBoxRedefinirSenha";
-            this.groupBoxRedefinirSenha.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxRedefinirSenha.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxRedefinirSenha.Size = new System.Drawing.Size(380, 126);
             this.groupBoxRedefinirSenha.TabIndex = 8;
             this.groupBoxRedefinirSenha.TabStop = false;
@@ -698,7 +698,7 @@
             // textBoxNovaSenha
             // 
             this.textBoxNovaSenha.Location = new System.Drawing.Point(118, 99);
-            this.textBoxNovaSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNovaSenha.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNovaSenha.Name = "textBoxNovaSenha";
             this.textBoxNovaSenha.Size = new System.Drawing.Size(283, 26);
             this.textBoxNovaSenha.TabIndex = 1;
@@ -729,7 +729,7 @@
             // textBoxUsuarioRedefinir
             // 
             this.textBoxUsuarioRedefinir.Location = new System.Drawing.Point(71, 67);
-            this.textBoxUsuarioRedefinir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxUsuarioRedefinir.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUsuarioRedefinir.Name = "textBoxUsuarioRedefinir";
             this.textBoxUsuarioRedefinir.Size = new System.Drawing.Size(330, 26);
             this.textBoxUsuarioRedefinir.TabIndex = 0;
@@ -748,7 +748,7 @@
             // textBoxConfirmarNovaSenha
             // 
             this.textBoxConfirmarNovaSenha.Location = new System.Drawing.Point(118, 263);
-            this.textBoxConfirmarNovaSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxConfirmarNovaSenha.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxConfirmarNovaSenha.Name = "textBoxConfirmarNovaSenha";
             this.textBoxConfirmarNovaSenha.Size = new System.Drawing.Size(283, 26);
             this.textBoxConfirmarNovaSenha.TabIndex = 2;
@@ -759,7 +759,7 @@
             this.buttonRedefinir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRedefinir.ForeColor = System.Drawing.Color.MidnightBlue;
             this.buttonRedefinir.Location = new System.Drawing.Point(140, 313);
-            this.buttonRedefinir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonRedefinir.Margin = new System.Windows.Forms.Padding(2);
             this.buttonRedefinir.Name = "buttonRedefinir";
             this.buttonRedefinir.Size = new System.Drawing.Size(155, 51);
             this.buttonRedefinir.TabIndex = 3;
@@ -783,7 +783,7 @@
             // 
             this.pictureBox2.Image = global::GerenciamentoBiblioteca.Properties.Resources.icons8_voltar_24;
             this.pictureBox2.Location = new System.Drawing.Point(8, 8);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(24, 24);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -800,7 +800,7 @@
             this.Controls.Add(this.panelRedefinirSenha);
             this.Controls.Add(this.panelCadastro);
             this.Controls.Add(this.panelLogin);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
