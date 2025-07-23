@@ -14,13 +14,16 @@ namespace GerenciamentoBiblioteca
     public partial class FormPublicar : Form
     {
         private MySqlConnection conexao;
+        private int estrelasSelecionadas = 5;
         public FormPublicar()
         {
             InitializeComponent(); 
             string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
             conexao = new MySqlConnection(conexaoString);
 
+            //ConfigurarLayout();
             CarregarLivrosDevolvidos();
+            GerarEstrelas();
         }
         private void CarregarLivrosDevolvidos()
         {
@@ -39,35 +42,70 @@ namespace GerenciamentoBiblioteca
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                cbLivros.DisplayMember = "titulo";
-                cbLivros.ValueMember = "id";
-                cbLivros.DataSource = dt;
+                cbLivro.DisplayMember = "titulo";
+                cbLivro.ValueMember = "id";
+                cbLivro.DataSource = dt;
             }
         }
 
-        private void btnPublicar_Click(object sender, EventArgs e)
+        private void GerarEstrelas()
         {
-            if (cbLivros.SelectedIndex < 0 || string.IsNullOrWhiteSpace(txtComentario.Text))
+            flowEstrela.Controls.Clear();
+            for (int i = 1; i <= 5; i++)
             {
-                MessageBox.Show("Preencha todos os campos!");
+                Label estrela = new Label
+                {
+                    Text = "★",
+                    Font = new Font("Segoe UI", 16),
+                    AutoSize = true,
+                    Tag = i,
+                    Cursor = Cursors.Hand,
+                    ForeColor = i <= estrelasSelecionadas ? Color.Gold : Color.Gray
+                };
+                estrela.Click += Estrela_Click;
+                flowEstrela.Controls.Add(estrela);
+            }
+        }
+
+        private void Estrela_Click(object sender, EventArgs e)
+        {
+            if (sender is Label estrela)
+            {
+                estrelasSelecionadas = (int)estrela.Tag;
+                GerarEstrelas();
+            }
+        }
+        
+
+        private void FormPublicar_Load(object sender, EventArgs e)
+        {
+            //AplicarFonte(this);
+        }
+
+        private void buttonPublicar_Click(object sender, EventArgs e)
+        {
+            if (cbLivro.SelectedIndex == -1)
+            {
+                MessageBox.Show("Preencha todos os campos.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             using (var conn = new MySqlConnection("Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;"))
             {
                 conn.Open();
-                string query = @"INSERT INTO publicacoes (id_usuario, id_livro, comentario, estrelas)
+                string query = @"INSERT INTO publicacoes (id_usuario, id_livro, comentario, estrelas) 
                                  VALUES (@idUsuario, @idLivro, @comentario, @estrelas)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@idUsuario", Sessao.Id);
-                cmd.Parameters.AddWithValue("@idLivro", cbLivros.SelectedValue);
-                cmd.Parameters.AddWithValue("@comentario", txtComentario.Text);
-                cmd.Parameters.AddWithValue("@estrelas", (int)nudEstrelas.Value);
+                cmd.Parameters.AddWithValue("@idLivro", cbLivro.SelectedValue);
+                cmd.Parameters.AddWithValue("@comentario", txtComentarios.Text.Trim());
+                cmd.Parameters.AddWithValue("@estrelas", estrelasSelecionadas);
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Comentário publicado com sucesso!");
-                txtComentario.Clear();
-                nudEstrelas.Value = 1;
+
+                MessageBox.Show("Publicação realzada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
         }
     }

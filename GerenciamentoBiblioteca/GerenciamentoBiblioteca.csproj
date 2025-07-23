@@ -229,12 +229,6 @@
     <Compile Include="UC_FeedPublicacoes.Designer.cs">
       <DependentUpon>UC_FeedPublicacoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_PublicarResenha.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_PublicarResenha.Designer.cs">
-      <DependentUpon>UC_PublicarResenha.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_Ranking.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -320,9 +314,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_FeedPublicacoes.resx">
       <DependentUpon>UC_FeedPublicacoes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_PublicarResenha.resx">
-      <DependentUpon>UC_PublicarResenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Ranking.resx">
       <DependentUpon>UC_Ranking.cs</DependentUpon>

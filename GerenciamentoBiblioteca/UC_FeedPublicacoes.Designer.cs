@@ -48,7 +48,8 @@
             // flowComentarios
             // 
             this.flowComentarios.AutoScroll = true;
-            this.flowComentarios.BackColor = System.Drawing.SystemColors.Control;
+            this.flowComentarios.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.flowComentarios.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowComentarios.Location = new System.Drawing.Point(42, 104);
             this.flowComentarios.Name = "flowComentarios";
             this.flowComentarios.Size = new System.Drawing.Size(912, 439);
@@ -62,7 +63,7 @@
             this.buttonFazerComentario.ForeColor = System.Drawing.Color.MidnightBlue;
             this.buttonFazerComentario.Location = new System.Drawing.Point(786, 36);
             this.buttonFazerComentario.Name = "buttonFazerComentario";
-            this.buttonFazerComentario.Size = new System.Drawing.Size(168, 39);
+            this.buttonFazerComentario.Size = new System.Drawing.Size(168, 52);
             this.buttonFazerComentario.TabIndex = 2;
             this.buttonFazerComentario.Text = "Fazer publicação";
             this.buttonFazerComentario.UseVisualStyleBackColor = false;
