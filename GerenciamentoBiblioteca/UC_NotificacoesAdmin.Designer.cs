@@ -46,9 +46,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(37, 31);
+            this.label1.Location = new System.Drawing.Point(28, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 38);
+            this.label1.Size = new System.Drawing.Size(141, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Notificações";
             // 
@@ -57,9 +58,10 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Window;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(44, 89);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(33, 72);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(705, 695);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(529, 565);
             this.flowLayoutPanel1.TabIndex = 1;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -69,9 +71,10 @@
             this.panelLixeira.Controls.Add(this.label2);
             this.panelLixeira.Controls.Add(this.pictureBox2);
             this.panelLixeira.Controls.Add(this.flowLayoutPanelLixeira);
-            this.panelLixeira.Location = new System.Drawing.Point(785, 89);
+            this.panelLixeira.Location = new System.Drawing.Point(589, 72);
+            this.panelLixeira.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelLixeira.Name = "panelLixeira";
-            this.panelLixeira.Size = new System.Drawing.Size(722, 695);
+            this.panelLixeira.Size = new System.Drawing.Size(542, 565);
             this.panelLixeira.TabIndex = 2;
             // 
             // label2
@@ -79,9 +82,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(5, 13);
+            this.label2.Location = new System.Drawing.Point(4, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 25);
+            this.label2.Size = new System.Drawing.Size(160, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Notificações excluídas";
             // 
@@ -89,7 +93,8 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::GerenciamentoBiblioteca.Properties.Resources.excluir;
-            this.pictureBox2.Location = new System.Drawing.Point(682, 13);
+            this.pictureBox2.Location = new System.Drawing.Point(512, 11);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(24, 24);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -101,9 +106,10 @@
             // 
             this.flowLayoutPanelLixeira.AutoScroll = true;
             this.flowLayoutPanelLixeira.BackColor = System.Drawing.SystemColors.Window;
-            this.flowLayoutPanelLixeira.Location = new System.Drawing.Point(10, 56);
+            this.flowLayoutPanelLixeira.Location = new System.Drawing.Point(8, 46);
+            this.flowLayoutPanelLixeira.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanelLixeira.Name = "flowLayoutPanelLixeira";
-            this.flowLayoutPanelLixeira.Size = new System.Drawing.Size(696, 615);
+            this.flowLayoutPanelLixeira.Size = new System.Drawing.Size(522, 500);
             this.flowLayoutPanelLixeira.TabIndex = 0;
             this.flowLayoutPanelLixeira.WrapContents = false;
             // 
@@ -111,7 +117,8 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::GerenciamentoBiblioteca.Properties.Resources.lixeira_azul;
-            this.pictureBox1.Location = new System.Drawing.Point(1288, 45);
+            this.pictureBox1.Location = new System.Drawing.Point(966, 37);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -124,24 +131,25 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label3.Location = new System.Drawing.Point(1322, 46);
+            this.label3.Location = new System.Drawing.Point(992, 37);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(185, 25);
+            this.label3.Size = new System.Drawing.Size(157, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Notificações excluídas";
             // 
             // UC_NotificacoesAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelLixeira);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UC_NotificacoesAdmin";
-            this.Size = new System.Drawing.Size(1527, 949);
+            this.Size = new System.Drawing.Size(1145, 771);
             this.Load += new System.EventHandler(this.UC_NotificacoesAdmin_Load);
             this.panelLixeira.ResumeLayout(false);
             this.panelLixeira.PerformLayout();
