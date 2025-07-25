@@ -33,9 +33,9 @@ namespace GerenciamentoBiblioteca
             FormPrincipalLeitor formularioPai = this.FindForm() as FormPrincipalLeitor;
             if (formularioPai != null)
             {
-                UC_Ranking uC_Ranking = new UC_Ranking();
+                UC_FeedPublicacoes uC_FeedPublicacoes = new UC_FeedPublicacoes();
 
-                formularioPai.CarregarTela(uC_Ranking);
+                formularioPai.CarregarTela(uC_FeedPublicacoes);
             }
         }
 

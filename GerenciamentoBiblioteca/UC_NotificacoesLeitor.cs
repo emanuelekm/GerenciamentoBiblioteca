@@ -19,69 +19,130 @@ namespace GerenciamentoBiblioteca
             InitializeComponent();
             string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
             conexao = new MySqlConnection(conexaoString);
-            CarregarNotificacoes();
+            this.Load += UC_NotificacoesLeitor_Load;
         }
-        private void CarregarNotificacoes()
+
+        private void UC_NotificacoesLeitor_Load(object sender, EventArgs e)
         {
-            try
+            flowNotificacoes.FlowDirection = FlowDirection.TopDown;
+            flowNotificacoes.WrapContents = false;
+
+            CarregarNotificacoesLeitor();
+        }
+
+        private void CarregarNotificacoesLeitor()
+        {
+            flowNotificacoes.Controls.Clear();
+
+            var notificacoes = BuscarTodosEmprestimosPorUsuario(Sessao.Id);
+
+            if (notificacoes.Count == 0)
             {
-                flowNotificacoes.Controls.Clear();
-                conexao.Open();
-
-                string query = @"SELECT mensagem, data_hora 
-                                 FROM notificacoes_leitor 
-                                 WHERE id_usuario = @id 
-                                 ORDER BY data_hora DESC";
-                MySqlCommand cmd = new MySqlCommand(query, conexao);
-                cmd.Parameters.AddWithValue("@id", Sessao.Id);
-
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
+                Label lbl = new Label();
+                lbl.Text = "Nenhuma notificação!";
+                lbl.Font = new Font("Segoe UI", 11F, FontStyle.Italic);
+                lbl.ForeColor = Color.Gray;
+                lbl.AutoSize = true;
+                flowNotificacoes.Controls.Add(lbl);
+            }
+            else
+            {
+                foreach (var notif in notificacoes)
                 {
-                    string mensagem = reader.GetString("mensagem");
-                    DateTime data = reader.GetDateTime("data_hora");
-
-                    flowNotificacoes.Controls.Add(CriarCardNotificacao(mensagem, data));
+                    AdicionarPainelNotificacao(notif, flowNotificacoes);
                 }
-                reader.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao carregar notificações: " + ex.Message);
-            }
-            finally
-            {
-                conexao.Close();
             }
         }
-
-        private Panel CriarCardNotificacao(string mensagem, DateTime data)
+        public List<Emprestimo> BuscarTodosEmprestimosPorUsuario(int idLeitor)
         {
-            Panel card = new Panel();
-            card.Width = flowNotificacoes.Width - 30;
-            card.Height = 70;
-            card.Padding = new Padding(10);
-            card.BackColor = Color.FromArgb(255, 248, 220);
-            card.BorderStyle = BorderStyle.FixedSingle;
-            card.Margin = new Padding(5);
-            card.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            var lista = new List<Emprestimo>();
 
-            Label lblData = new Label();
-            lblData.Text = data.ToString("dd/MM/yyyy HH:mm");
-            lblData.Font = new Font("Segoe UI", 8, FontStyle.Italic);
-            lblData.ForeColor = Color.Gray;
-            lblData.Dock = DockStyle.Top;
+            string query = @"
+        SELECT 
+            e.id, 
+            u.nome AS nome_usuario, 
+            l.titulo AS titulo_livro, 
+            e.data_emprestimo, 
+            e.data_devolucao, 
+            e.data_devolvido, 
+            e.status
+        FROM emprestimos e
+        JOIN livros l ON l.id = e.id_livro
+        JOIN usuarios u ON u.id = e.id_usuario
+        WHERE e.id_usuario = @idLeitor
+        ORDER BY e.data_emprestimo DESC;
+    ";
 
-            Label lblMensagem = new Label();
-            lblMensagem.Text = mensagem;
-            lblMensagem.Font = new Font("Segoe UI", 10, FontStyle.Regular);
-            lblMensagem.Dock = DockStyle.Fill;
-            lblMensagem.AutoSize = false;
+            using (var conexao = new MySqlConnection("Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;"))
+            {
+                conexao.Open();
+                using (var cmd = new MySqlCommand(query, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@idLeitor", idLeitor);
 
-            card.Controls.Add(lblMensagem);
-            card.Controls.Add(lblData);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var emprestimo = new Emprestimo
+                            {
+                                Id = reader.GetInt32("id"),
+                                NomeUsuario = reader.GetString("nome_usuario"),
+                                TituloLivro = reader.GetString("titulo_livro"),
+                                DataEmprestimo = reader.GetDateTime("data_emprestimo"),
+                                DataDevolucao = reader.IsDBNull(reader.GetOrdinal("data_devolucao"))
+                                    ? (DateTime?)null : reader.GetDateTime("data_devolucao"),
+                                DataDevolvido = reader.IsDBNull(reader.GetOrdinal("data_devolvido"))
+                                    ? (DateTime?)null : reader.GetDateTime("data_devolvido"),
+                                Status = reader.IsDBNull(reader.GetOrdinal("status"))
+                                    ? null : reader.GetString("status")
+                            };
+                            lista.Add(emprestimo);
+                        }
+                    }
+                }
+            }
+            return lista;
+        }
+        
+        private void AdicionarPainelNotificacao(Emprestimo notif, FlowLayoutPanel painel)
+        {
+            Panel panel = new Panel();
+            panel.Width = 350;   // Ajuste conforme o layout
+            panel.Height = 75;
+            panel.Margin = new Padding(8);
+            panel.BorderStyle = BorderStyle.FixedSingle;
 
-            return card;
+            // Defina a cor de fundo do painel conforme o status do empréstimo
+            if (notif.DataDevolvido.HasValue)
+            {
+                panel.BackColor = Color.LightGreen; // Devolvido: verde
+            }
+            else if (notif.DataDevolucao.HasValue && notif.DataDevolucao.Value >= DateTime.Now)
+            {
+                panel.BackColor = Color.LightYellow; // Em andamento: amarelo
+            }
+            else if (notif.DataDevolucao.HasValue && notif.DataDevolucao.Value < DateTime.Now)
+            {
+                panel.BackColor = Color.LightCoral; // Em atraso: vermelho (opcional)
+            }
+            else
+            {
+                panel.BackColor = Color.WhiteSmoke; // Outros casos
+            }
+
+            // Adicione as informações do empréstimo
+            Label lblInfo = new Label();
+            lblInfo.Text = $"Livro: {notif.TituloLivro}\nData empréstimo: {notif.DataEmprestimo:dd/MM/yyyy}\n" +
+                           $"Devolver até: {notif.DataDevolucao?.ToString("dd/MM/yyyy") ?? "-"}\n" +
+                           $"Status: {(notif.DataDevolvido.HasValue ? "Devolvido" : (notif.DataDevolucao.HasValue && notif.DataDevolucao.Value < DateTime.Now ? "Atrasado" : "Em andamento"))}";
+            lblInfo.Dock = DockStyle.Fill;
+            lblInfo.Font = new Font("Segoe UI", 9.5F);
+            lblInfo.TextAlign = ContentAlignment.MiddleLeft;
+
+            panel.Controls.Add(lblInfo);
+            painel.Controls.Add(panel);
+        
         }
     }
 }

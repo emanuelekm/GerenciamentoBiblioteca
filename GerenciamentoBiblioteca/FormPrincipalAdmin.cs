@@ -54,9 +54,5 @@ namespace GerenciamentoBiblioteca
             CarregarTela(new UC_NotificacoesAdmin());
         }
 
-        private void linkLabelDuvidas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            CarregarTela(new UC_Duvidas());
-        }
     }
 }

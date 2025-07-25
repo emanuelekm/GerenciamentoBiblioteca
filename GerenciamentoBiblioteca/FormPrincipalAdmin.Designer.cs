@@ -34,9 +34,6 @@
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.panelDuvidas = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.linkLabelDuvidas = new System.Windows.Forms.LinkLabel();
             this.panelNotificacoes = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.linkLabelNotificacoes = new System.Windows.Forms.LinkLabel();
@@ -52,8 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.panelDuvidas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panelNotificacoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panelAlterarCadastro.SuspendLayout();
@@ -114,7 +109,6 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(208)))), ((int)(((byte)(252)))));
             this.panelMenu.Controls.Add(this.pictureBox8);
-            this.panelMenu.Controls.Add(this.panelDuvidas);
             this.panelMenu.Controls.Add(this.panelNotificacoes);
             this.panelMenu.Controls.Add(this.panelAlterarCadastro);
             this.panelMenu.Controls.Add(this.panelInicio);
@@ -136,43 +130,6 @@
             this.pictureBox8.TabIndex = 11;
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
-            // 
-            // panelDuvidas
-            // 
-            this.panelDuvidas.Controls.Add(this.pictureBox6);
-            this.panelDuvidas.Controls.Add(this.linkLabelDuvidas);
-            this.panelDuvidas.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelDuvidas.Location = new System.Drawing.Point(3, 290);
-            this.panelDuvidas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelDuvidas.Name = "panelDuvidas";
-            this.panelDuvidas.Size = new System.Drawing.Size(332, 82);
-            this.panelDuvidas.TabIndex = 9;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::GerenciamentoBiblioteca.Properties.Resources.ícone_dúvida_24;
-            this.pictureBox6.Location = new System.Drawing.Point(30, 28);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox6.TabIndex = 6;
-            this.pictureBox6.TabStop = false;
-            // 
-            // linkLabelDuvidas
-            // 
-            this.linkLabelDuvidas.ActiveLinkColor = System.Drawing.Color.MidnightBlue;
-            this.linkLabelDuvidas.AutoSize = true;
-            this.linkLabelDuvidas.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelDuvidas.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabelDuvidas.LinkColor = System.Drawing.Color.Navy;
-            this.linkLabelDuvidas.Location = new System.Drawing.Point(82, 26);
-            this.linkLabelDuvidas.Name = "linkLabelDuvidas";
-            this.linkLabelDuvidas.Size = new System.Drawing.Size(192, 28);
-            this.linkLabelDuvidas.TabIndex = 5;
-            this.linkLabelDuvidas.TabStop = true;
-            this.linkLabelDuvidas.Text = "Dúvidas Frequentes";
-            this.linkLabelDuvidas.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelDuvidas_LinkClicked);
             // 
             // panelNotificacoes
             // 
@@ -315,9 +272,6 @@
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.panelDuvidas.ResumeLayout(false);
-            this.panelDuvidas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panelNotificacoes.ResumeLayout(false);
             this.panelNotificacoes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -339,17 +293,14 @@
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel linkLabelInicio;
-        private System.Windows.Forms.LinkLabel linkLabelDuvidas;
         private System.Windows.Forms.LinkLabel linkLabelNotificacoes;
         private System.Windows.Forms.LinkLabel linkLabelAlterarCadastro;
         private System.Windows.Forms.Panel panelAlterarCadastro;
         private System.Windows.Forms.Panel panelInicio;
-        private System.Windows.Forms.Panel panelDuvidas;
         private System.Windows.Forms.Panel panelNotificacoes;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Panel panelTelaInterna;
     }

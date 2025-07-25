@@ -34,9 +34,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.linkLabelMeuPerfil = new System.Windows.Forms.LinkLabel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panelDuvidas = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -54,8 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panelMenu.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panelDuvidas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -127,7 +122,6 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(208)))), ((int)(((byte)(252)))));
-            this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Controls.Add(this.pictureBox8);
             this.panelMenu.Controls.Add(this.panelDuvidas);
             this.panelMenu.Controls.Add(this.panelNotificacoes);
@@ -139,42 +133,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(356, 649);
             this.panelMenu.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.linkLabelMeuPerfil);
-            this.panel1.Location = new System.Drawing.Point(3, 202);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(332, 82);
-            this.panel1.TabIndex = 10;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::GerenciamentoBiblioteca.Properties.Resources.ícone_usuário_24;
-            this.pictureBox3.Location = new System.Drawing.Point(30, 28);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 6;
-            this.pictureBox3.TabStop = false;
-            // 
-            // linkLabelMeuPerfil
-            // 
-            this.linkLabelMeuPerfil.ActiveLinkColor = System.Drawing.Color.MidnightBlue;
-            this.linkLabelMeuPerfil.AutoSize = true;
-            this.linkLabelMeuPerfil.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelMeuPerfil.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabelMeuPerfil.LinkColor = System.Drawing.Color.Navy;
-            this.linkLabelMeuPerfil.Location = new System.Drawing.Point(82, 26);
-            this.linkLabelMeuPerfil.Name = "linkLabelMeuPerfil";
-            this.linkLabelMeuPerfil.Size = new System.Drawing.Size(118, 28);
-            this.linkLabelMeuPerfil.TabIndex = 5;
-            this.linkLabelMeuPerfil.TabStop = true;
-            this.linkLabelMeuPerfil.Text = "Publicações";
-            this.linkLabelMeuPerfil.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelMeuPerfil_LinkClicked);
             // 
             // pictureBox8
             // 
@@ -192,7 +150,7 @@
             // 
             this.panelDuvidas.Controls.Add(this.pictureBox6);
             this.panelDuvidas.Controls.Add(this.linkLabelDuvidasLeitor);
-            this.panelDuvidas.Location = new System.Drawing.Point(3, 377);
+            this.panelDuvidas.Location = new System.Drawing.Point(3, 289);
             this.panelDuvidas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDuvidas.Name = "panelDuvidas";
             this.panelDuvidas.Size = new System.Drawing.Size(332, 82);
@@ -228,7 +186,7 @@
             // 
             this.panelNotificacoes.Controls.Add(this.pictureBox5);
             this.panelNotificacoes.Controls.Add(this.linkLabelNotificacoesLeitor);
-            this.panelNotificacoes.Location = new System.Drawing.Point(3, 288);
+            this.panelNotificacoes.Location = new System.Drawing.Point(3, 200);
             this.panelNotificacoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelNotificacoes.Name = "panelNotificacoes";
             this.panelNotificacoes.Size = new System.Drawing.Size(332, 84);
@@ -351,9 +309,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panelDuvidas.ResumeLayout(false);
             this.panelDuvidas.PerformLayout();
@@ -392,8 +347,5 @@
         private System.Windows.Forms.Panel panelInicio;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.LinkLabel linkLabelInicioLeitor;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.LinkLabel linkLabelMeuPerfil;
     }
 }

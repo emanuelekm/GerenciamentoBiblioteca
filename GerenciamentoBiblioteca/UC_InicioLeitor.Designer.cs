@@ -75,12 +75,12 @@
             // 
             this.buttonRanking.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRanking.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonRanking.Location = new System.Drawing.Point(37, 354);
+            this.buttonRanking.Location = new System.Drawing.Point(788, 97);
             this.buttonRanking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRanking.Name = "buttonRanking";
             this.buttonRanking.Size = new System.Drawing.Size(348, 221);
             this.buttonRanking.TabIndex = 5;
-            this.buttonRanking.Text = "Ranking de leitores";
+            this.buttonRanking.Text = "Publicações e avaliações";
             this.buttonRanking.UseVisualStyleBackColor = true;
             this.buttonRanking.Click += new System.EventHandler(this.buttonRanking_Click);
             // 

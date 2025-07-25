@@ -52,7 +52,7 @@
             this.label1.Location = new System.Drawing.Point(22, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 30);
+            this.label1.Size = new System.Drawing.Size(179, 38);
             this.label1.TabIndex = 5;
             this.label1.Text = "Notificações";
             // 
@@ -62,6 +62,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UC_NotificacoesLeitor";
             this.Size = new System.Drawing.Size(1043, 756);
+            this.Load += new System.EventHandler(this.UC_NotificacoesLeitor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
