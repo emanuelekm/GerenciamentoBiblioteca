@@ -35,7 +35,6 @@
             this.flowEstrela = new System.Windows.Forms.FlowLayoutPanel();
             this.txtComentarios = new System.Windows.Forms.TextBox();
             this.buttonPublicar = new System.Windows.Forms.Button();
-            this.buttonCancelar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -101,24 +100,13 @@
             // 
             this.buttonPublicar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.buttonPublicar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPublicar.Location = new System.Drawing.Point(15, 279);
+            this.buttonPublicar.Location = new System.Drawing.Point(271, 277);
             this.buttonPublicar.Name = "buttonPublicar";
             this.buttonPublicar.Size = new System.Drawing.Size(108, 35);
             this.buttonPublicar.TabIndex = 6;
             this.buttonPublicar.Text = "PUBLICAR";
             this.buttonPublicar.UseVisualStyleBackColor = false;
             this.buttonPublicar.Click += new System.EventHandler(this.buttonPublicar_Click);
-            // 
-            // buttonCancelar
-            // 
-            this.buttonCancelar.BackColor = System.Drawing.SystemColors.Menu;
-            this.buttonCancelar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancelar.Location = new System.Drawing.Point(271, 279);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(108, 35);
-            this.buttonCancelar.TabIndex = 7;
-            this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -136,7 +124,6 @@
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.buttonCancelar);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.buttonPublicar);
             this.panel1.Controls.Add(this.cbLivro);
@@ -174,7 +161,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowEstrela;
         private System.Windows.Forms.TextBox txtComentarios;
         private System.Windows.Forms.Button buttonPublicar;
-        private System.Windows.Forms.Button buttonCancelar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
     }

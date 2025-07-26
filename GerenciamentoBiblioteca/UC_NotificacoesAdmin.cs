@@ -90,7 +90,7 @@ namespace GerenciamentoBiblioteca
         {
             Panel panel = new Panel();
             panel.Width = 500;
-            panel.Height = 70;
+            panel.Height = 100;
             panel.Margin = new Padding(6);
 
             Label lblUsuario = new Label();
@@ -111,7 +111,7 @@ namespace GerenciamentoBiblioteca
             else
                 lblData.Text = $"Devolução prevista: {notif.DataDevolucao:dd/MM/yyyy}";
             lblData.AutoSize = true;
-            lblData.Location = new Point(180, 32);
+            lblData.Location = new Point(7, 56);
             lblData.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
 
             // customização visual por status

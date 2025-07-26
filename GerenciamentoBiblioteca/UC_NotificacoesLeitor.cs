@@ -107,7 +107,7 @@ namespace GerenciamentoBiblioteca
         
         private void AdicionarPainelNotificacao(Emprestimo notif, FlowLayoutPanel painel)
         {
-            Panel panel = new Panel();
+            /*Panel panel = new Panel();
             panel.Width = 350;   // Ajuste conforme o layout
             panel.Height = 75;
             panel.Margin = new Padding(8);
@@ -141,8 +141,58 @@ namespace GerenciamentoBiblioteca
             lblInfo.TextAlign = ContentAlignment.MiddleLeft;
 
             panel.Controls.Add(lblInfo);
+            painel.Controls.Add(panel);*/
+
+            Panel panel = new Panel();
+            panel.Width = 800;
+            panel.Height = 100;
+            panel.Margin = new Padding(15);
+
+            Label lblUsuario = new Label();
+            lblUsuario.Text = $"Usuário: {notif.NomeUsuario}";
+            lblUsuario.AutoSize = true;
+            lblUsuario.Location = new Point(7, 8);
+            lblUsuario.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
+
+            Label lblLivro = new Label();
+            lblLivro.Text = $"Livro: {notif.TituloLivro}";
+            lblLivro.AutoSize = true;
+            lblLivro.Location = new Point(7, 32);
+            lblLivro.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
+
+            Label lblData = new Label();
+            if (notif.Status == "DevolvidoNoPrazo")
+                lblData.Text = $"Devolvido em: {notif.DataDevolvido?.ToString("dd/MM/yyyy")}";
+            else
+                lblData.Text = $"Devolução prevista: {notif.DataDevolucao:dd/MM/yyyy}";
+            lblData.AutoSize = true;
+            lblData.Location = new Point(7, 56);
+            lblData.Font = new Font("Segoe UI", 11F, FontStyle.Regular);
+
+            // customização visual por status
+            if (notif.Status == "Em atraso")
+            {
+                panel.BackColor = Color.FromArgb(255, 220, 220); // vermelho claro
+                lblUsuario.ForeColor = Color.Red;
+                lblUsuario.Font = new Font(lblUsuario.Font, FontStyle.Bold);
+            }
+            else if (notif.Status == "Devolvido")
+            {
+                panel.BackColor = Color.FromArgb(220, 255, 220); // verde claro
+                lblUsuario.ForeColor = Color.DarkGreen;
+                lblUsuario.Font = new Font(lblUsuario.Font, FontStyle.Italic);
+            }
+            else if (notif.Status == "Em andamento")
+            {
+                panel.BackColor = Color.FromArgb(255, 255, 200); // amarelo claro
+                lblUsuario.ForeColor = Color.DarkGoldenrod;
+                lblUsuario.Font = new Font(lblUsuario.Font, FontStyle.Regular | FontStyle.Bold);
+            }
+
+            panel.Controls.Add(lblUsuario);
+            panel.Controls.Add(lblLivro);
+            panel.Controls.Add(lblData);
             painel.Controls.Add(panel);
-        
         }
     }
 }

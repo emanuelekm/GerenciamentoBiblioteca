@@ -31,7 +31,7 @@ namespace GerenciamentoBiblioteca
             InicializarTimer();
             CarregarEmprestimosNoDataGridView();
 
-            this.buttonTabelaPDF.Click += new System.EventHandler(this.buttonTabelaPDF_Click);
+            //this.buttonTabelaPDF.Click += new System.EventHandler(this.buttonTabelaPDF_Click);
 
             dataGridViewEmprestimo.RowPrePaint += dataGridViewEmprestimo_RowPrePaint;
             dataGridViewEmprestimo.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -153,11 +153,6 @@ namespace GerenciamentoBiblioteca
             {
                 form.CarregarTela(ucRelatorios);
             }
-        }
-
-        private void buttonTabelaPDF_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
