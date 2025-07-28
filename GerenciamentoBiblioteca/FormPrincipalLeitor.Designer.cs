@@ -44,6 +44,9 @@
             this.panelInicio = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.linkLabelInicioLeitor = new System.Windows.Forms.LinkLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.linkSair = new System.Windows.Forms.LinkLabel();
             this.panelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -55,13 +58,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTelaInternaLeitor
             // 
             this.panelTelaInternaLeitor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTelaInternaLeitor.Location = new System.Drawing.Point(267, 89);
-            this.panelTelaInternaLeitor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTelaInternaLeitor.Margin = new System.Windows.Forms.Padding(2);
             this.panelTelaInternaLeitor.Name = "panelTelaInternaLeitor";
             this.panelTelaInternaLeitor.Size = new System.Drawing.Size(791, 438);
             this.panelTelaInternaLeitor.TabIndex = 5;
@@ -74,7 +79,7 @@
             this.panelSuperior.Controls.Add(this.pictureBoxLogo);
             this.panelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSuperior.Location = new System.Drawing.Point(267, 0);
-            this.panelSuperior.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelSuperior.Margin = new System.Windows.Forms.Padding(2);
             this.panelSuperior.Name = "panelSuperior";
             this.panelSuperior.Size = new System.Drawing.Size(791, 89);
             this.panelSuperior.TabIndex = 4;
@@ -97,7 +102,7 @@
             // 
             this.pictureBox1.Image = global::GerenciamentoBiblioteca.Properties.Resources.escrita2;
             this.pictureBox1.Location = new System.Drawing.Point(86, 21);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(258, 51);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -108,7 +113,7 @@
             // 
             this.pictureBoxLogo.Image = global::GerenciamentoBiblioteca.Properties.Resources.logo;
             this.pictureBoxLogo.Location = new System.Drawing.Point(0, 2);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(88, 87);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -118,13 +123,14 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(208)))), ((int)(((byte)(252)))));
+            this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Controls.Add(this.pictureBox8);
             this.panelMenu.Controls.Add(this.panelNotificacoes);
             this.panelMenu.Controls.Add(this.panelAlterarCadastro);
             this.panelMenu.Controls.Add(this.panelInicio);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(267, 527);
             this.panelMenu.TabIndex = 3;
@@ -133,7 +139,7 @@
             // 
             this.pictureBox8.Image = global::GerenciamentoBiblioteca.Properties.Resources.icons8_voltar_24;
             this.pictureBox8.Location = new System.Drawing.Point(8, 8);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(24, 24);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -146,7 +152,7 @@
             this.panelNotificacoes.Controls.Add(this.pictureBox5);
             this.panelNotificacoes.Controls.Add(this.linkLabelNotificacoesLeitor);
             this.panelNotificacoes.Location = new System.Drawing.Point(2, 162);
-            this.panelNotificacoes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelNotificacoes.Margin = new System.Windows.Forms.Padding(2);
             this.panelNotificacoes.Name = "panelNotificacoes";
             this.panelNotificacoes.Size = new System.Drawing.Size(249, 68);
             this.panelNotificacoes.TabIndex = 9;
@@ -155,7 +161,7 @@
             // 
             this.pictureBox5.Image = global::GerenciamentoBiblioteca.Properties.Resources.ícone_notificação_24;
             this.pictureBox5.Location = new System.Drawing.Point(22, 28);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(24, 24);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -183,7 +189,7 @@
             this.panelAlterarCadastro.Controls.Add(this.pictureBox4);
             this.panelAlterarCadastro.Controls.Add(this.linkLabelAlterarCadastroLeitor);
             this.panelAlterarCadastro.Location = new System.Drawing.Point(2, 93);
-            this.panelAlterarCadastro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelAlterarCadastro.Margin = new System.Windows.Forms.Padding(2);
             this.panelAlterarCadastro.Name = "panelAlterarCadastro";
             this.panelAlterarCadastro.Size = new System.Drawing.Size(249, 67);
             this.panelAlterarCadastro.TabIndex = 8;
@@ -192,7 +198,7 @@
             // 
             this.pictureBox4.Image = global::GerenciamentoBiblioteca.Properties.Resources.ícone_chave_24;
             this.pictureBox4.Location = new System.Drawing.Point(22, 24);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(24, 24);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -220,7 +226,7 @@
             this.panelInicio.Controls.Add(this.pictureBox2);
             this.panelInicio.Controls.Add(this.linkLabelInicioLeitor);
             this.panelInicio.Location = new System.Drawing.Point(2, 18);
-            this.panelInicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelInicio.Margin = new System.Windows.Forms.Padding(2);
             this.panelInicio.Name = "panelInicio";
             this.panelInicio.Size = new System.Drawing.Size(249, 72);
             this.panelInicio.TabIndex = 7;
@@ -229,7 +235,7 @@
             // 
             this.pictureBox2.Image = global::GerenciamentoBiblioteca.Properties.Resources.ícone_casa_24;
             this.pictureBox2.Location = new System.Drawing.Point(22, 28);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(24, 24);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -253,6 +259,40 @@
             this.linkLabelInicioLeitor.Text = "Início";
             this.linkLabelInicioLeitor.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelInicioLeitor_LinkClicked);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.linkSair);
+            this.panel1.Location = new System.Drawing.Point(3, 235);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(249, 71);
+            this.panel1.TabIndex = 14;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GerenciamentoBiblioteca.Properties.Resources.icons8_sair_24__1_;
+            this.pictureBox3.Location = new System.Drawing.Point(22, 23);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
+            // linkSair
+            // 
+            this.linkSair.ActiveLinkColor = System.Drawing.SystemColors.ActiveCaption;
+            this.linkSair.AutoSize = true;
+            this.linkSair.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkSair.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkSair.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.linkSair.Location = new System.Drawing.Point(61, 26);
+            this.linkSair.Name = "linkSair";
+            this.linkSair.Size = new System.Drawing.Size(37, 21);
+            this.linkSair.TabIndex = 12;
+            this.linkSair.TabStop = true;
+            this.linkSair.Text = "Sair";
+            this.linkSair.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSair_LinkClicked);
+            // 
             // FormPrincipalLeitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,7 +301,7 @@
             this.Controls.Add(this.panelTelaInternaLeitor);
             this.Controls.Add(this.panelSuperior);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormPrincipalLeitor";
             this.Text = "FormPrincipalLeitor";
             this.Load += new System.EventHandler(this.FormPrincipalLeitor_Load);
@@ -281,6 +321,9 @@
             this.panelInicio.ResumeLayout(false);
             this.panelInicio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -303,5 +346,8 @@
         private System.Windows.Forms.Panel panelInicio;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.LinkLabel linkLabelInicioLeitor;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.LinkLabel linkSair;
     }
 }

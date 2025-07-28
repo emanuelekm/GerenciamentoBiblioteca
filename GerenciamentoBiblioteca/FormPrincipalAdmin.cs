@@ -54,5 +54,26 @@ namespace GerenciamentoBiblioteca
             CarregarTela(new UC_NotificacoesAdmin());
         }
 
+        private void linkSair_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var resultado = MessageBox.Show(
+                "Tem certeza que deseja sair do sistema?",
+                "Confirmação",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (resultado == DialogResult.Yes)
+            {
+                this.Hide();
+
+                Sessao.Id = 0;
+
+                FormLogin loginForm = new FormLogin();
+                loginForm.Show();
+
+                loginForm.FormClosed += (s, args) => this.Close();
+            }
+        }
     }
 }

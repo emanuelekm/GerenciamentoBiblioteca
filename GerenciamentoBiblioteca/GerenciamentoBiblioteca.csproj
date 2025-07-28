@@ -421,6 +421,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\excluir.png" />
+    <None Include="Resources\icons8-sair-24 %281%29.png" />
     <Content Include="Resources\lixeira.png" />
     <None Include="Resources\lixeira_azul.png" />
     <None Include="Resources\lixeira1.png" />
