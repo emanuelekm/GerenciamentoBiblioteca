@@ -91,7 +91,7 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(208)))), ((int)(((byte)(252)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(185)))), ((int)(((byte)(255)))));
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Controls.Add(this.pictureBox8);
             this.panelMenu.Controls.Add(this.panelNotificacoes);
@@ -121,7 +121,7 @@
             this.linkLabelNotificacoes.AutoSize = true;
             this.linkLabelNotificacoes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelNotificacoes.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabelNotificacoes.LinkColor = System.Drawing.Color.Navy;
+            this.linkLabelNotificacoes.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.linkLabelNotificacoes.Location = new System.Drawing.Point(62, 25);
             this.linkLabelNotificacoes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabelNotificacoes.Name = "linkLabelNotificacoes";
@@ -148,7 +148,7 @@
             this.linkLabelAlterarCadastro.AutoSize = true;
             this.linkLabelAlterarCadastro.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelAlterarCadastro.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabelAlterarCadastro.LinkColor = System.Drawing.Color.Navy;
+            this.linkLabelAlterarCadastro.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.linkLabelAlterarCadastro.Location = new System.Drawing.Point(62, 23);
             this.linkLabelAlterarCadastro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabelAlterarCadastro.Name = "linkLabelAlterarCadastro";
@@ -176,7 +176,7 @@
             this.linkLabelInicio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelInicio.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.linkLabelInicio.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabelInicio.LinkColor = System.Drawing.Color.Navy;
+            this.linkLabelInicio.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.linkLabelInicio.Location = new System.Drawing.Point(62, 26);
             this.linkLabelInicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabelInicio.Name = "linkLabelInicio";
@@ -188,6 +188,7 @@
             // 
             // panelTelaInterna
             // 
+            this.panelTelaInterna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.panelTelaInterna.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTelaInterna.Location = new System.Drawing.Point(267, 89);
             this.panelTelaInterna.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -201,7 +202,7 @@
             this.linkSair.AutoSize = true;
             this.linkSair.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkSair.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkSair.LinkColor = System.Drawing.Color.MidnightBlue;
+            this.linkSair.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.linkSair.Location = new System.Drawing.Point(62, 26);
             this.linkSair.Name = "linkSair";
             this.linkSair.Size = new System.Drawing.Size(37, 21);
@@ -265,7 +266,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::GerenciamentoBiblioteca.Properties.Resources.ícone_notificação_24;
+            this.pictureBox5.Image = global::GerenciamentoBiblioteca.Properties.Resources.icons8_notificação_24;
             this.pictureBox5.Location = new System.Drawing.Point(22, 28);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
@@ -276,7 +277,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::GerenciamentoBiblioteca.Properties.Resources.ícone_chave_24;
+            this.pictureBox4.Image = global::GerenciamentoBiblioteca.Properties.Resources.icons8_senha_1_24;
             this.pictureBox4.Location = new System.Drawing.Point(22, 24);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
@@ -287,7 +288,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::GerenciamentoBiblioteca.Properties.Resources.ícone_casa_24;
+            this.pictureBox2.Image = global::GerenciamentoBiblioteca.Properties.Resources.icons8_casa_241;
             this.pictureBox2.Location = new System.Drawing.Point(22, 28);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";

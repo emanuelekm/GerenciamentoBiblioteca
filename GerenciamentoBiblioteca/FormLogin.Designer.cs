@@ -87,6 +87,7 @@
             this.buttonRedefinir = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.panelLogin.SuspendLayout();
             this.panelInterno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picOlho)).BeginInit();
@@ -106,7 +107,7 @@
             // 
             // textBoxUser
             // 
-            this.textBoxUser.Location = new System.Drawing.Point(74, 76);
+            this.textBoxUser.Location = new System.Drawing.Point(74, 115);
             this.textBoxUser.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUser.Name = "textBoxUser";
             this.textBoxUser.Size = new System.Drawing.Size(336, 26);
@@ -114,7 +115,7 @@
             // 
             // textBoxSenha
             // 
-            this.textBoxSenha.Location = new System.Drawing.Point(72, 111);
+            this.textBoxSenha.Location = new System.Drawing.Point(72, 150);
             this.textBoxSenha.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(338, 26);
@@ -123,16 +124,17 @@
             // 
             // panelLogin
             // 
-            this.panelLogin.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panelLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.panelLogin.Controls.Add(this.panelInterno);
             this.panelLogin.Location = new System.Drawing.Point(8, 8);
             this.panelLogin.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(459, 320);
+            this.panelLogin.Size = new System.Drawing.Size(459, 337);
             this.panelLogin.TabIndex = 2;
             // 
             // panelInterno
             // 
+            this.panelInterno.Controls.Add(this.label17);
             this.panelInterno.Controls.Add(this.buttonLogin);
             this.panelInterno.Controls.Add(this.label16);
             this.panelInterno.Controls.Add(this.picOlho);
@@ -144,20 +146,20 @@
             this.panelInterno.Controls.Add(this.label1);
             this.panelInterno.Controls.Add(this.linkLabelSenha);
             this.panelInterno.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelInterno.Location = new System.Drawing.Point(2, 14);
+            this.panelInterno.Location = new System.Drawing.Point(2, 3);
             this.panelInterno.Margin = new System.Windows.Forms.Padding(2);
             this.panelInterno.Name = "panelInterno";
-            this.panelInterno.Size = new System.Drawing.Size(445, 294);
+            this.panelInterno.Size = new System.Drawing.Size(445, 332);
             this.panelInterno.TabIndex = 7;
             // 
             // buttonLogin
             // 
-            this.buttonLogin.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.buttonLogin.BackColor = System.Drawing.Color.Snow;
             this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.buttonLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.buttonLogin.Location = new System.Drawing.Point(136, 181);
+            this.buttonLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
+            this.buttonLogin.Location = new System.Drawing.Point(136, 220);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(160, 48);
@@ -170,7 +172,8 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(104, 246);
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
+            this.label16.Location = new System.Drawing.Point(104, 285);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(131, 15);
@@ -180,7 +183,7 @@
             // picOlho
             // 
             this.picOlho.Image = global::GerenciamentoBiblioteca.Properties.Resources.olho_fechado;
-            this.picOlho.Location = new System.Drawing.Point(416, 112);
+            this.picOlho.Location = new System.Drawing.Point(416, 151);
             this.picOlho.Margin = new System.Windows.Forms.Padding(2);
             this.picOlho.Name = "picOlho";
             this.picOlho.Size = new System.Drawing.Size(24, 24);
@@ -193,8 +196,8 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(19, 113);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
+            this.label9.Location = new System.Drawing.Point(19, 152);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(52, 20);
@@ -205,8 +208,8 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(19, 78);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
+            this.label8.Location = new System.Drawing.Point(19, 117);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 20);
@@ -217,10 +220,11 @@
             // 
             this.linkLabelMensagem.ActiveLinkColor = System.Drawing.Color.Black;
             this.linkLabelMensagem.AutoSize = true;
+            this.linkLabelMensagem.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(185)))), ((int)(((byte)(255)))));
             this.linkLabelMensagem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelMensagem.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabelMensagem.LinkColor = System.Drawing.Color.RoyalBlue;
-            this.linkLabelMensagem.Location = new System.Drawing.Point(236, 246);
+            this.linkLabelMensagem.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(185)))), ((int)(((byte)(255)))));
+            this.linkLabelMensagem.Location = new System.Drawing.Point(236, 285);
             this.linkLabelMensagem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabelMensagem.Name = "linkLabelMensagem";
             this.linkLabelMensagem.Size = new System.Drawing.Size(98, 15);
@@ -233,8 +237,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(181, 9);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
+            this.label1.Location = new System.Drawing.Point(183, 49);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 37);
@@ -245,10 +249,11 @@
             // 
             this.linkLabelSenha.ActiveLinkColor = System.Drawing.Color.Black;
             this.linkLabelSenha.AutoSize = true;
+            this.linkLabelSenha.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(185)))), ((int)(((byte)(255)))));
             this.linkLabelSenha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelSenha.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabelSenha.LinkColor = System.Drawing.Color.SteelBlue;
-            this.linkLabelSenha.Location = new System.Drawing.Point(154, 145);
+            this.linkLabelSenha.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(74)))), ((int)(((byte)(132)))));
+            this.linkLabelSenha.Location = new System.Drawing.Point(154, 184);
             this.linkLabelSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabelSenha.Name = "linkLabelSenha";
             this.linkLabelSenha.Size = new System.Drawing.Size(118, 15);
@@ -261,6 +266,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.label2.Location = new System.Drawing.Point(26, 63);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
@@ -270,7 +276,7 @@
             // 
             // panelCadastro
             // 
-            this.panelCadastro.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panelCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.panelCadastro.Controls.Add(this.panelInternoCadastro);
             this.panelCadastro.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelCadastro.Location = new System.Drawing.Point(496, 28);
@@ -281,7 +287,7 @@
             // 
             // panelInternoCadastro
             // 
-            this.panelInternoCadastro.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panelInternoCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.panelInternoCadastro.Controls.Add(this.picOlhoConfirmar);
             this.panelInternoCadastro.Controls.Add(this.picOlhoCadastro);
             this.panelInternoCadastro.Controls.Add(this.groupBox1);
@@ -431,6 +437,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.label15.Location = new System.Drawing.Point(25, 119);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
@@ -451,6 +458,7 @@
             // 
             this.radioButtonAdmin.AutoSize = true;
             this.radioButtonAdmin.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.radioButtonAdmin.Location = new System.Drawing.Point(109, 88);
             this.radioButtonAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonAdmin.Name = "radioButtonAdmin";
@@ -472,6 +480,7 @@
             // 
             this.radioButtonLeitor.AutoSize = true;
             this.radioButtonLeitor.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonLeitor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.radioButtonLeitor.Location = new System.Drawing.Point(30, 88);
             this.radioButtonLeitor.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonLeitor.Name = "radioButtonLeitor";
@@ -483,9 +492,9 @@
             // 
             // buttonCadastrar
             // 
-            this.buttonCadastrar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonCadastrar.BackColor = System.Drawing.Color.Snow;
             this.buttonCadastrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCadastrar.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.buttonCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.buttonCadastrar.Location = new System.Drawing.Point(148, 480);
             this.buttonCadastrar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCadastrar.Name = "buttonCadastrar";
@@ -499,6 +508,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.label14.Location = new System.Drawing.Point(24, 192);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
@@ -510,7 +520,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.label3.Location = new System.Drawing.Point(160, 10);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
@@ -522,6 +532,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.label13.Location = new System.Drawing.Point(25, 229);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
@@ -550,6 +561,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.label5.Location = new System.Drawing.Point(24, 432);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
@@ -561,6 +573,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.label6.Location = new System.Drawing.Point(25, 271);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
@@ -572,6 +585,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.label7.Location = new System.Drawing.Point(25, 158);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
@@ -581,7 +595,7 @@
             // 
             // panelRedefinirSenha
             // 
-            this.panelRedefinirSenha.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panelRedefinirSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.panelRedefinirSenha.Controls.Add(this.panelInternoSenha);
             this.panelRedefinirSenha.Controls.Add(this.pictureBox2);
             this.panelRedefinirSenha.Location = new System.Drawing.Point(10, 349);
@@ -747,17 +761,17 @@
             // 
             // textBoxConfirmarNovaSenha
             // 
-            this.textBoxConfirmarNovaSenha.Location = new System.Drawing.Point(118, 263);
+            this.textBoxConfirmarNovaSenha.Location = new System.Drawing.Point(133, 263);
             this.textBoxConfirmarNovaSenha.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxConfirmarNovaSenha.Name = "textBoxConfirmarNovaSenha";
-            this.textBoxConfirmarNovaSenha.Size = new System.Drawing.Size(283, 26);
+            this.textBoxConfirmarNovaSenha.Size = new System.Drawing.Size(268, 26);
             this.textBoxConfirmarNovaSenha.TabIndex = 2;
             // 
             // buttonRedefinir
             // 
-            this.buttonRedefinir.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonRedefinir.BackColor = System.Drawing.Color.Snow;
             this.buttonRedefinir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRedefinir.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.buttonRedefinir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.buttonRedefinir.Location = new System.Drawing.Point(140, 313);
             this.buttonRedefinir.Margin = new System.Windows.Forms.Padding(2);
             this.buttonRedefinir.Name = "buttonRedefinir";
@@ -771,7 +785,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.label4.Location = new System.Drawing.Point(97, 9);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
@@ -790,6 +804,17 @@
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
+            this.label17.Location = new System.Drawing.Point(131, 17);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(172, 20);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Bem-Vindo ao Librarium!";
             // 
             // FormLogin
             // 
@@ -894,6 +919,7 @@
         private System.Windows.Forms.PictureBox picOlhoConfirmarNovaSenha;
         private System.Windows.Forms.PictureBox picOlhoNovaSenha;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }
 

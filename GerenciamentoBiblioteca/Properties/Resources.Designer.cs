@@ -223,6 +223,16 @@ namespace GerenciamentoBiblioteca.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_casa_241 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-casa-241", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_casa_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-casa-48", resourceCulture);
@@ -246,6 +256,16 @@ namespace GerenciamentoBiblioteca.Properties {
         internal static System.Drawing.Bitmap icons8_chave_481 {
             get {
                 object obj = ResourceManager.GetObject("icons8-chave-481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_notificação_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-notificação-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -286,6 +306,16 @@ namespace GerenciamentoBiblioteca.Properties {
         internal static System.Drawing.Bitmap icons8_sair_24__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-sair-24 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_senha_1_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-senha-1-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

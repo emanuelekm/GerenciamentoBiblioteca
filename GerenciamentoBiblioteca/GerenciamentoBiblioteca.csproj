@@ -422,6 +422,9 @@
   <ItemGroup>
     <None Include="Resources\excluir.png" />
     <None Include="Resources\icons8-sair-24 %281%29.png" />
+    <None Include="Resources\icons8-casa-241.png" />
+    <None Include="Resources\icons8-senha-1-24.png" />
+    <None Include="Resources\icons8-notificação-24.png" />
     <Content Include="Resources\lixeira.png" />
     <None Include="Resources\lixeira_azul.png" />
     <None Include="Resources\lixeira1.png" />
