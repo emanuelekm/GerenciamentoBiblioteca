@@ -169,12 +169,6 @@
     <Compile Include="UC_ControleDeUsuarios.Designer.cs">
       <DependentUpon>UC_ControleDeUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_Duvidas.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_Duvidas.Designer.cs">
-      <DependentUpon>UC_Duvidas.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_Emprestimo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -229,12 +223,6 @@
     <Compile Include="UC_FeedPublicacoes.Designer.cs">
       <DependentUpon>UC_FeedPublicacoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_Ranking.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_Ranking.Designer.cs">
-      <DependentUpon>UC_Ranking.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_Relatorios.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -285,9 +273,6 @@
     <EmbeddedResource Include="UC_ControleDeUsuarios.resx">
       <DependentUpon>UC_ControleDeUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_Duvidas.resx">
-      <DependentUpon>UC_Duvidas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC_Emprestimo.resx">
       <DependentUpon>UC_Emprestimo.cs</DependentUpon>
     </EmbeddedResource>
@@ -314,9 +299,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_FeedPublicacoes.resx">
       <DependentUpon>UC_FeedPublicacoes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_Ranking.resx">
-      <DependentUpon>UC_Ranking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Relatorios.resx">
       <DependentUpon>UC_Relatorios.cs</DependentUpon>

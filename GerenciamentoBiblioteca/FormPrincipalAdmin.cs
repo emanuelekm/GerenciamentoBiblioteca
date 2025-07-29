@@ -26,11 +26,11 @@ namespace GerenciamentoBiblioteca
             CarregarTela(new UC_InicioAdmin());
         }
 
-        private void pictureBox8_Click(object sender, EventArgs e)
+        /*private void pictureBox8_Click(object sender, EventArgs e)
         {
             this.Hide();
             Application.OpenForms["FormLogin"].Show();
-        }
+        }*/
 
         public void CarregarTela(UserControl tela)
         {

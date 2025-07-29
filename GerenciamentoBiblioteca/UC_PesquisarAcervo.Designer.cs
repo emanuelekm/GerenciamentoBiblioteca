@@ -48,7 +48,7 @@
             this.textBoxPesquisar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPesquisar.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.textBoxPesquisar.Location = new System.Drawing.Point(6, 61);
-            this.textBoxPesquisar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPesquisar.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPesquisar.Name = "textBoxPesquisar";
             this.textBoxPesquisar.Size = new System.Drawing.Size(443, 26);
             this.textBoxPesquisar.TabIndex = 0;
@@ -63,7 +63,7 @@
             this.dataGridViewPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewPesquisar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPesquisar.Location = new System.Drawing.Point(24, 25);
-            this.dataGridViewPesquisar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewPesquisar.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewPesquisar.Name = "dataGridViewPesquisar";
             this.dataGridViewPesquisar.ReadOnly = true;
             this.dataGridViewPesquisar.RowHeadersWidth = 62;
@@ -88,7 +88,7 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.Image = global::GerenciamentoBiblioteca.Properties.Resources.icons8_pesquisar_24;
             this.pictureBox1.Location = new System.Drawing.Point(932, 61);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -98,18 +98,19 @@
             // 
             // comboBoxGenero
             // 
+            this.comboBoxGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGenero.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxGenero.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.comboBoxGenero.FormattingEnabled = true;
             this.comboBoxGenero.Location = new System.Drawing.Point(465, 61);
-            this.comboBoxGenero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxGenero.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxGenero.Name = "comboBoxGenero";
             this.comboBoxGenero.Size = new System.Drawing.Size(219, 27);
             this.comboBoxGenero.TabIndex = 5;
-            this.comboBoxGenero.Text = "Gênero";
             // 
             // comboBoxStatus
             // 
+            this.comboBoxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatus.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxStatus.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.comboBoxStatus.FormattingEnabled = true;
@@ -118,18 +119,17 @@
             "Regular",
             "Ruim"});
             this.comboBoxStatus.Location = new System.Drawing.Point(699, 62);
-            this.comboBoxStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxStatus.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(102, 27);
             this.comboBoxStatus.TabIndex = 6;
-            this.comboBoxStatus.Text = "Estado";
             // 
             // textBoxAno
             // 
             this.textBoxAno.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAno.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.textBoxAno.Location = new System.Drawing.Point(813, 61);
-            this.textBoxAno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxAno.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAno.Name = "textBoxAno";
             this.textBoxAno.Size = new System.Drawing.Size(102, 26);
             this.textBoxAno.TabIndex = 7;
@@ -164,7 +164,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_PesquisarAcervo";
             this.Size = new System.Drawing.Size(1063, 689);
             this.Load += new System.EventHandler(this.UC_PesquisarAcervo_Load);

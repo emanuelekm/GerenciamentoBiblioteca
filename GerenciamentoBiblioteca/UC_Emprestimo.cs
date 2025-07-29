@@ -141,7 +141,7 @@ namespace GerenciamentoBiblioteca
 
         private void AtualizarResumoEmprestimo()
         {
-            string livro = comboBoxLivro.Text;
+            /*string livro = comboBoxLivro.Text;
             string leitor = comboBoxLeitor.Text;
             string dataEmprestimo = dtpEmprestimo.Value.ToShortDateString();
             string dataDevolucao = dtpDevolucao.Value.ToShortDateString();
@@ -149,7 +149,7 @@ namespace GerenciamentoBiblioteca
             labelResumo.Text = $"Livro: {livro}\n" +
                                          $"Leitor: {leitor}\n" +
                                          $"Empréstimo: {dataEmprestimo}\n" +
-                                         $"Devolução prevista: {dataDevolucao}";
+                                         $"Devolução prevista: {dataDevolucao}";*/
         }
 
         private void dtpEmprestimo_ValueChanged(object sender, EventArgs e)
@@ -215,7 +215,7 @@ namespace GerenciamentoBiblioteca
             comboBoxLivro.SelectedIndex = -1;
             dtpEmprestimo.Value = DateTime.Today;
             dtpDevolucao.Value = DateTime.Today.AddDays(15);
-            labelResumo.Text = "";
+            //labelResumo.Text = "";
             this.ActiveControl = null;
         }
     }
