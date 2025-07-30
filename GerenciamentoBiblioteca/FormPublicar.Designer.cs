@@ -44,6 +44,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.label1.Location = new System.Drawing.Point(15, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 20);
@@ -54,6 +55,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.label2.Location = new System.Drawing.Point(15, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 20);
@@ -64,6 +66,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.label3.Location = new System.Drawing.Point(15, 137);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(232, 20);
@@ -72,11 +75,12 @@
             // 
             // cbLivro
             // 
+            this.cbLivro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbLivro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLivro.FormattingEnabled = true;
             this.cbLivro.Location = new System.Drawing.Point(17, 40);
             this.cbLivro.Name = "cbLivro";
-            this.cbLivro.Size = new System.Drawing.Size(361, 25);
+            this.cbLivro.Size = new System.Drawing.Size(405, 25);
             this.cbLivro.TabIndex = 3;
             // 
             // flowEstrela
@@ -89,22 +93,24 @@
             // 
             // txtComentarios
             // 
+            this.txtComentarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtComentarios.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComentarios.Location = new System.Drawing.Point(17, 167);
             this.txtComentarios.Multiline = true;
             this.txtComentarios.Name = "txtComentarios";
-            this.txtComentarios.Size = new System.Drawing.Size(362, 75);
+            this.txtComentarios.Size = new System.Drawing.Size(405, 75);
             this.txtComentarios.TabIndex = 5;
             // 
             // buttonPublicar
             // 
-            this.buttonPublicar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.buttonPublicar.BackColor = System.Drawing.SystemColors.Control;
             this.buttonPublicar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPublicar.Location = new System.Drawing.Point(271, 277);
+            this.buttonPublicar.Location = new System.Drawing.Point(314, 280);
             this.buttonPublicar.Name = "buttonPublicar";
             this.buttonPublicar.Size = new System.Drawing.Size(108, 35);
             this.buttonPublicar.TabIndex = 6;
             this.buttonPublicar.Text = "PUBLICAR";
+            this.buttonPublicar.UseMnemonic = false;
             this.buttonPublicar.UseVisualStyleBackColor = false;
             this.buttonPublicar.Click += new System.EventHandler(this.buttonPublicar_Click);
             // 
@@ -113,7 +119,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label4.Location = new System.Drawing.Point(20, 25);
+            this.label4.Location = new System.Drawing.Point(20, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 25);
             this.label4.TabIndex = 8;
@@ -121,7 +127,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
@@ -131,14 +137,15 @@
             this.panel1.Controls.Add(this.flowEstrela);
             this.panel1.Location = new System.Drawing.Point(25, 59);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 334);
+            this.panel1.Size = new System.Drawing.Size(449, 334);
             this.panel1.TabIndex = 9;
             // 
             // FormPublicar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 423);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.ClientSize = new System.Drawing.Size(499, 423);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Name = "FormPublicar";
