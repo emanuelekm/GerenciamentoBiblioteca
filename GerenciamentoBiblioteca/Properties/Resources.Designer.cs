@@ -213,6 +213,36 @@ namespace GerenciamentoBiblioteca.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_adicionar_usuários_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-adicionar-usuários-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_alterar_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-alterar-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_books_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-books-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_casa_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-casa-24", resourceCulture);
@@ -263,6 +293,46 @@ namespace GerenciamentoBiblioteca.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_leitura_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-leitura-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_leitura_641 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-leitura-641", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_leitura_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-leitura-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_livros_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-livros-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_notificação_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-notificação-24", resourceCulture);
@@ -293,9 +363,49 @@ namespace GerenciamentoBiblioteca.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_pesquisar_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pesquisar-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pesquisar_na_lista_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pesquisar-na-lista-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pesquisar_na_lista_961 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pesquisar-na-lista-961", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_ponto_de_interrogação_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-ponto-de-interrogação-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_relatório_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-relatório-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -316,6 +426,16 @@ namespace GerenciamentoBiblioteca.Properties {
         internal static System.Drawing.Bitmap icons8_senha_1_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-senha-1-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_tópico_popular_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-tópico-popular-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
