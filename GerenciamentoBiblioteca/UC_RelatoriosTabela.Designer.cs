@@ -39,11 +39,11 @@
             // 
             this.dataGridViewEmprestimo.AllowUserToAddRows = false;
             this.dataGridViewEmprestimo.AllowUserToDeleteRows = false;
-            this.dataGridViewEmprestimo.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridViewEmprestimo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
             this.dataGridViewEmprestimo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewEmprestimo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEmprestimo.Location = new System.Drawing.Point(38, 72);
-            this.dataGridViewEmprestimo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewEmprestimo.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewEmprestimo.Name = "dataGridViewEmprestimo";
             this.dataGridViewEmprestimo.ReadOnly = true;
             this.dataGridViewEmprestimo.RowHeadersWidth = 62;
@@ -56,7 +56,7 @@
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::GerenciamentoBiblioteca.Properties.Resources.excluir;
             this.pictureBox1.Location = new System.Drawing.Point(1204, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -68,7 +68,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.label1.Location = new System.Drawing.Point(33, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -80,10 +80,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridViewEmprestimo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_RelatoriosTabela";
             this.Size = new System.Drawing.Size(1234, 649);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmprestimo)).EndInit();

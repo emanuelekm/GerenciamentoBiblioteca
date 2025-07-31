@@ -47,8 +47,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(33, 28);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
+            this.label1.Location = new System.Drawing.Point(21, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 30);
@@ -174,6 +174,7 @@
             this.label2.Size = new System.Drawing.Size(126, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "Pesquisar Acervo";
+            this.label2.UseWaitCursor = true;
             // 
             // label3
             // 
@@ -185,6 +186,7 @@
             this.label3.Size = new System.Drawing.Size(114, 20);
             this.label3.TabIndex = 12;
             this.label3.Text = "Alterar Coleção";
+            this.label3.UseWaitCursor = true;
             // 
             // label4
             // 
@@ -196,6 +198,7 @@
             this.label4.Size = new System.Drawing.Size(152, 20);
             this.label4.TabIndex = 13;
             this.label4.Text = "Controle de Usuários";
+            this.label4.UseWaitCursor = true;
             // 
             // label5
             // 
@@ -207,6 +210,7 @@
             this.label5.Size = new System.Drawing.Size(154, 20);
             this.label5.TabIndex = 14;
             this.label5.Text = "Realizar Empréstimos";
+            this.label5.UseWaitCursor = true;
             // 
             // label6
             // 
@@ -218,6 +222,7 @@
             this.label6.Size = new System.Drawing.Size(146, 20);
             this.label6.TabIndex = 15;
             this.label6.Text = "Realizar Devoluções";
+            this.label6.UseWaitCursor = true;
             // 
             // label7
             // 
@@ -229,11 +234,13 @@
             this.label7.Size = new System.Drawing.Size(77, 20);
             this.label7.TabIndex = 16;
             this.label7.Text = "Relatórios";
+            this.label7.UseWaitCursor = true;
             // 
             // UC_InicioAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -247,7 +254,7 @@
             this.Controls.Add(this.buttonRelatorio);
             this.Controls.Add(this.buttonAlterarColeção);
             this.Controls.Add(this.buttonUsuarios);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_InicioAdmin";
             this.Size = new System.Drawing.Size(1027, 576);
             this.UseWaitCursor = true;

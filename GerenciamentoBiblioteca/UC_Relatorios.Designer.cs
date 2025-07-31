@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.chartEmprestimo = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.buttonExportar = new System.Windows.Forms.Button();
@@ -57,39 +57,41 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(36, 35);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
+            this.label1.Location = new System.Drawing.Point(27, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(535, 38);
+            this.label1.Size = new System.Drawing.Size(421, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Relatório de Empréstimos e Devoluções";
             // 
             // chartEmprestimo
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartEmprestimo.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartEmprestimo.Legends.Add(legend4);
-            this.chartEmprestimo.Location = new System.Drawing.Point(43, 142);
-            this.chartEmprestimo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            chartArea1.Name = "ChartArea1";
+            this.chartEmprestimo.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartEmprestimo.Legends.Add(legend1);
+            this.chartEmprestimo.Location = new System.Drawing.Point(32, 115);
+            this.chartEmprestimo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chartEmprestimo.Name = "chartEmprestimo";
             this.chartEmprestimo.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartEmprestimo.Series.Add(series4);
-            this.chartEmprestimo.Size = new System.Drawing.Size(649, 644);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartEmprestimo.Series.Add(series1);
+            this.chartEmprestimo.Size = new System.Drawing.Size(487, 523);
             this.chartEmprestimo.TabIndex = 1;
             this.chartEmprestimo.Text = "Relação de empréstimos e devoluções";
             this.chartEmprestimo.UseWaitCursor = true;
             // 
             // buttonExportar
             // 
-            this.buttonExportar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExportar.Location = new System.Drawing.Point(1355, 28);
-            this.buttonExportar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonExportar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExportar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
+            this.buttonExportar.Location = new System.Drawing.Point(1016, 23);
+            this.buttonExportar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonExportar.Name = "buttonExportar";
-            this.buttonExportar.Size = new System.Drawing.Size(224, 67);
+            this.buttonExportar.Size = new System.Drawing.Size(168, 68);
             this.buttonExportar.TabIndex = 3;
             this.buttonExportar.Text = "Exportar dados gráficos em PDF";
             this.buttonExportar.UseVisualStyleBackColor = true;
@@ -99,44 +101,45 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Window;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(40, 110);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(28, 81);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(570, 20);
+            this.label2.Size = new System.Drawing.Size(590, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Quantidade de empréstimos e devoluções de acordo com os estados em tempo real";
             // 
             // chartLivroDisponibilidade
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartLivroDisponibilidade.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartLivroDisponibilidade.Legends.Add(legend5);
-            this.chartLivroDisponibilidade.Location = new System.Drawing.Point(717, 142);
-            this.chartLivroDisponibilidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            chartArea2.Name = "ChartArea1";
+            this.chartLivroDisponibilidade.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartLivroDisponibilidade.Legends.Add(legend2);
+            this.chartLivroDisponibilidade.Location = new System.Drawing.Point(538, 115);
+            this.chartLivroDisponibilidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chartLivroDisponibilidade.Name = "chartLivroDisponibilidade";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartLivroDisponibilidade.Series.Add(series5);
-            this.chartLivroDisponibilidade.Size = new System.Drawing.Size(411, 306);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartLivroDisponibilidade.Series.Add(series2);
+            this.chartLivroDisponibilidade.Size = new System.Drawing.Size(308, 249);
             this.chartLivroDisponibilidade.TabIndex = 5;
             this.chartLivroDisponibilidade.Text = "chart1";
             // 
             // chartEstadoLivro
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartEstadoLivro.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chartEstadoLivro.Legends.Add(legend6);
-            this.chartEstadoLivro.Location = new System.Drawing.Point(1157, 142);
-            this.chartEstadoLivro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            chartArea3.Name = "ChartArea1";
+            this.chartEstadoLivro.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartEstadoLivro.Legends.Add(legend3);
+            this.chartEstadoLivro.Location = new System.Drawing.Point(868, 115);
+            this.chartEstadoLivro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chartEstadoLivro.Name = "chartEstadoLivro";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chartEstadoLivro.Series.Add(series6);
-            this.chartEstadoLivro.Size = new System.Drawing.Size(411, 307);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartEstadoLivro.Series.Add(series3);
+            this.chartEstadoLivro.Size = new System.Drawing.Size(308, 249);
             this.chartEstadoLivro.TabIndex = 6;
             this.chartEstadoLivro.Text = "Estado dos Livros";
             // 
@@ -144,20 +147,23 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.Window;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1154, 110);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(864, 81);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 20);
+            this.label3.Size = new System.Drawing.Size(127, 21);
             this.label3.TabIndex = 7;
             this.label3.Text = "Estado dos livros";
             // 
             // buttonTabelaEmprestimo
             // 
-            this.buttonTabelaEmprestimo.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.buttonTabelaEmprestimo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTabelaEmprestimo.Location = new System.Drawing.Point(718, 739);
+            this.buttonTabelaEmprestimo.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonTabelaEmprestimo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTabelaEmprestimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
+            this.buttonTabelaEmprestimo.Location = new System.Drawing.Point(538, 600);
+            this.buttonTabelaEmprestimo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonTabelaEmprestimo.Name = "buttonTabelaEmprestimo";
-            this.buttonTabelaEmprestimo.Size = new System.Drawing.Size(411, 47);
+            this.buttonTabelaEmprestimo.Size = new System.Drawing.Size(352, 38);
             this.buttonTabelaEmprestimo.TabIndex = 8;
             this.buttonTabelaEmprestimo.Text = "Visualizar tabela detalhada de empréstimo";
             this.buttonTabelaEmprestimo.UseVisualStyleBackColor = false;
@@ -170,29 +176,32 @@
             this.dataGridViewLivrosEmAtraso.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridViewLivrosEmAtraso.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewLivrosEmAtraso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewLivrosEmAtraso.Location = new System.Drawing.Point(717, 503);
+            this.dataGridViewLivrosEmAtraso.Location = new System.Drawing.Point(538, 409);
+            this.dataGridViewLivrosEmAtraso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewLivrosEmAtraso.Name = "dataGridViewLivrosEmAtraso";
             this.dataGridViewLivrosEmAtraso.ReadOnly = true;
             this.dataGridViewLivrosEmAtraso.RowHeadersWidth = 51;
             this.dataGridViewLivrosEmAtraso.RowTemplate.Height = 24;
-            this.dataGridViewLivrosEmAtraso.Size = new System.Drawing.Size(850, 214);
+            this.dataGridViewLivrosEmAtraso.Size = new System.Drawing.Size(638, 174);
             this.dataGridViewLivrosEmAtraso.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.Window;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(714, 469);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(534, 373);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 20);
+            this.label4.Size = new System.Drawing.Size(162, 21);
             this.label4.TabIndex = 10;
             this.label4.Text = "Exemplares em atraso";
             // 
             // UC_Relatorios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridViewLivrosEmAtraso);
             this.Controls.Add(this.buttonTabelaEmprestimo);
@@ -203,9 +212,9 @@
             this.Controls.Add(this.buttonExportar);
             this.Controls.Add(this.chartEmprestimo);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UC_Relatorios";
-            this.Size = new System.Drawing.Size(1603, 828);
+            this.Size = new System.Drawing.Size(1202, 673);
             ((System.ComponentModel.ISupportInitialize)(this.chartEmprestimo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartLivroDisponibilidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartEstadoLivro)).EndInit();

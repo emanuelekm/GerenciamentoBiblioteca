@@ -48,16 +48,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.label1.Location = new System.Drawing.Point(22, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 38);
+            this.label1.Size = new System.Drawing.Size(141, 30);
             this.label1.TabIndex = 5;
             this.label1.Text = "Notificações";
             // 
             // UC_NotificacoesLeitor
             // 
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.Controls.Add(this.flowNotificacoes);
             this.Controls.Add(this.label1);
             this.Name = "UC_NotificacoesLeitor";

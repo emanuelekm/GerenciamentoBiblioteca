@@ -37,11 +37,11 @@
             // 
             this.dataGridViewHistorico.AllowUserToAddRows = false;
             this.dataGridViewHistorico.AllowUserToDeleteRows = false;
-            this.dataGridViewHistorico.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridViewHistorico.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
             this.dataGridViewHistorico.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewHistorico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewHistorico.Location = new System.Drawing.Point(25, 75);
-            this.dataGridViewHistorico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewHistorico.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewHistorico.Name = "dataGridViewHistorico";
             this.dataGridViewHistorico.ReadOnly = true;
             this.dataGridViewHistorico.RowHeadersWidth = 51;
@@ -54,8 +54,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(22, 32);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
+            this.label1.Location = new System.Drawing.Point(20, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(206, 30);
             this.label1.TabIndex = 2;
@@ -65,10 +65,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewHistorico);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_HistoricoLeitor";
             this.Size = new System.Drawing.Size(975, 686);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistorico)).EndInit();

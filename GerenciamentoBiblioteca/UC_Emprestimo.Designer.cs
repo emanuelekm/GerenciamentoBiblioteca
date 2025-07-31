@@ -46,6 +46,7 @@
             // 
             // comboBoxLeitor
             // 
+            this.comboBoxLeitor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxLeitor.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxLeitor.FormattingEnabled = true;
             this.comboBoxLeitor.Location = new System.Drawing.Point(215, 87);
@@ -56,6 +57,7 @@
             // comboBoxLivro
             // 
             this.comboBoxLivro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxLivro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxLivro.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxLivro.FormattingEnabled = true;
             this.comboBoxLivro.Location = new System.Drawing.Point(214, 128);
@@ -81,8 +83,8 @@
             // 
             // buttonConfirmarEmprestimo
             // 
-            this.buttonConfirmarEmprestimo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonConfirmarEmprestimo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonConfirmarEmprestimo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConfirmarEmprestimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.buttonConfirmarEmprestimo.Location = new System.Drawing.Point(661, 259);
             this.buttonConfirmarEmprestimo.Name = "buttonConfirmarEmprestimo";
             this.buttonConfirmarEmprestimo.Size = new System.Drawing.Size(261, 46);
@@ -95,7 +97,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.label1.Location = new System.Drawing.Point(25, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(225, 30);
@@ -106,7 +108,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(27, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 21);
@@ -117,7 +119,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(27, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 21);
@@ -128,7 +130,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(27, 177);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(155, 21);
@@ -139,7 +141,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(27, 220);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(143, 21);
@@ -150,10 +152,10 @@
             // 
             this.dataGridViewEmprestimo.AllowUserToAddRows = false;
             this.dataGridViewEmprestimo.AllowUserToDeleteRows = false;
-            this.dataGridViewEmprestimo.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridViewEmprestimo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
             this.dataGridViewEmprestimo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewEmprestimo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmprestimo.Location = new System.Drawing.Point(31, 398);
+            this.dataGridViewEmprestimo.Location = new System.Drawing.Point(30, 390);
             this.dataGridViewEmprestimo.Name = "dataGridViewEmprestimo";
             this.dataGridViewEmprestimo.ReadOnly = true;
             this.dataGridViewEmprestimo.RowHeadersWidth = 62;
@@ -166,7 +168,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label7.Location = new System.Drawing.Point(27, 357);
+            this.label7.Location = new System.Drawing.Point(27, 351);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(295, 21);
             this.label7.TabIndex = 13;
@@ -174,7 +176,8 @@
             // 
             // buttonLimpar
             // 
-            this.buttonLimpar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLimpar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.buttonLimpar.Location = new System.Drawing.Point(928, 259);
             this.buttonLimpar.Name = "buttonLimpar";
             this.buttonLimpar.Size = new System.Drawing.Size(118, 46);
@@ -187,6 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.Controls.Add(this.buttonLimpar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridViewEmprestimo);
