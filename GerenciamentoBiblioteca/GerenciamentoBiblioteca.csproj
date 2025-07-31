@@ -419,6 +419,7 @@
     <None Include="Resources\icons8-livros-64.png" />
     <None Include="Resources\icons8-books-64.png" />
     <None Include="Resources\icons8-relatório-64.png" />
+    <Content Include="Database\db.sql" />
     <Content Include="Resources\lixeira.png" />
     <None Include="Resources\lixeira_azul.png" />
     <None Include="Resources\lixeira1.png" />
