@@ -444,6 +444,7 @@ namespace GerenciamentoBiblioteca
 
             textBoxSenha.Focus();
             textBoxSenha.SelectionStart = textBoxSenha.Text.Length;
+
         }
 
         private void picOlhoCadastro_Click(object sender, EventArgs e)

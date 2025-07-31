@@ -114,20 +114,18 @@
             this.textBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUser.Location = new System.Drawing.Point(24, 249);
             this.textBoxUser.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxUser.Multiline = true;
             this.textBoxUser.Name = "textBoxUser";
-            this.textBoxUser.Size = new System.Drawing.Size(400, 26);
+            this.textBoxUser.Size = new System.Drawing.Size(400, 19);
             this.textBoxUser.TabIndex = 0;
             // 
             // textBoxSenha
             // 
             this.textBoxSenha.BackColor = System.Drawing.SystemColors.Window;
             this.textBoxSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxSenha.Location = new System.Drawing.Point(23, 311);
+            this.textBoxSenha.Location = new System.Drawing.Point(23, 303);
             this.textBoxSenha.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxSenha.Multiline = true;
             this.textBoxSenha.Name = "textBoxSenha";
-            this.textBoxSenha.Size = new System.Drawing.Size(401, 26);
+            this.textBoxSenha.Size = new System.Drawing.Size(401, 19);
             this.textBoxSenha.TabIndex = 1;
             this.textBoxSenha.UseSystemPasswordChar = true;
             // 
@@ -204,7 +202,7 @@
             // picOlho
             // 
             this.picOlho.Image = global::GerenciamentoBiblioteca.Properties.Resources.olho_fechado;
-            this.picOlho.Location = new System.Drawing.Point(428, 311);
+            this.picOlho.Location = new System.Drawing.Point(428, 301);
             this.picOlho.Margin = new System.Windows.Forms.Padding(2);
             this.picOlho.Name = "picOlho";
             this.picOlho.Size = new System.Drawing.Size(24, 24);
@@ -218,7 +216,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
-            this.label9.Location = new System.Drawing.Point(19, 285);
+            this.label9.Location = new System.Drawing.Point(19, 277);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 20);
@@ -274,7 +272,7 @@
             this.linkLabelSenha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelSenha.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabelSenha.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(74)))), ((int)(((byte)(132)))));
-            this.linkLabelSenha.Location = new System.Drawing.Point(154, 349);
+            this.linkLabelSenha.Location = new System.Drawing.Point(154, 335);
             this.linkLabelSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabelSenha.Name = "linkLabelSenha";
             this.linkLabelSenha.Size = new System.Drawing.Size(118, 15);
@@ -441,9 +439,8 @@
             this.textBoxNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxNome.Location = new System.Drawing.Point(148, 141);
             this.textBoxNome.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxNome.Multiline = true;
             this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(317, 26);
+            this.textBoxNome.Size = new System.Drawing.Size(317, 19);
             this.textBoxNome.TabIndex = 16;
             // 
             // textBoxTelefone
@@ -451,9 +448,8 @@
             this.textBoxTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxTelefone.Location = new System.Drawing.Point(100, 214);
             this.textBoxTelefone.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxTelefone.Multiline = true;
             this.textBoxTelefone.Name = "textBoxTelefone";
-            this.textBoxTelefone.Size = new System.Drawing.Size(365, 26);
+            this.textBoxTelefone.Size = new System.Drawing.Size(365, 19);
             this.textBoxTelefone.TabIndex = 9;
             // 
             // label15
@@ -473,9 +469,8 @@
             this.textBoxSenhaCadastro.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxSenhaCadastro.Location = new System.Drawing.Point(88, 290);
             this.textBoxSenhaCadastro.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxSenhaCadastro.Multiline = true;
             this.textBoxSenhaCadastro.Name = "textBoxSenhaCadastro";
-            this.textBoxSenhaCadastro.Size = new System.Drawing.Size(349, 26);
+            this.textBoxSenhaCadastro.Size = new System.Drawing.Size(349, 19);
             this.textBoxSenhaCadastro.TabIndex = 1;
             this.textBoxSenhaCadastro.TextChanged += new System.EventHandler(this.textBoxSenhaCadastro_TextChanged_1);
             // 
@@ -498,9 +493,8 @@
             this.textBoxConfirmarSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxConfirmarSenha.Location = new System.Drawing.Point(166, 450);
             this.textBoxConfirmarSenha.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxConfirmarSenha.Multiline = true;
             this.textBoxConfirmarSenha.Name = "textBoxConfirmarSenha";
-            this.textBoxConfirmarSenha.Size = new System.Drawing.Size(271, 26);
+            this.textBoxConfirmarSenha.Size = new System.Drawing.Size(271, 19);
             this.textBoxConfirmarSenha.TabIndex = 2;
             // 
             // radioButtonLeitor
@@ -572,9 +566,8 @@
             this.textBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUsuario.Location = new System.Drawing.Point(100, 178);
             this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxUsuario.Multiline = true;
             this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(365, 26);
+            this.textBoxUsuario.Size = new System.Drawing.Size(365, 19);
             this.textBoxUsuario.TabIndex = 0;
             // 
             // dtpNascimento
@@ -755,11 +748,10 @@
             // textBoxNovaSenha
             // 
             this.textBoxNovaSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNovaSenha.Location = new System.Drawing.Point(118, 119);
+            this.textBoxNovaSenha.Location = new System.Drawing.Point(118, 124);
             this.textBoxNovaSenha.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxNovaSenha.Multiline = true;
             this.textBoxNovaSenha.Name = "textBoxNovaSenha";
-            this.textBoxNovaSenha.Size = new System.Drawing.Size(283, 26);
+            this.textBoxNovaSenha.Size = new System.Drawing.Size(283, 19);
             this.textBoxNovaSenha.TabIndex = 1;
             this.textBoxNovaSenha.TextChanged += new System.EventHandler(this.textBoxNovaSenha_TextChanged);
             // 
@@ -788,11 +780,10 @@
             // textBoxUsuarioRedefinir
             // 
             this.textBoxUsuarioRedefinir.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUsuarioRedefinir.Location = new System.Drawing.Point(71, 87);
+            this.textBoxUsuarioRedefinir.Location = new System.Drawing.Point(71, 91);
             this.textBoxUsuarioRedefinir.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxUsuarioRedefinir.Multiline = true;
             this.textBoxUsuarioRedefinir.Name = "textBoxUsuarioRedefinir";
-            this.textBoxUsuarioRedefinir.Size = new System.Drawing.Size(330, 26);
+            this.textBoxUsuarioRedefinir.Size = new System.Drawing.Size(330, 19);
             this.textBoxUsuarioRedefinir.TabIndex = 0;
             // 
             // label11
@@ -809,11 +800,10 @@
             // textBoxConfirmarNovaSenha
             // 
             this.textBoxConfirmarNovaSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxConfirmarNovaSenha.Location = new System.Drawing.Point(133, 283);
+            this.textBoxConfirmarNovaSenha.Location = new System.Drawing.Point(133, 289);
             this.textBoxConfirmarNovaSenha.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxConfirmarNovaSenha.Multiline = true;
             this.textBoxConfirmarNovaSenha.Name = "textBoxConfirmarNovaSenha";
-            this.textBoxConfirmarNovaSenha.Size = new System.Drawing.Size(268, 26);
+            this.textBoxConfirmarNovaSenha.Size = new System.Drawing.Size(268, 19);
             this.textBoxConfirmarNovaSenha.TabIndex = 2;
             // 
             // buttonRedefinir
