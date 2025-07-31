@@ -848,7 +848,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GerenciamentoBiblioteca.Properties.Resources.fundo_escuro;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(185)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1128, 1056);
             this.Controls.Add(this.panelRedefinirSenha);
             this.Controls.Add(this.panelCadastro);

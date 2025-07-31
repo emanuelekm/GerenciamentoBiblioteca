@@ -21,7 +21,6 @@ namespace GerenciamentoBiblioteca
             string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
             conexao = new MySqlConnection(conexaoString);
 
-            //ConfigurarLayout();
             CarregarLivrosDevolvidos();
             GerarEstrelas();
         }
@@ -74,12 +73,6 @@ namespace GerenciamentoBiblioteca
                 estrelasSelecionadas = (int)estrela.Tag;
                 GerarEstrelas();
             }
-        }
-        
-
-        private void FormPublicar_Load(object sender, EventArgs e)
-        {
-            //AplicarFonte(this);
         }
 
         private void buttonPublicar_Click(object sender, EventArgs e)

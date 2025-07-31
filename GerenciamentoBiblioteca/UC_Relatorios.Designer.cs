@@ -37,6 +37,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.chartEmprestimo = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.buttonExportar = new System.Windows.Forms.Button();
@@ -72,7 +73,7 @@
             legend1.Name = "Legend1";
             this.chartEmprestimo.Legends.Add(legend1);
             this.chartEmprestimo.Location = new System.Drawing.Point(32, 115);
-            this.chartEmprestimo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chartEmprestimo.Margin = new System.Windows.Forms.Padding(2);
             this.chartEmprestimo.Name = "chartEmprestimo";
             this.chartEmprestimo.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series1.ChartArea = "ChartArea1";
@@ -89,7 +90,7 @@
             this.buttonExportar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExportar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.buttonExportar.Location = new System.Drawing.Point(1016, 23);
-            this.buttonExportar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonExportar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExportar.Name = "buttonExportar";
             this.buttonExportar.Size = new System.Drawing.Size(168, 68);
             this.buttonExportar.TabIndex = 3;
@@ -116,7 +117,7 @@
             legend2.Name = "Legend1";
             this.chartLivroDisponibilidade.Legends.Add(legend2);
             this.chartLivroDisponibilidade.Location = new System.Drawing.Point(538, 115);
-            this.chartLivroDisponibilidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chartLivroDisponibilidade.Margin = new System.Windows.Forms.Padding(2);
             this.chartLivroDisponibilidade.Name = "chartLivroDisponibilidade";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
@@ -133,7 +134,7 @@
             legend3.Name = "Legend1";
             this.chartEstadoLivro.Legends.Add(legend3);
             this.chartEstadoLivro.Location = new System.Drawing.Point(868, 115);
-            this.chartEstadoLivro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chartEstadoLivro.Margin = new System.Windows.Forms.Padding(2);
             this.chartEstadoLivro.Name = "chartEstadoLivro";
             series3.ChartArea = "ChartArea1";
             series3.Legend = "Legend1";
@@ -161,7 +162,7 @@
             this.buttonTabelaEmprestimo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTabelaEmprestimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
             this.buttonTabelaEmprestimo.Location = new System.Drawing.Point(538, 600);
-            this.buttonTabelaEmprestimo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonTabelaEmprestimo.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTabelaEmprestimo.Name = "buttonTabelaEmprestimo";
             this.buttonTabelaEmprestimo.Size = new System.Drawing.Size(352, 38);
             this.buttonTabelaEmprestimo.TabIndex = 8;
@@ -173,11 +174,13 @@
             // 
             this.dataGridViewLivrosEmAtraso.AllowUserToAddRows = false;
             this.dataGridViewLivrosEmAtraso.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewLivrosEmAtraso.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewLivrosEmAtraso.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridViewLivrosEmAtraso.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewLivrosEmAtraso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLivrosEmAtraso.Location = new System.Drawing.Point(538, 409);
-            this.dataGridViewLivrosEmAtraso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewLivrosEmAtraso.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewLivrosEmAtraso.Name = "dataGridViewLivrosEmAtraso";
             this.dataGridViewLivrosEmAtraso.ReadOnly = true;
             this.dataGridViewLivrosEmAtraso.RowHeadersWidth = 51;
@@ -212,7 +215,7 @@
             this.Controls.Add(this.buttonExportar);
             this.Controls.Add(this.chartEmprestimo);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_Relatorios";
             this.Size = new System.Drawing.Size(1202, 673);
             ((System.ComponentModel.ISupportInitialize)(this.chartEmprestimo)).EndInit();

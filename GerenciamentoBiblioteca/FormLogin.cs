@@ -37,6 +37,8 @@ namespace GerenciamentoBiblioteca
             CenterPanel();
         }
 
+        // Definição da tela inicial (dividir a tela em duas partes)
+
         private void CenterPanel()
         {
  
@@ -59,8 +61,9 @@ namespace GerenciamentoBiblioteca
             panelRedefinirSenha.Top = 0;
 
             CentralizarPainelInterno();
-
         }
+
+        // Localização dos painéis de login, redefinição de senha e de cadastro
 
         private void CentralizarPainelInterno()
         {
@@ -76,6 +79,8 @@ namespace GerenciamentoBiblioteca
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            // Definições para exibir senha
+
             textBoxSenha.UseSystemPasswordChar = true;
             picOlho.Image = Properties.Resources.olho_fechado;
 
@@ -90,6 +95,8 @@ namespace GerenciamentoBiblioteca
 
             textBoxConfirmarNovaSenha.UseSystemPasswordChar = true;
             picOlhoConfirmarNovaSenha.Image = Properties.Resources.olho_fechado;
+
+            // Verifica se já existe um administrador no sistema
 
             if (ExisteAdministrador())
             {
@@ -129,9 +136,6 @@ namespace GerenciamentoBiblioteca
                     {
                         string senhaHashArmazenada = reader["senha"].ToString().Trim();
                         string tipo = reader["tipo_usuario"].ToString();
-                        //string nome = reader["nome"].ToString();
-
-                        //MessageBox.Show($"Senha digitada: {senha}\nHash armazenado:\n{senhaHashArmazenada}");
 
                         if (PasswordHasher.Verify(senha, senhaHashArmazenada))
                         {
@@ -173,7 +177,6 @@ namespace GerenciamentoBiblioteca
                         MessageBox.Show("Usuário não encontrado.");
                     }
                 }
-                //
             }
 
             catch (Exception ex)

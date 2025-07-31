@@ -47,17 +47,6 @@ namespace GerenciamentoBiblioteca
             CarregarTela(new UC_NotificacoesLeitor());
         }
 
-        /*private void linkLabelDuvidasLeitor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            CarregarTela(new UC_Duvidas());
-        }*/
-
-        /*private void pictureBox8_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Application.OpenForms["FormLogin"].Show();
-        }*/
-
         private void linkSair_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var resultado = MessageBox.Show(
