@@ -80,10 +80,10 @@ namespace GerenciamentoBiblioteca
                 dataGridViewUsuarios.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 dataGridViewUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                /*if (dataGridViewUsuarios.Columns.Contains("Id"))
+                if (dataGridViewUsuarios.Columns.Contains("Senha"))
                 {
-                    dataGridViewUsuarios.Columns["Id"].Visible = false;
-                }*/
+                    dataGridViewUsuarios.Columns["Senha"].Visible = false;
+                }
             }
             catch (Exception ex)
             {

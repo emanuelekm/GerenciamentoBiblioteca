@@ -69,6 +69,11 @@ namespace GerenciamentoBiblioteca
                 conexao.Close();
             }
 
+            if (dataGridViewDevolucoes.Columns.Contains("NotificacaoExcluida"))
+            {
+                dataGridViewDevolucoes.Columns["NotificacaoExcluida"].Visible = false;
+            }
+
             dataGridViewDevolucoes.DataSource = null;
             dataGridViewDevolucoes.DataSource = lista;
         }

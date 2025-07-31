@@ -204,6 +204,11 @@ namespace GerenciamentoBiblioteca
             dataGridViewEmprestimo.DataSource = null;
             dataGridViewEmprestimo.DataSource = emprestimos;
 
+            if (dataGridViewEmprestimo.Columns.Contains("NotificacaoExcluida"))
+            {
+                dataGridViewEmprestimo.Columns["NotificacaoExcluida"].Visible = false;
+            }
+
             dataGridViewEmprestimo.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dataGridViewEmprestimo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
