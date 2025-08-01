@@ -138,11 +138,11 @@ namespace GerenciamentoBiblioteca
         {
             string termo = textBoxPesquisar.Text.Trim();
             string genero = comboBoxGenero.SelectedItem?.ToString() ?? "";
-            string status = comboBoxStatus.SelectedItem?.ToString() ?? "";
+            //string status = comboBoxStatus.SelectedItem?.ToString() ?? "";
             //int? ano = string.IsNullOrEmpty(textBoxAno.Text.Trim()) ? (int?)null : int.Parse(textBoxAno.Text);
 
             AcervoBiblioteca db = new AcervoBiblioteca();
-            List<Livro> livrosFiltrados = db.BuscarLivros(termo, genero, status);
+            List<Livro> livrosFiltrados = db.BuscarLivros(termo, genero);
 
             dataGridViewPesquisar.DataSource = livrosFiltrados;
             dataGridViewPesquisar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -157,7 +157,7 @@ namespace GerenciamentoBiblioteca
         {
             CarregarLivros();
 
-            comboBoxGenero.Items.AddRange(new string[] { "Aventura",
+            /*comboBoxGenero.Items.AddRange(new string[] { "Aventura",
                 "Autoajuda",
                 "Biografia / Autobiografia",
                 "Ciência",
@@ -180,12 +180,12 @@ namespace GerenciamentoBiblioteca
                 "Terror / Horror",
                 "Thriller",
                 "Viagem / Turismo" 
-            });
+            });*/
 
             //comboBoxStatus.Items.AddRange(new string[] { "Bom", "Regular", "Ruim" });
 
             comboBoxGenero.SelectedIndex = -1;
-            comboBoxStatus.SelectedIndex = -1;
+            //comboBoxStatus.SelectedIndex = -1;
         }
     }
 }
