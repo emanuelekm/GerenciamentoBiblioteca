@@ -34,6 +34,9 @@
             // 
             // flowNotificacoes
             // 
+            this.flowNotificacoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowNotificacoes.AutoScroll = true;
             this.flowNotificacoes.BackColor = System.Drawing.SystemColors.Window;
             this.flowNotificacoes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;

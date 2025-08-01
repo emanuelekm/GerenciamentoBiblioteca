@@ -47,6 +47,9 @@
             // 
             // flowComentarios
             // 
+            this.flowComentarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowComentarios.AutoScroll = true;
             this.flowComentarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
             this.flowComentarios.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
