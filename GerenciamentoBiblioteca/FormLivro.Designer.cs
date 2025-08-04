@@ -92,6 +92,7 @@
             // 
             // comboBoxGeneroNovoLivro
             // 
+            this.comboBoxGeneroNovoLivro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGeneroNovoLivro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxGeneroNovoLivro.FormattingEnabled = true;
             this.comboBoxGeneroNovoLivro.Location = new System.Drawing.Point(69, 120);
@@ -112,6 +113,7 @@
             // 
             // comboBoxEstadoNovoLivro
             // 
+            this.comboBoxEstadoNovoLivro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEstadoNovoLivro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxEstadoNovoLivro.FormattingEnabled = true;
             this.comboBoxEstadoNovoLivro.Location = new System.Drawing.Point(69, 226);
@@ -122,6 +124,7 @@
             // 
             // comboBoxStatusNovoLivro
             // 
+            this.comboBoxStatusNovoLivro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStatusNovoLivro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxStatusNovoLivro.FormattingEnabled = true;
             this.comboBoxStatusNovoLivro.Location = new System.Drawing.Point(69, 261);

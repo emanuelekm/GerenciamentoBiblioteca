@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static GerenciamentoBiblioteca.UC_ControleDeUsuarios;
 
 namespace GerenciamentoBiblioteca
@@ -55,6 +56,12 @@ namespace GerenciamentoBiblioteca
             DateTime dataEmprestimo = dtpEmprestimo.Value;
             DateTime dataPrevistaDevolucao = dtpDevolucao.Value;
 
+            if (dataPrevistaDevolucao < dataEmprestimo)
+            {
+                MessageBox.Show("A data de devolução não pode ser anterior à data do empréstimo.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // 1. Verificar quantidade disponível
             int qtdExemplares = 0;
             string queryQtd = "SELECT qtd_exemplares FROM livros WHERE id = @id_livro";
@@ -71,6 +78,7 @@ namespace GerenciamentoBiblioteca
                 MessageBox.Show("Este livro não possui exemplares disponíveis para empréstimo.");
                 return;
             }
+            
 
             // 2. Fazer o empréstimo
             string query = @"INSERT INTO emprestimos 
@@ -136,7 +144,7 @@ namespace GerenciamentoBiblioteca
             MessageBox.Show("Empréstimo realizado com sucesso!");
 
             CarregarEmprestimosNoDataGridView();
-            AtualizarResumoEmprestimo();
+            //AtualizarResumoEmprestimo();
         }
 
         private void AtualizarResumoEmprestimo()
@@ -222,6 +230,11 @@ namespace GerenciamentoBiblioteca
             dtpDevolucao.Value = DateTime.Today.AddDays(15);
             //labelResumo.Text = "";
             this.ActiveControl = null;
+        }
+
+        private void dtpDevolucao_ValueChanged(object sender, EventArgs e)
+        {
+            dtpDevolucao.MinDate = dtpEmprestimo.Value.AddDays(1);
         }
     }
 }

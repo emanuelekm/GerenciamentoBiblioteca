@@ -63,7 +63,32 @@ namespace GerenciamentoBiblioteca
             comboBoxStatusNovoLivro.Text = livro.Status;
             comboBoxEstadoNovoLivro.Text = livro.Estado;
         }
+        private bool LivroJaExiste(string titulo, string autor)
+        {
+            string query = "SELECT COUNT(*) FROM livros WHERE titulo = @titulo AND autor = @autor AND ano = @ano";
 
+            using (MySqlCommand cmd = new MySqlCommand(query, conexao))
+            {
+                cmd.Parameters.AddWithValue("@titulo", titulo.Trim());
+                cmd.Parameters.AddWithValue("@autor", autor.Trim());
+
+                try
+                {
+                    conexao.Open();
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao verificar duplicidade: " + ex.Message);
+                    return true; // por segurança, assume duplicado
+                }
+                finally
+                {
+                    conexao.Close();
+                }
+            }
+        }
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             string titulo = textBoxTituloNovoLivro.Text.Trim();
@@ -81,6 +106,12 @@ namespace GerenciamentoBiblioteca
                 || !int.TryParse(textBoxQtdNovoLivro.Text.Trim(), out qtdExemplares))
             {
                 MessageBox.Show("Preencha todos os campos corretamente.");
+                return;
+            }
+
+            if (LivroJaExiste(textBoxTituloNovoLivro.Text, textBoxAutorNovoLivro.Text))
+            {
+                MessageBox.Show("Este livro já está cadastrado.", "Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

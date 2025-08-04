@@ -54,7 +54,6 @@
             this.labelRequisitoMinuscula = new System.Windows.Forms.Label();
             this.labelRequisitoMaiuscula = new System.Windows.Forms.Label();
             this.textBoxNome = new System.Windows.Forms.TextBox();
-            this.textBoxTelefone = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.textBoxSenhaCadastro = new System.Windows.Forms.TextBox();
             this.radioButtonAdmin = new System.Windows.Forms.RadioButton();
@@ -89,6 +88,7 @@
             this.buttonRedefinir = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.maskedTextBoxTelefone = new System.Windows.Forms.MaskedTextBox();
             this.panelLogin.SuspendLayout();
             this.panelInterno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -318,11 +318,11 @@
             // panelInternoCadastro
             // 
             this.panelInternoCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.panelInternoCadastro.Controls.Add(this.maskedTextBoxTelefone);
             this.panelInternoCadastro.Controls.Add(this.picOlhoConfirmar);
             this.panelInternoCadastro.Controls.Add(this.picOlhoCadastro);
             this.panelInternoCadastro.Controls.Add(this.groupBox1);
             this.panelInternoCadastro.Controls.Add(this.textBoxNome);
-            this.panelInternoCadastro.Controls.Add(this.textBoxTelefone);
             this.panelInternoCadastro.Controls.Add(this.label15);
             this.panelInternoCadastro.Controls.Add(this.textBoxSenhaCadastro);
             this.panelInternoCadastro.Controls.Add(this.radioButtonAdmin);
@@ -387,7 +387,7 @@
             // labelRequisitoTamanho
             // 
             this.labelRequisitoTamanho.AutoSize = true;
-            this.labelRequisitoTamanho.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRequisitoTamanho.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRequisitoTamanho.Location = new System.Drawing.Point(9, 93);
             this.labelRequisitoTamanho.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRequisitoTamanho.Name = "labelRequisitoTamanho";
@@ -397,7 +397,7 @@
             // labelRequisitoEspecial
             // 
             this.labelRequisitoEspecial.AutoSize = true;
-            this.labelRequisitoEspecial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRequisitoEspecial.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRequisitoEspecial.Location = new System.Drawing.Point(8, 75);
             this.labelRequisitoEspecial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRequisitoEspecial.Name = "labelRequisitoEspecial";
@@ -407,7 +407,7 @@
             // labelRequisitoNumero
             // 
             this.labelRequisitoNumero.AutoSize = true;
-            this.labelRequisitoNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRequisitoNumero.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRequisitoNumero.Location = new System.Drawing.Point(9, 54);
             this.labelRequisitoNumero.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRequisitoNumero.Name = "labelRequisitoNumero";
@@ -417,7 +417,7 @@
             // labelRequisitoMinuscula
             // 
             this.labelRequisitoMinuscula.AutoSize = true;
-            this.labelRequisitoMinuscula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRequisitoMinuscula.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRequisitoMinuscula.Location = new System.Drawing.Point(9, 33);
             this.labelRequisitoMinuscula.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRequisitoMinuscula.Name = "labelRequisitoMinuscula";
@@ -427,7 +427,7 @@
             // labelRequisitoMaiuscula
             // 
             this.labelRequisitoMaiuscula.AutoSize = true;
-            this.labelRequisitoMaiuscula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRequisitoMaiuscula.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRequisitoMaiuscula.Location = new System.Drawing.Point(8, 13);
             this.labelRequisitoMaiuscula.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRequisitoMaiuscula.Name = "labelRequisitoMaiuscula";
@@ -442,15 +442,6 @@
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(317, 19);
             this.textBoxNome.TabIndex = 16;
-            // 
-            // textBoxTelefone
-            // 
-            this.textBoxTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxTelefone.Location = new System.Drawing.Point(100, 214);
-            this.textBoxTelefone.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxTelefone.Name = "textBoxTelefone";
-            this.textBoxTelefone.Size = new System.Drawing.Size(365, 19);
-            this.textBoxTelefone.TabIndex = 9;
             // 
             // label15
             // 
@@ -564,10 +555,10 @@
             // textBoxUsuario
             // 
             this.textBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUsuario.Location = new System.Drawing.Point(100, 178);
+            this.textBoxUsuario.Location = new System.Drawing.Point(88, 178);
             this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(365, 19);
+            this.textBoxUsuario.Size = new System.Drawing.Size(377, 19);
             this.textBoxUsuario.TabIndex = 0;
             // 
             // dtpNascimento
@@ -844,6 +835,15 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // maskedTextBoxTelefone
+            // 
+            this.maskedTextBoxTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBoxTelefone.Location = new System.Drawing.Point(100, 215);
+            this.maskedTextBoxTelefone.Mask = "(00) 00000-0000";
+            this.maskedTextBoxTelefone.Name = "maskedTextBoxTelefone";
+            this.maskedTextBoxTelefone.Size = new System.Drawing.Size(123, 19);
+            this.maskedTextBoxTelefone.TabIndex = 19;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -925,7 +925,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker dtpNascimento;
-        private System.Windows.Forms.TextBox textBoxTelefone;
         private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panelInterno;
@@ -952,6 +951,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxTelefone;
     }
 }
 

@@ -81,6 +81,7 @@
             this.dtpDevolucao.Name = "dtpDevolucao";
             this.dtpDevolucao.Size = new System.Drawing.Size(832, 26);
             this.dtpDevolucao.TabIndex = 3;
+            this.dtpDevolucao.ValueChanged += new System.EventHandler(this.dtpDevolucao_ValueChanged);
             // 
             // buttonConfirmarEmprestimo
             // 
@@ -161,12 +162,12 @@
             this.dataGridViewEmprestimo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
             this.dataGridViewEmprestimo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewEmprestimo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmprestimo.Location = new System.Drawing.Point(30, 390);
+            this.dataGridViewEmprestimo.Location = new System.Drawing.Point(30, 371);
             this.dataGridViewEmprestimo.Name = "dataGridViewEmprestimo";
             this.dataGridViewEmprestimo.ReadOnly = true;
             this.dataGridViewEmprestimo.RowHeadersWidth = 62;
             this.dataGridViewEmprestimo.RowTemplate.Height = 28;
-            this.dataGridViewEmprestimo.Size = new System.Drawing.Size(1015, 278);
+            this.dataGridViewEmprestimo.Size = new System.Drawing.Size(999, 259);
             this.dataGridViewEmprestimo.TabIndex = 11;
             // 
             // label7
@@ -174,7 +175,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label7.Location = new System.Drawing.Point(27, 351);
+            this.label7.Location = new System.Drawing.Point(26, 335);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(295, 21);
             this.label7.TabIndex = 13;

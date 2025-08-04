@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewModificarAcervo = new System.Windows.Forms.DataGridView();
             this.textBoxPesquisarColecao = new System.Windows.Forms.TextBox();
@@ -38,6 +38,7 @@
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.buttonAdicionar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModificarAcervo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLupa)).BeginInit();
             this.SuspendLayout();
@@ -57,37 +58,37 @@
             // dataGridViewModificarAcervo
             // 
             this.dataGridViewModificarAcervo.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewModificarAcervo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewModificarAcervo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewModificarAcervo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewModificarAcervo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
             this.dataGridViewModificarAcervo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewModificarAcervo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewModificarAcervo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewModificarAcervo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridViewModificarAcervo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewModificarAcervo.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewModificarAcervo.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewModificarAcervo.Location = new System.Drawing.Point(31, 110);
             this.dataGridViewModificarAcervo.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewModificarAcervo.Name = "dataGridViewModificarAcervo";
             this.dataGridViewModificarAcervo.RowHeadersWidth = 62;
             this.dataGridViewModificarAcervo.RowTemplate.Height = 28;
-            this.dataGridViewModificarAcervo.Size = new System.Drawing.Size(1002, 449);
+            this.dataGridViewModificarAcervo.Size = new System.Drawing.Size(1163, 449);
             this.dataGridViewModificarAcervo.TabIndex = 1;
             // 
             // textBoxPesquisarColecao
@@ -117,7 +118,7 @@
             // 
             this.buttonEditar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
-            this.buttonEditar.Location = new System.Drawing.Point(807, 50);
+            this.buttonEditar.Location = new System.Drawing.Point(826, 54);
             this.buttonEditar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(103, 43);
@@ -130,7 +131,7 @@
             // 
             this.buttonExcluir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
-            this.buttonExcluir.Location = new System.Drawing.Point(929, 50);
+            this.buttonExcluir.Location = new System.Drawing.Point(948, 54);
             this.buttonExcluir.Margin = new System.Windows.Forms.Padding(2);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(103, 43);
@@ -143,7 +144,7 @@
             // 
             this.buttonAdicionar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdicionar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
-            this.buttonAdicionar.Location = new System.Drawing.Point(681, 50);
+            this.buttonAdicionar.Location = new System.Drawing.Point(700, 54);
             this.buttonAdicionar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAdicionar.Name = "buttonAdicionar";
             this.buttonAdicionar.Size = new System.Drawing.Size(103, 43);
@@ -152,11 +153,28 @@
             this.buttonAdicionar.UseVisualStyleBackColor = true;
             this.buttonAdicionar.Click += new System.EventHandler(this.buttonAdicionar_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(8)))), ((int)(((byte)(67)))));
+            this.button1.Location = new System.Drawing.Point(1111, 54);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 43);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Limpar";
+            this.button1.UseMnemonic = false;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // UC_AlterarAcervo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonAdicionar);
             this.Controls.Add(this.buttonExcluir);
             this.Controls.Add(this.buttonEditar);
@@ -164,9 +182,10 @@
             this.Controls.Add(this.textBoxPesquisarColecao);
             this.Controls.Add(this.dataGridViewModificarAcervo);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_AlterarAcervo";
-            this.Size = new System.Drawing.Size(1113, 593);
+            this.Size = new System.Drawing.Size(1274, 593);
             this.Load += new System.EventHandler(this.UCAlterarAcervo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModificarAcervo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLupa)).EndInit();
@@ -184,5 +203,6 @@
         private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.Button buttonExcluir;
         private System.Windows.Forms.Button buttonAdicionar;
+        private System.Windows.Forms.Button button1;
     }
 }

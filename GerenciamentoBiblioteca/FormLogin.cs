@@ -29,6 +29,8 @@ namespace GerenciamentoBiblioteca
             panelCadastro.Hide();
 
             AtualizarRequisitosSenha("");
+
+            //textBoxTelefone.KeyPress += textBoxTelefone_KeyPress;
         }
 
         private void FormLogin_SizeChanged(object sender, EventArgs e)
@@ -213,7 +215,7 @@ namespace GerenciamentoBiblioteca
             string senha = textBoxSenhaCadastro.Text;
             string confirmacao = textBoxConfirmarSenha.Text;
             DateTime data_nascimento = dtpNascimento.Value;
-            string telefone = textBoxTelefone.Text;
+            string telefone = maskedTextBoxTelefone.Text.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "");
             string tipo_usuario = radioButtonLeitor.Checked ? "Leitor" : radioButtonAdmin.Checked ? "Administrador" : "Não selecionado";
 
             if (string.IsNullOrEmpty(nome) || (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(senha) || string.IsNullOrEmpty(confirmacao) || string.IsNullOrWhiteSpace(telefone) || tipo_usuario == "Não selecionado"))
@@ -232,6 +234,35 @@ namespace GerenciamentoBiblioteca
             {
                 MessageBox.Show(erroSenha, "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+
+            if (!telefone.All(char.IsDigit))
+            {
+                MessageBox.Show("O telefone deve conter apenas números.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (telefone.Length != 11)
+            {
+                MessageBox.Show("Informe um número de telefone válido com 11 dígitos.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Verificar email duplicado
+            string queryVerificaEmail = "SELECT COUNT(*) FROM usuarios WHERE email = @Email";
+            using (MySqlCommand cmdVerifica = new MySqlCommand(queryVerificaEmail, conexao))
+            {
+                cmdVerifica.Parameters.AddWithValue("@Email", email);
+
+                conexao.Open();
+                int count = Convert.ToInt32(cmdVerifica.ExecuteScalar());
+                conexao.Close();
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Já existe um usuário cadastrado com este e-mail.", "Cadastro duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
 
             try
@@ -289,9 +320,14 @@ namespace GerenciamentoBiblioteca
 
         private void LimparCampos()
         {
+            textBoxNome.Clear();
             textBoxUsuario.Clear();
             textBoxSenhaCadastro.Clear();
             textBoxConfirmarSenha.Clear();
+            maskedTextBoxTelefone.Clear();
+            dtpNascimento.Value = DateTime.Today;
+            radioButtonLeitor.Checked = false;
+            radioButtonAdmin.Checked = false;
         }
 
         //Botão redefinir senha
@@ -525,6 +561,14 @@ namespace GerenciamentoBiblioteca
 
             textBoxConfirmarNovaSenha.Focus();
             textBoxConfirmarNovaSenha.SelectionStart = textBoxConfirmarNovaSenha.Text.Length;
+        }
+
+        private void textBoxTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Bloqueia o caractere
+            }
         }
     }
 }

@@ -203,5 +203,11 @@ namespace GerenciamentoBiblioteca
                 MessageBox.Show("Selecione um título para remover.");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBoxPesquisarColecao.Clear();
+            CarregarLivros();
+        }
     }
 }
