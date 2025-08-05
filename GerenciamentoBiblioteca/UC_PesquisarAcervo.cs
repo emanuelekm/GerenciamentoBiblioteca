@@ -258,5 +258,21 @@ namespace GerenciamentoBiblioteca
 
             CarregarLivros();
         }
+        
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Form currentForm = this.FindForm();
+
+            if (Sessao.TipoUsuario == "Leitor" && currentForm is FormPrincipalLeitor leitorForm)
+            {
+                leitorForm.panelTelaInternaLeitor.Controls.Clear();
+                leitorForm.panelTelaInternaLeitor.Controls.Add(new UC_InicioLeitor());
+            }
+            else if (Sessao.TipoUsuario == "Administrador" && currentForm is FormPrincipalAdmin adminForm)
+            {
+                adminForm.panelTelaInterna.Controls.Clear();
+                adminForm.panelTelaInterna.Controls.Add(new UC_InicioAdmin());
+            }
+        }
     }
 }

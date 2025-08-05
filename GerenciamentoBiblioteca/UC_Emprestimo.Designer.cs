@@ -42,7 +42,9 @@
             this.dataGridViewEmprestimo = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.buttonLimpar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmprestimo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxLeitor
@@ -193,11 +195,23 @@
             this.buttonLimpar.UseVisualStyleBackColor = true;
             this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GerenciamentoBiblioteca.Properties.Resources.icons8_voltar_24;
+            this.pictureBox1.Location = new System.Drawing.Point(5, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // UC_Emprestimo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonLimpar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridViewEmprestimo);
@@ -216,6 +230,7 @@
             this.Size = new System.Drawing.Size(1076, 691);
             this.Load += new System.EventHandler(this.UCEmprestimo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmprestimo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,5 +251,6 @@
         private System.Windows.Forms.DataGridView dataGridViewEmprestimo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonLimpar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -109,6 +109,17 @@ namespace GerenciamentoBiblioteca
                 }
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            UC_InicioLeitor UC_InicioLeitor = new UC_InicioLeitor();
+
+            FormPrincipalLeitor form = this.FindForm() as FormPrincipalLeitor;
+            if (form != null)
+            {
+                form.CarregarTela(UC_InicioLeitor);
+            }
+        }
     }
 }
 

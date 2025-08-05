@@ -274,7 +274,7 @@
             // 
             // panelTelaInterna
             // 
-            this.panelTelaInterna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.panelTelaInterna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panelTelaInterna.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTelaInterna.Location = new System.Drawing.Point(267, 89);
             this.panelTelaInterna.Margin = new System.Windows.Forms.Padding(2);
@@ -332,9 +332,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panelTelaInterna;
         private System.Windows.Forms.LinkLabel linkSair;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox3;
+        public System.Windows.Forms.Panel panelTelaInterna;
     }
 }

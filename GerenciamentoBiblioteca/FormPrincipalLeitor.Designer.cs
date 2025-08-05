@@ -62,7 +62,7 @@
             // 
             // panelTelaInternaLeitor
             // 
-            this.panelTelaInternaLeitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.panelTelaInternaLeitor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panelTelaInternaLeitor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTelaInternaLeitor.Location = new System.Drawing.Point(267, 89);
             this.panelTelaInternaLeitor.Margin = new System.Windows.Forms.Padding(2);
@@ -313,8 +313,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelTelaInternaLeitor;
         private System.Windows.Forms.Panel panelSuperior;
         private System.Windows.Forms.Label labelBemVindo;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -332,5 +330,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.LinkLabel linkSair;
+        public System.Windows.Forms.Panel panelTelaInternaLeitor;
     }
 }

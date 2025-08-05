@@ -69,5 +69,15 @@ namespace GerenciamentoBiblioteca
             }
                 
         }
+
+        public void CarregarHomePorTipoUsuario()
+        {
+            panelTelaInternaLeitor.Controls.Clear();
+
+            if (Sessao.TipoUsuario == "Leitor")
+                panelTelaInternaLeitor.Controls.Add(new UC_InicioLeitor());
+            else if (Sessao.TipoUsuario == "Administrador")
+                panelTelaInternaLeitor.Controls.Add(new UC_InicioAdmin());
+        }
     }
 }

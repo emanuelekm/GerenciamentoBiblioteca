@@ -372,5 +372,15 @@ namespace GerenciamentoBiblioteca
             dataGridViewLivrosEmAtraso.DataSource = atrasos;
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            UC_InicioAdmin UC_InicioAdmin = new UC_InicioAdmin();
+
+            FormPrincipalAdmin form = this.FindForm() as FormPrincipalAdmin;
+            if (form != null)
+            {
+                form.CarregarTela(UC_InicioAdmin);
+            }
+        }
     }
 }

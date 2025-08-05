@@ -236,5 +236,16 @@ namespace GerenciamentoBiblioteca
         {
             dtpDevolucao.MinDate = dtpEmprestimo.Value.AddDays(1);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            UC_InicioAdmin uC_InicioAdmin = new UC_InicioAdmin();
+
+            FormPrincipalAdmin form = this.FindForm() as FormPrincipalAdmin;
+            if (form != null)
+            {
+                form.CarregarTela(uC_InicioAdmin);
+            }
+        }
     }
 }
