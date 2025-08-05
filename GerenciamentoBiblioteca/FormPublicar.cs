@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -17,8 +18,8 @@ namespace GerenciamentoBiblioteca
         private int estrelasSelecionadas = 5;
         public FormPublicar()
         {
-            InitializeComponent(); 
-            string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
+            InitializeComponent();
+            string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
             conexao = new MySqlConnection(conexaoString);
 
             CarregarLivrosDevolvidos();
@@ -26,7 +27,9 @@ namespace GerenciamentoBiblioteca
         }
         private void CarregarLivrosDevolvidos()
         {
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;"))
+            string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
+            conexao = new MySqlConnection(conexaoString);
+            using (MySqlConnection conn = new MySqlConnection(conexaoString))
             {
                 conn.Open();
                 string query = @"SELECT l.id, l.titulo 
@@ -83,7 +86,9 @@ namespace GerenciamentoBiblioteca
                 return;
             }
 
-            using (var conn = new MySqlConnection("Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;"))
+            string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
+            conexao = new MySqlConnection(conexaoString);
+            using (MySqlConnection conn = new MySqlConnection(conexaoString))
             {
                 conn.Open();
                 string query = @"INSERT INTO publicacoes (id_usuario, id_livro, comentario, estrelas) 

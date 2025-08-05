@@ -4,6 +4,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -25,7 +26,7 @@ namespace GerenciamentoBiblioteca
         {
             InitializeComponent();
 
-            string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
+            string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
             conexao = new MySqlConnection(conexaoString);
 
             InicializarTimer();

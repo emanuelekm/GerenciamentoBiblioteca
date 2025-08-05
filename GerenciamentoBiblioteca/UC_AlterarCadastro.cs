@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace GerenciamentoBiblioteca
 {
     public partial class UC_AlterarCadastro : UserControl
     {
+        private MySqlConnection conexao;
         public UC_AlterarCadastro()
         {
             InitializeComponent();
@@ -39,7 +41,9 @@ namespace GerenciamentoBiblioteca
             string novoTelefone = txtTelefone.Text.Trim();
             DateTime novaDataNascimento = dtpData.Value;
 
-            using (MySqlConnection conexao = new MySqlConnection("server=localhost;uid=root;pwd=;database=gerenciamentobiblioteca"))
+            string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
+            conexao = new MySqlConnection(conexaoString);
+            using (MySqlConnection conn = new MySqlConnection(conexaoString))
             {
                 try
                 {

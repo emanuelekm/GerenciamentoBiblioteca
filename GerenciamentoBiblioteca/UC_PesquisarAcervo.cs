@@ -3,6 +3,7 @@ using Org.BouncyCastle.Asn1.Cmp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -18,8 +19,9 @@ namespace GerenciamentoBiblioteca
         public UC_PesquisarAcervo()
         {
             InitializeComponent();
-            string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
+            string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
             conexao = new MySqlConnection(conexaoString);
+
             this.Load += UC_PesquisarAcervo_Load;
 
         }
@@ -30,7 +32,9 @@ namespace GerenciamentoBiblioteca
             {
                 List<Livro> livros = new List<Livro>();
 
-                using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;"))
+                string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
+                //conexao = new MySqlConnection(conexaoString);
+                using (MySqlConnection conn = new MySqlConnection(conexaoString))
                 {
                     try
                     {
@@ -138,7 +142,9 @@ namespace GerenciamentoBiblioteca
             string estado = comboBoxEstado.SelectedItem?.ToString();
             string status = comboBoxStatus.SelectedItem?.ToString();
 
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;"))
+            string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
+            conexao = new MySqlConnection(conexaoString);
+            using (MySqlConnection conn = new MySqlConnection(conexaoString))
             {
                 conn.Open();
                 StringBuilder query = new StringBuilder("SELECT * FROM livros WHERE 1=1");

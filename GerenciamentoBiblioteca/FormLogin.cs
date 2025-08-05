@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -24,7 +25,7 @@ namespace GerenciamentoBiblioteca
         public FormLogin()
         {
             InitializeComponent();
-            string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
+            string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
             conexao = new MySqlConnection(conexaoString);
 
             panelRedefinirSenha.Hide();

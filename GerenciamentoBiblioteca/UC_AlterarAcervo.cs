@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -14,12 +15,14 @@ namespace GerenciamentoBiblioteca
     public partial class UC_AlterarAcervo : UserControl
     {
         private MySqlConnection conexao;
+
         public UC_AlterarAcervo()
         {
             InitializeComponent();
 
-            string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
+            string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
             conexao = new MySqlConnection(conexaoString);
+
             this.Load += UCAlterarAcervo_Load;
         }
 
@@ -29,7 +32,10 @@ namespace GerenciamentoBiblioteca
             {
                 List<Livro> livros = new List<Livro>();
 
-                using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;"))
+                string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
+                //conexao = new MySqlConnection(conexaoString);
+
+                using (MySqlConnection conn = new MySqlConnection(conexaoString))
                 {
                     try
                     {

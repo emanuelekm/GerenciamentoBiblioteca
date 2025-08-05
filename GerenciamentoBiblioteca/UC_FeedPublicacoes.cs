@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace GerenciamentoBiblioteca
 {
     public partial class UC_FeedPublicacoes : UserControl
     {
+        private MySqlConnection conexao;
         public UC_FeedPublicacoes()
         {
             InitializeComponent();
@@ -22,7 +24,9 @@ namespace GerenciamentoBiblioteca
         {
             flowComentarios.Controls.Clear();
 
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;"))
+            string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
+            conexao = new MySqlConnection(conexaoString);
+            using (MySqlConnection conn = new MySqlConnection(conexaoString))
             {
                 conn.Open();
                 string query = @"SELECT u.nome AS Leitor, 

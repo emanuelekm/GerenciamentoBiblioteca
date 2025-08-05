@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace GerenciamentoBiblioteca
         public UC_ControleDeUsuarios()
         {
             InitializeComponent();
-            string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
+            string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
             conexao = new MySqlConnection(conexaoString);
             this.Load += UCControleDeUsuarios_Load;
         }
@@ -28,7 +29,9 @@ namespace GerenciamentoBiblioteca
             {
                 List<Usuario> usuarios = new List<Usuario>();
 
-                using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;"))
+                string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
+                // conexao = new MySqlConnection(conexaoString);
+                using (MySqlConnection conn = new MySqlConnection(conexaoString))
                 {
                     try
                     {

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -18,8 +19,9 @@ namespace GerenciamentoBiblioteca
         public UC_HistoricoLeitor()
         {
             InitializeComponent();
-            string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
+            string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
             conexao = new MySqlConnection(conexaoString);
+
             CarregarHistorico();
             dataGridViewHistorico.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dataGridViewHistorico.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -29,7 +31,9 @@ namespace GerenciamentoBiblioteca
         {
             int idUsuarioLogado = Sessao.Id;
 
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;"))
+            string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
+            conexao = new MySqlConnection(conexaoString);
+            using (MySqlConnection conn = new MySqlConnection(conexaoString))
             {
                 try
                 {

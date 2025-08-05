@@ -12,6 +12,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using iTextSharp.text.pdf;
 using iTextSharp.text;
 using MySql.Data.MySqlClient;
+using System.Configuration;
 
 namespace GerenciamentoBiblioteca
 {
@@ -24,7 +25,7 @@ namespace GerenciamentoBiblioteca
         {
             InitializeComponent();
 
-            string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
+            string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
             conexao = new MySqlConnection(conexaoString);
 
             AtualizarGraficoPizza();

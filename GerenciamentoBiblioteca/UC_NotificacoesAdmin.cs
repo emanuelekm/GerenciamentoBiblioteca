@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace GerenciamentoBiblioteca
         {
             InitializeComponent();
 
-            string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
+            string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
             conexao = new MySqlConnection(conexaoString);
 
             this.Load += UC_NotificacoesAdmin_Load;
@@ -195,7 +196,8 @@ namespace GerenciamentoBiblioteca
         /// </summary>
         private void MarcarNotificacaoComoExcluida(int idEmprestimo, bool excluir)
         {
-            string conexaoString = "Server=localhost;Database=gerenciamentobiblioteca;Uid=root;Pwd=;";
+            string conexaoString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
+            //conexao = new MySqlConnection(conexaoString);
             string query = "UPDATE emprestimos SET notificacao_excluida = @excluida WHERE id = @id";
             using (MySqlConnection conexao = new MySqlConnection(conexaoString))
             using (MySqlCommand cmd = new MySqlCommand(query, conexao))
