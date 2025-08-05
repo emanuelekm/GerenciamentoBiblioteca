@@ -12,11 +12,14 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
+
 namespace GerenciamentoBiblioteca
 {
     public partial class FormLogin : Form
     {
         private MySqlConnection conexao;
+        private int tentativasLogin = 0;
+        private System.Windows.Forms.Timer timerResetTentativas;
 
         public FormLogin()
         {
@@ -30,7 +33,9 @@ namespace GerenciamentoBiblioteca
 
             AtualizarRequisitosSenha("");
 
-            //textBoxTelefone.KeyPress += textBoxTelefone_KeyPress;
+            timerResetTentativas = new System.Windows.Forms.Timer();
+            timerResetTentativas.Interval = 5 * 60 * 1000; // 5 minutos
+            timerResetTentativas.Tick += TimerResetTentativas_Tick;
         }
 
         private void FormLogin_SizeChanged(object sender, EventArgs e)
@@ -39,6 +44,7 @@ namespace GerenciamentoBiblioteca
             CenterPanel();
         }
 
+        
         // Definição da tela inicial (dividir a tela em duas partes)
 
         private void CenterPanel()
@@ -112,6 +118,11 @@ namespace GerenciamentoBiblioteca
                 radioButtonLeitor.Visible = true;
             }
         }
+        private void TimerResetTentativas_Tick(object sender, EventArgs e)
+        {
+            tentativasLogin = 0;
+            timerResetTentativas.Stop();
+        }
 
         //Botão de login
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -123,6 +134,14 @@ namespace GerenciamentoBiblioteca
             {
                 MessageBox.Show("Por favor, preencha todos os campos.");
                 return;
+            }
+
+            int maxTentativas = 3;
+
+            if (tentativasLogin >= maxTentativas)
+            {
+                MessageBox.Show("Número máximo de tentativas atingido. Aguarde para tentar novamente.");
+                return;  // bloqueia o login
             }
 
             try
@@ -141,6 +160,8 @@ namespace GerenciamentoBiblioteca
 
                         if (PasswordHasher.Verify(senha, senhaHashArmazenada))
                         {
+                            tentativasLogin = 0;
+
                             MessageBox.Show("Login bem-sucedido!");
 
                             Sessao.Id = Convert.ToInt32(reader["id"]);
@@ -171,19 +192,21 @@ namespace GerenciamentoBiblioteca
                         }
                         else
                         {
-                            MessageBox.Show("Senha incorreta.");
+                            tentativasLogin++;
+                            MessageBox.Show($"Senha incorreta. Tentativa {tentativasLogin} de {maxTentativas}.");
                         }
                     }
                     else
                     {
+                        tentativasLogin++;
                         MessageBox.Show("Usuário não encontrado.");
                     }
                 }
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message);
+                MessageBox.Show("Erro interno. Contate o suporte.");
             }
             finally
             {
@@ -276,7 +299,7 @@ namespace GerenciamentoBiblioteca
                 cmd.Parameters.AddWithValue("@nome", nome);
                 cmd.Parameters.AddWithValue("@email", email);
                 cmd.Parameters.AddWithValue("@senha", senhaHasheada);
-                cmd.Parameters.AddWithValue("@data_nascimento", data_nascimento);
+                cmd.Parameters.Add("@data_nascimento", MySqlDbType.Date).Value = data_nascimento;
                 cmd.Parameters.AddWithValue("@telefone", telefone);
                 cmd.Parameters.AddWithValue("@tipo_usuario", tipo_usuario);
 
