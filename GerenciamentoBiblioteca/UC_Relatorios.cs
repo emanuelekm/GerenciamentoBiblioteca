@@ -75,10 +75,10 @@ namespace GerenciamentoBiblioteca
             series.Points[1].Color = ColorTranslator.FromHtml("#f2b21b");
 
             //series.Points[2].Color = Color.Red;
-            series.Points[2].Color = ColorTranslator.FromHtml("#d44041");
+            series.Points[2].Color = ColorTranslator.FromHtml("#ff5757");
 
             //series.Points[3].Color = Color.LightGreen;
-            series.Points[3].Color = ColorTranslator.FromHtml("#0ecf15");
+            series.Points[3].Color = ColorTranslator.FromHtml("#0cc0df");
 
             chartEmprestimo.Legends[0].Docking = Docking.Bottom;
             chart.Series.Add(series);
@@ -277,9 +277,9 @@ namespace GerenciamentoBiblioteca
             serie.Points.AddXY("Indisponíveis", indisponiveis);
 
             //serie.Points[0].Color = Color.LightGreen;
-            serie.Points[0].Color = ColorTranslator.FromHtml("#0ecf15");
+            serie.Points[0].Color = ColorTranslator.FromHtml("#0cc0df");
             //serie.Points[1].Color = Color.Red;
-            serie.Points[1].Color = ColorTranslator.FromHtml("#d44041");
+            serie.Points[1].Color = ColorTranslator.FromHtml("#ff5757");
 
             chartLivroDisponibilidade.Legends[0].Docking = Docking.Bottom;
 
@@ -347,13 +347,13 @@ namespace GerenciamentoBiblioteca
             series.Points.AddXY("Ruim", dados["Ruim"]);
 
             //series.Points[0].Color = Color.LightGreen;
-            series.Points[0].Color = ColorTranslator.FromHtml("#0ecf15");
+            series.Points[0].Color = ColorTranslator.FromHtml("#0cc0df");
             
             //series.Points[1].Color = Color.Yellow;
             series.Points[1].Color = ColorTranslator.FromHtml("#f5f522");
 
             //series.Points[2].Color = Color.Red;
-            series.Points[2].Color = ColorTranslator.FromHtml("#d44041");
+            series.Points[2].Color = ColorTranslator.FromHtml("#ff5757");
 
             chart.Series.Add(series);
 
