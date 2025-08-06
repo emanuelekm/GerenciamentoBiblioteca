@@ -39,6 +39,7 @@ namespace GerenciamentoBiblioteca
                 "Filosofia",
                 "História",
                 "Histórico",
+                "Infantil",
                 "Mistério / Suspense",
                 "Negócios / Finanças",
                 "Religião / Espiritualidade",
@@ -48,6 +49,8 @@ namespace GerenciamentoBiblioteca
                 "Thriller",
                 "Viagem / Turismo"
             });
+
+
         }
 
         public FormLivro(MySqlConnection conexao, Livro livro) : this(conexao)
@@ -63,14 +66,25 @@ namespace GerenciamentoBiblioteca
             comboBoxStatusNovoLivro.Text = livro.Status;
             comboBoxEstadoNovoLivro.Text = livro.Estado;
         }
-        private bool LivroJaExiste(string titulo, string autor)
+        private bool LivroJaExiste(string titulo, string autor, int ano, int? idIgnorar = null)
         {
             string query = "SELECT COUNT(*) FROM livros WHERE titulo = @titulo AND autor = @autor AND ano = @ano";
+
+            if (idIgnorar.HasValue)
+            {
+                query += " AND id != @id";
+            }
 
             using (MySqlCommand cmd = new MySqlCommand(query, conexao))
             {
                 cmd.Parameters.AddWithValue("@titulo", titulo.Trim());
                 cmd.Parameters.AddWithValue("@autor", autor.Trim());
+                cmd.Parameters.AddWithValue("@ano", ano);
+
+                if (idIgnorar.HasValue)
+                {
+                    cmd.Parameters.AddWithValue("@id", idIgnorar.Value);
+                }
 
                 try
                 {
@@ -81,7 +95,7 @@ namespace GerenciamentoBiblioteca
                 catch (Exception ex)
                 {
                     MessageBox.Show("Erro ao verificar duplicidade: " + ex.Message);
-                    return true; // por segurança, assume duplicado
+                    return true;
                 }
                 finally
                 {
@@ -89,8 +103,12 @@ namespace GerenciamentoBiblioteca
                 }
             }
         }
+
+
+
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
+            
             string titulo = textBoxTituloNovoLivro.Text.Trim();
             string autor = textBoxAutorNovoLivro.Text.Trim();
             string genero = comboBoxGeneroNovoLivro.Text.Trim();
@@ -109,11 +127,20 @@ namespace GerenciamentoBiblioteca
                 return;
             }
 
-            if (LivroJaExiste(textBoxTituloNovoLivro.Text, textBoxAutorNovoLivro.Text))
+            int? idLivro = livroParaEditar?.Id;
+
+            //MessageBox.Show($"ID para ignorar: {idLivro}");
+
+            bool duplicado = LivroJaExiste(titulo, autor, ano, idLivro);
+
+            //MessageBox.Show("Resultado da verificação: " + (duplicado ? "DUPLICADO" : "OK"));
+
+            if (duplicado)
             {
                 MessageBox.Show("Este livro já está cadastrado.", "Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
 
             if (livroParaEditar == null)
             {
