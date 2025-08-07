@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Windows.Forms.VisualStyles;
 
 namespace GerenciamentoBiblioteca
 {
@@ -224,6 +225,32 @@ namespace GerenciamentoBiblioteca
             if (form != null)
             {
                 form.CarregarTela(uC_InicioAdmin);
+            }
+        }
+
+        private void textBoxPesquisarColecao_TextChanged(object sender, EventArgs e)
+        {
+            RealizarPesquisa();
+        }
+
+        private void RealizarPesquisa()
+        {
+            string termo = textBoxPesquisarColecao.Text.Trim();
+            //string genero = comboBoxGenero.SelectedItem?.ToString() ?? "";
+            //string estado = comboBoxEstado.SelectedItem?.ToString() ?? "";
+            //string status = comboBoxStatus.SelectedItem?.ToString() ?? "";
+            // int? ano = string.IsNullOrEmpty(textBoxAno.Text.Trim()) ? (int?)null : int.Parse(textBoxAno.Text);
+
+            AcervoBiblioteca db = new AcervoBiblioteca();
+
+            List<Livro> livrosFiltrados = db.BuscarLivros(termo);
+
+            dataGridViewModificarAcervo.DataSource = livrosFiltrados;
+            dataGridViewModificarAcervo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            if (dataGridViewModificarAcervo.Columns.Contains("Id"))
+            {
+                dataGridViewModificarAcervo.Columns["Id"].Visible = false;
             }
         }
     }
