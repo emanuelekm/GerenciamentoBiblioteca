@@ -293,6 +293,26 @@ namespace GerenciamentoBiblioteca.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_configurações_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-configurações-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_dúvida_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-dúvida-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_leitura_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-leitura-64", resourceCulture);

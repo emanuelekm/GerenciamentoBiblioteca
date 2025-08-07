@@ -163,6 +163,12 @@
     <Compile Include="UC_AlterarCadastro.Designer.cs">
       <DependentUpon>UC_AlterarCadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Config.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Config.Designer.cs">
+      <DependentUpon>UC_Config.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_ControleDeUsuarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -270,6 +276,9 @@
     <EmbeddedResource Include="UC_AlterarCadastro.resx">
       <DependentUpon>UC_AlterarCadastro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_Config.resx">
+      <DependentUpon>UC_Config.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_ControleDeUsuarios.resx">
       <DependentUpon>UC_ControleDeUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +315,9 @@
     <EmbeddedResource Include="UC_RelatoriosTabela.resx">
       <DependentUpon>UC_RelatoriosTabela.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="manual.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -420,6 +432,8 @@
     <None Include="Resources\icons8-books-64.png" />
     <None Include="Resources\icons8-relatório-64.png" />
     <Content Include="Database\db.sql" />
+    <None Include="Resources\icons8-dúvida-48.png" />
+    <None Include="Resources\icons8-configurações-24.png" />
     <Content Include="Resources\lixeira.png" />
     <None Include="Resources\lixeira_azul.png" />
     <None Include="Resources\lixeira1.png" />

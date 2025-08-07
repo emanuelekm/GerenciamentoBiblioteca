@@ -79,5 +79,10 @@ namespace GerenciamentoBiblioteca
             else if (Sessao.TipoUsuario == "Administrador")
                 panelTelaInternaLeitor.Controls.Add(new UC_InicioAdmin());
         }
+
+        private void linkLabelConfigLeitor_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CarregarTela(new UC_Config());
+        }
     }
 }
