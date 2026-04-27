@@ -1,5 +1,8 @@
 # 📚 LIBRARIUM  
-**Sistema de Gerenciamento de Biblioteca**
+
+<p align="center">
+  <img src="banner_Librarium.png" alt="Banner do Projeto" width="100%">
+</p>
 
 ---
 
