@@ -4,8 +4,6 @@
 
 ---
 
-## 💡 Sobre o projeto  
-
 O **LIBRARIUM** é um sistema desktop desenvolvido como Trabalho de Conclusão de Curso, com foco na **organização e automação de bibliotecas**.
 
 A aplicação permite gerenciar livros, usuários, empréstimos e devoluções de forma simples e eficiente, sendo ideal para ambientes que precisam de uma solução **local (offline)**.
