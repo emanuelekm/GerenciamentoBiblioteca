@@ -1,5 +1,3 @@
-# 📚 LIBRARIUM  
-
 <p align="center">
   <img src="banner_Librarium.png" alt="Banner do Projeto" width="100%">
 </p>
